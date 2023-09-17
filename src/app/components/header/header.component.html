@@ -14,9 +14,9 @@
                 </a>
                 <ul class="no-select dropdown-content"
                     [ngStyle]="{'display': isDropdownOpen ? 'block' : 'none'}">
-                    <li><a class="dropdown-item no-select">First Semester</a></li>
-                    <li><a class="dropdown-item no-select">Second Semester</a></li>
-                    <li><a class="dropdown-item no-sele ct">Third Semester</a></li>
+                    <li><a (click)="toggleDropdown()" class="dropdown-item no-select">First Semester</a></li>
+                    <li><a (click)="toggleDropdown()" class="dropdown-item no-select">Second Semester</a></li>
+                    <li><a (click)="toggleDropdown()" class="dropdown-item no-sele ct">Third Semester</a></li>
                 </ul>
             </li>
             <li class="nav-item">
