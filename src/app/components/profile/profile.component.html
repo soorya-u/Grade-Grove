@@ -1,1 +1,64 @@
-<p>profile works!</p>
+<ng-container *ngFor="let item of [].constructor(10); let i = index">
+    <ng-container *ngIf="usn===data?.rank[i].usn.substring(7,10)">
+        <div class="main">
+            <div class="container">
+                <img [src]="'../../../assets/'+usn+'.jpg'" class="profile-photo" alt="profile-picture">
+                <div class="cell">
+                    <b>Name: </b>
+                    <p>{{data?.rank[i].name}}</p>
+                </div>
+                <div class="cell">
+                    <b>USN: </b>
+                    <p>{{data?.rank[i].usn}}</p>
+                </div>
+                <div class="cell">
+                    <b>Semester: </b>
+                    <p>{{name}} Semester</p>
+                </div>
+                <div class="cell" *ngIf="is_first_or_second">
+                    <b>Cycle: </b>
+                    <p>{{data?.rank[i].cycle}}</p>
+                </div>
+                <div class="cell">
+                    <b>SGPA: </b>
+                    <p>{{data?.rank[i].spga}}</p>
+                </div>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Subject Code</th>
+                            <th>IA marks</th>
+                            <th>EA marks</th>
+                            <th>Total Marks</th>
+                        </tr>
+                    </thead>
+                    <!-- <ng-template *ngIf="is_first_or_second; else newDeb"> -->
+                        <tbody *ngFor="let item of [].constructor(is_first_or_second? 9:8); let i = index">
+                            <tr>
+                                <td>{{data?.rank[i].subjects[i].subject}}</td>
+                                <td>{{data?.rank[i].subjects[i].subject_code}}</td>
+                                <td>{{data?.rank[i].subjects[i].int_marks}}</td>
+                                <td>{{data?.rank[i].subjects[i].ext_marks}}</td>
+                                <td>{{data?.rank[i].subjects[i].total_marks}}</td>
+                            </tr>
+                        </tbody>
+                    <!-- </ng-template> -->
+                    <!-- <ng-template #newDeb>
+                        <tbody *ngFor="let item of [].constructor(7); let i = index">
+                            <tr>
+                                <td>{{data?.rank[i].subjects[i].subject}}</td>
+                                <td>{{data?.rank[i].subjects[i].subject_code}}</td>
+                                <td>{{data?.rank[i].subjects[i].int_marks}}</td>
+                                <td>{{data?.rank[i].subjects[i].ext_marks}}</td>
+                                <td>{{data?.rank[i].subjects[i].total_marks}}</td>
+                            </tr>
+                        </tbody>
+                    </ng-template> -->
+                </table>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>
