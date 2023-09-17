@@ -24,39 +24,27 @@
                     <p>{{data?.rank[i].spga}}</p>
                 </div>
             </div>
-            <div>
+            <div class="container-2">
                 <table>
                     <thead>
                         <tr>
-                            <th>Subject</th>
-                            <th>Subject Code</th>
-                            <th>IA marks</th>
-                            <th>EA marks</th>
-                            <th>Total Marks</th>
+                            <th class="sub-cell">Subject</th>
+                            <th class="sub-code-cell">Subject Code</th>
+                            <th class="ext-cell">Internal Assessment</th>
+                            <th class="int-cell">External Assessment</th>
+                            <th class="total-cell">Total Marks</th>
                         </tr>
                     </thead>
                     <!-- <ng-template *ngIf="is_first_or_second; else newDeb"> -->
-                        <tbody *ngFor="let item of [].constructor(is_first_or_second? 9:8); let i = index">
-                            <tr>
-                                <td>{{data?.rank[i].subjects[i].subject}}</td>
-                                <td>{{data?.rank[i].subjects[i].subject_code}}</td>
-                                <td>{{data?.rank[i].subjects[i].int_marks}}</td>
-                                <td>{{data?.rank[i].subjects[i].ext_marks}}</td>
-                                <td>{{data?.rank[i].subjects[i].total_marks}}</td>
-                            </tr>
-                        </tbody>
-                    <!-- </ng-template> -->
-                    <!-- <ng-template #newDeb>
-                        <tbody *ngFor="let item of [].constructor(7); let i = index">
-                            <tr>
-                                <td>{{data?.rank[i].subjects[i].subject}}</td>
-                                <td>{{data?.rank[i].subjects[i].subject_code}}</td>
-                                <td>{{data?.rank[i].subjects[i].int_marks}}</td>
-                                <td>{{data?.rank[i].subjects[i].ext_marks}}</td>
-                                <td>{{data?.rank[i].subjects[i].total_marks}}</td>
-                            </tr>
-                        </tbody>
-                    </ng-template> -->
+                    <tbody *ngFor="let item of [].constructor(is_first_or_second? 9:8); let i = index">
+                        <tr>
+                            <td class="sub-cell">{{data?.rank[i].subjects[i].subject}}</td>
+                            <td class="sub-code-cell">{{data?.rank[i].subjects[i].subject_code}}</td>
+                            <td class="ext-cell">{{data?.rank[i].subjects[i].int_marks}}</td>
+                            <td class="int-cell">{{data?.rank[i].subjects[i].ext_marks}}</td>
+                            <td class="total-cell">{{data?.rank[i].subjects[i].total_marks}}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

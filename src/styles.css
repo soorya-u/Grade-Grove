@@ -1,9 +1,13 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat';
 }
 
 .no-select {
@@ -14,4 +18,8 @@
     -ms-user-select: none;
     user-select: none;
 
+}
+
+.head-font{
+    font-family: 'Lato';
 }
