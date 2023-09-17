@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { MarksService } from 'src/app/services/marks.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -11,13 +12,13 @@ export class ResultsComponent {
 
   name:string
   sem:string
-  path:string
+  next_path:string
   data:Object | any
   rank:any
 
-  constructor(private location: Location, private api:MarksService) { 
-    this.path = this.location.path()+"/";
-    this.sem = this.path.split('/')[2];
+  constructor(private location: Location, private api:MarksService, private router:Router) { 
+    this.next_path = this.location.path()+"/usn/";
+    this.sem = this.next_path.split('/')[2];
     this.name = ""
 
     
@@ -39,6 +40,6 @@ export class ResultsComponent {
         this.name="Third"
       })
     }
-
   }
 }
+

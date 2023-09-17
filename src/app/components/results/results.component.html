@@ -12,7 +12,7 @@
         <tbody *ngFor="let item of [].constructor(10); let i = index">
             <tr>
                 <td>{{i+1}}</td>
-                <td><a [routerLink]="path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
+                <td><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
                 <td>{{data?.rank[i].usn}}</td>
                 <td>{{data?.rank[i].total}}</td>
             </tr>
