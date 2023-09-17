@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  constructor(private router:Router){}
   
   @ViewChild('dropdownButton') dropdownButton!: ElementRef;
   @ViewChild('dropdownContent') dropdownContent!: ElementRef;
@@ -23,5 +26,17 @@ export class HeaderComponent {
     ) {
       this.isDropdownOpen = false;
     }
+  }
+
+  subRouter(event:any){
+    let element = event.target || event.srcElement || event.currentTarget;
+    let elementId = element.id;
+    this.toggleDropdown()
+
+    this.router.navigate(['/result',elementId]).then(
+      ()=>{
+      // window.location.reload();
+      }
+    )
   }
 }

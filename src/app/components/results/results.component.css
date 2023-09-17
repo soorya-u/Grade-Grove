@@ -1,0 +1,47 @@
+.container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading{
+    margin-bottom: 30px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;   
+}
+
+
+
+/* Define column widths */
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 1%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 40%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 4    0%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 10%;
+}
