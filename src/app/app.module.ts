@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ResultsComponent } from './components/results/results.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutComponent } from './components/about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

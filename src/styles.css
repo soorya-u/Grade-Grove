@@ -8,6 +8,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
+    background-color: #e8f1fa;
 }
 
 .no-select {
@@ -20,6 +21,6 @@
 
 }
 
-.head-font{
+h1,.head-font{
     font-family: 'Lato';
 }
