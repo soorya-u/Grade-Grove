@@ -2,7 +2,7 @@
     <ng-container *ngIf="usn===data?.rank[i].usn.substring(7,10)">
         <h1>{{i+1}}<sup class="head-font">{{calculateSuperScript(i+1)}}</sup> Rank - {{data?.rank[i].name}}</h1>
         <div class="main">
-            <div class="container">
+            <div class="blur-effect container">
                 <img [src]="'../../../assets/'+usn+'.jpg'" class="profile-photo" alt="profile-picture">
                 <table class="detail-table">
                     <tr class="detail-table-row">
@@ -35,21 +35,21 @@
                 <table [cellSpacing]="0" class="marks-table">
                     <thead>
                         <tr class="marks-table-row">
-                            <th class="marks-table-heading">Subject</th>
-                            <th class="marks-table-heading">Subject Code</th>
-                            <th class="marks-table-heading">Internal Assessment</th>
-                            <th class="marks-table-heading">External Assessment</th>
-                            <th class="marks-table-heading">Total Marks</th>
+                            <th class="blur-effect marks-table-heading">Subject</th>
+                            <th class="blur-effect marks-table-heading">Subject Code</th>
+                            <th class="blur-effect marks-table-heading">Internal Assessment</th>
+                            <th class="blur-effect marks-table-heading">External Assessment</th>
+                            <th class="blur-effect marks-table-heading">Total Marks</th>
                         </tr>
                     </thead>
                     <!-- <ng-template *ngIf="is_first_or_second; else newDeb"> -->
                     <tbody *ngFor="let item of [].constructor(is_first_or_second? 9:8); let i = index">
                         <tr class="marks-table-row">
-                            <td class="marks-table-data">{{data?.rank[i].subjects[i].subject}}</td>
-                            <td class="marks-table-data">{{data?.rank[i].subjects[i].subject_code}}</td>
-                            <td class="marks-table-data">{{data?.rank[i].subjects[i].int_marks}}</td>
-                            <td class="marks-table-data">{{data?.rank[i].subjects[i].ext_marks}}</td>
-                            <td [style]="data?.rank[i].subjects[i].total_marks===100?'color:#ffbb00;font-weight:bold;':'color:black'" class="marks-table-data">{{data?.rank[i].subjects[i].total_marks}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].subject}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].subject_code}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].int_marks}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].ext_marks}}</td>
+                            <td [style]="data?.rank[i].subjects[i].total_marks===100?'color:#ffbb00;font-weight:bold;':'color:black'" class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].total_marks}}</td>
                         </tr>
                     </tbody>
                 </table>

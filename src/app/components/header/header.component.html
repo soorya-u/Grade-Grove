@@ -1,7 +1,4 @@
 <nav class="navbar">
-    <div class="nav-child-1">
-        <h1 class="navbar-brand no-select head-font">elite-AIML</h1>
-    </div>
     <div class="nav-child-2">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -12,7 +9,7 @@
                     aria-expanded="false" style="cursor:pointer">
                     Results<i class="bi bi-caret-down-fill"></i>
                 </a>
-                <ul style="background-color: #42cbf5;" class="no-select dropdown-content"
+                <ul style="background-color: transparent;" class="no-select blur-effect dropdown-content"
                     [ngStyle]="{'display': isDropdownOpen ? 'block' : 'none'}">
                     <li><a style="cursor:pointer" id="first-sem"(click)="subRouter($event)" class="dropdown-item no-select">First Semester</a></li>
                     <li><a style="cursor:pointer" id="sec-sem" (click)="subRouter($event)" class="dropdown-item no-select">Second Semester</a></li>
@@ -26,5 +23,8 @@
                 <a class="nav-link active no-select" aria-current="page" routerLink="/about">About</a>
             </li>
         </ul>
+    </div>
+    <div class="nav-child-1">
+        <h1 style="font-family: 'Audiowide';" class="navbar-brand no-select head-font">elite-AIML</h1>
     </div>
 </nav>

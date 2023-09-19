@@ -3,20 +3,20 @@
     <table [cellSpacing]="0" class="main-table">
         <thead>
             <tr class="main-table-row">
-                <th class="main-table-heading">Rank</th>
-                <th class="main-table-heading">Student Name</th>
-                <th class="main-table-heading">USN</th>
-                <th class="main-table-heading">Total Marks</th>
-                <th class="main-table-heading">SGPA</th>
+                <th class="main-table-heading blur-effect">Rank</th>
+                <th class="main-table-heading blur-effect">Student Name</th>
+                <th class="main-table-heading blur-effect">USN</th>
+                <th class="main-table-heading blur-effect">Total Marks</th>
+                <th class="main-table-heading blur-effect">SGPA</th>
             </tr>
         </thead>
         <tbody *ngFor="let item of [].constructor(10); let i = index">
             <tr>
-                <td class="main-table-data">{{i+1}}</td>
-                <td class="main-table-data"><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
-                <td class="main-table-data">{{data?.rank[i].usn}}</td>
-                <td class="main-table-data">{{data?.rank[i].total}}</td>
-                <td class="main-table-data">{{data?.rank[i].spga}}</td>
+                <td class="main-table-data blur-effect">{{i+1}}</td>
+                <td class="main-table-data blur-effect"><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
+                <td class="main-table-data blur-effect">{{data?.rank[i].usn}}</td>
+                <td class="main-table-data blur-effect">{{data?.rank[i].total}}</td>
+                <td class="main-table-data blur-effect">{{data?.rank[i].spga}}</td>
             </tr>
         </tbody>
     </table>

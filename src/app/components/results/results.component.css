@@ -11,26 +11,26 @@
 
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 
 .main-table {
     width:80vw;
     height: 70vh;
-    border: 0.5px solid black;
+    border: 0.5px solid white;
     border-radius: 7px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .main-table-data{
-    border: 0.5px solid #ccc;
+    border: 0.5px solid #a2a2a2;
     padding: 5px 15px;
     text-align: center;
 }
 .main-table-heading{
-    border: 0.5px solid #ccc;
+    border: 0.5px solid #a2a2a2;
     padding: 15px 15px;
     text-align: center;
 }
