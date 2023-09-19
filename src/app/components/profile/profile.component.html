@@ -1,9 +1,9 @@
-<ng-container *ngFor="let item of [].constructor(10); let i = index">
+<ng-container *ngFor="let item1 of [].constructor(10); let i = index">
     <ng-container *ngIf="usn===data?.rank[i].usn.substring(7,10)">
         <h1>{{i+1}}<sup class="head-font">{{calculateSuperScript(i+1)}}</sup> Rank - {{data?.rank[i].name}}</h1>
         <div class="main">
             <div class="blur-effect container">
-                <img [src]="'../../../assets/'+usn+'.jpg'" class="profile-photo" alt="profile-picture">
+                <img [src]="'https://soorya-u.github.io/Elite-AIML/assets/'+usn+'.jpg'" class="profile-photo" alt="profile-picture">
                 <table class="detail-table">
                     <tr class="detail-table-row">
                         <th class="detail-table-heading">Name :</th>
@@ -43,13 +43,13 @@
                         </tr>
                     </thead>
                     <!-- <ng-template *ngIf="is_first_or_second; else newDeb"> -->
-                    <tbody *ngFor="let item of [].constructor(is_first_or_second? 9:8); let i = index">
+                    <tbody *ngFor="let item2 of [].constructor(is_first_or_second? 9:8); let j = index">
                         <tr class="marks-table-row">
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].subject}}</td>
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].subject_code}}</td>
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].int_marks}}</td>
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].ext_marks}}</td>
-                            <td [style]="data?.rank[i].subjects[i].total_marks===100?'color:#ffbb00;font-weight:bold;':'color:white'" class="blur-effect marks-table-data">{{data?.rank[i].subjects[i].total_marks}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].subject}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].subject_code}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].int_marks}}</td>
+                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].ext_marks}}</td>
+                            <td [style]="data?.rank[i].subjects[j].total_marks===100?'color:#ffbb00;font-weight:bold;':'color:white'" class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].total_marks}}</td>
                         </tr>
                     </tbody>
                 </table>
