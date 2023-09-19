@@ -1,20 +1,22 @@
 <div class="container">
     <h1 class="heading">{{name}} Semester Top 10 List</h1>
-    <table border="2">
+    <table [cellSpacing]="0" class="main-table">
         <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>USN</th>
-                <th>Total marks</th>
+            <tr class="main-table-row">
+                <th class="main-table-heading">Rank</th>
+                <th class="main-table-heading">Student Name</th>
+                <th class="main-table-heading">USN</th>
+                <th class="main-table-heading">Total Marks</th>
+                <th class="main-table-heading">SGPA</th>
             </tr>
         </thead>
         <tbody *ngFor="let item of [].constructor(10); let i = index">
             <tr>
-                <td>{{i+1}}</td>
-                <td><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
-                <td>{{data?.rank[i].usn}}</td>
-                <td>{{data?.rank[i].total}}</td>
+                <td class="main-table-data">{{i+1}}</td>
+                <td class="main-table-data"><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
+                <td class="main-table-data">{{data?.rank[i].usn}}</td>
+                <td class="main-table-data">{{data?.rank[i].total}}</td>
+                <td class="main-table-data">{{data?.rank[i].spga}}</td>
             </tr>
         </tbody>
     </table>

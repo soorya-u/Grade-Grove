@@ -9,7 +9,35 @@
     margin-bottom: 30px;
 }
 
-table {
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.main-table {
+    width:80vw;
+    height: 70vh;
+    border: 0.5px solid black;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.main-table-data{
+    border: 0.5px solid #ccc;
+    padding: 5px 15px;
+    text-align: center;
+}
+.main-table-heading{
+    border: 0.5px solid #ccc;
+    padding: 15px 15px;
+    text-align: center;
+}
+
+
+
+/* table {
     width: 80%;
     border-collapse: collapse;
 }
@@ -23,7 +51,7 @@ td {
 
 
 
-/* Define column widths */
+Define column widths
 
 th:nth-child(1),
 td:nth-child(1) {
@@ -43,9 +71,4 @@ td:nth-child(3) {
 th:nth-child(4),
 td:nth-child(4) {
     width: 10%;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
+} */

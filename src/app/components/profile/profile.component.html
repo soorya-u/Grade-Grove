@@ -32,7 +32,7 @@
                 </table>
             </div>
             <div class="container-2">
-                <table border="0" [cellSpacing]="0" class="marks-table">
+                <table [cellSpacing]="0" class="marks-table">
                     <thead>
                         <tr class="marks-table-row">
                             <th class="marks-table-heading">Subject</th>
@@ -47,9 +47,9 @@
                         <tr class="marks-table-row">
                             <td class="marks-table-data">{{data?.rank[i].subjects[i].subject}}</td>
                             <td class="marks-table-data">{{data?.rank[i].subjects[i].subject_code}}</td>
-                            <td [style]="data?.rank[i].subjects[i].int_marks===50?'color:gold':'color:black'" class="marks-table-data">{{data?.rank[i].subjects[i].int_marks}}</td>
-                            <td [style]="data?.rank[i].subjects[i].ext_marks===50?'color:gold':'color:black'" class="marks-table-data">{{data?.rank[i].subjects[i].ext_marks}}</td>
-                            <td [style]="data?.rank[i].subjects[i].total_marks===100?'color:gold':'color:black'" class="marks-table-data">{{data?.rank[i].subjects[i].total_marks}}</td>
+                            <td class="marks-table-data">{{data?.rank[i].subjects[i].int_marks}}</td>
+                            <td class="marks-table-data">{{data?.rank[i].subjects[i].ext_marks}}</td>
+                            <td [style]="data?.rank[i].subjects[i].total_marks===100?'color:#ffbb00;font-weight:bold;':'color:black'" class="marks-table-data">{{data?.rank[i].subjects[i].total_marks}}</td>
                         </tr>
                     </tbody>
                 </table>
