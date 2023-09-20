@@ -63,11 +63,6 @@ a {
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-img {
-    height: 40px;
-    filter: invert(100%);
-}
-
 .nav-brand {
     font-size: 35px;
 }
@@ -94,4 +89,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nav-image{
+    height: 40px;
+    /* filter: invert(100%); */
+}
+
+.nav-image:hover{
+    filter: drop-shadow(5px 5px 10px red);
 }
