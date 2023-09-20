@@ -93,9 +93,9 @@ a {
 
 .nav-image{
     height: 40px;
-    /* filter: invert(100%); */
+    transition: filter 0.15s linear;
 }
 
 .nav-image:hover{
-    filter: drop-shadow(5px 5px 10px red);
+    filter: drop-shadow(5px 5px 10px white);
 }
