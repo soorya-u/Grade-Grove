@@ -93,9 +93,10 @@ a {
 
 .nav-image{
     height: 40px;
-    transition: filter 0.15s linear;
+    transition: filter 0.15s linear, transform 0.15s linear;
 }
 
 .nav-image:hover{
+    transform: scale(1.2);
     filter: drop-shadow(5px 5px 10px white);
 }
