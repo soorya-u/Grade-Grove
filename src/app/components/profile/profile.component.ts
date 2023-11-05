@@ -5,7 +5,7 @@ import { MarksService } from 'src/app/services/marks.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.scss']
 })
 
 export class ProfileComponent {
