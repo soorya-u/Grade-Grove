@@ -9,7 +9,8 @@ main {
   align-items: center;
   gap: 1.875rem;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     content: "";
   }
 
@@ -48,8 +49,12 @@ main {
     @include head-font();
   }
   ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     li {
-        list-style: none;
+      list-style: none;
+      font-size: larger;
     }
   }
 }
