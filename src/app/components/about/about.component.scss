@@ -1,66 +1,103 @@
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10%;
+@mixin head-font() {
+  font-family: "Poppins";
 }
 
-.class {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
 
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 85vh;
-    width: 80vw;
-    margin-left: 10vw;
-    margin-top: 15px;
-}
-
-.article{
+  h1 {
     text-align: center;
-    font-size: 20px;
-}
+    margin-top: 1.875rem;
+    font-size: 2.8rem;
+    @include head-font();
+  }
 
-.heading{
-    font-size: 45px;
-}
+  .article-1 {
+    text-align: center;
+    font-size: 1.25rem;
 
-.dev-div{
+    span {
+      font-family: "Audiowide";
+    }
+  }
+
+  h2 {
+    text-align: center;
+    @include head-font();
+  }
+
+  .dev-div {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-}
+    flex-wrap: wrap;
+    row-gap: 1.75rem;
 
-.dev-image{
-    height: 100px;
-    width: 100px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    transform: scale(1);
-    transition: transform 0.15s linear;
-}
+    .hover-img {
+      position: relative;
+      margin-bottom: 2rem;
 
-.dev-image:hover{
-    transform: scale(1.2);
-}
+      img {
+        height: 100px;
+        aspect-ratio: 1;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        transform: scale(1);
+        transition: transform 0.15s linear;
+        cursor: pointer;
 
-.tooltip-text {
-    visibility: hidden;
-    position: absolute;
-    top: 445px;  
-    z-index: 1;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.25);
-    border: 2px solid white;
-    border-radius: 15px;
-    font-size: 15px;
-    padding: 5px 7px;
-}
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      span {
+        text-align: center;
+        visibility: hidden;
+        position: absolute;
+        top: 110%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.25);
+        border: 2px solid white;
+        border-radius: 15px;
+        font-size: 15px;
+        padding: 5px 7px;
 
-.hover-text:hover .tooltip-text {
-    visibility: visible;
+        &.span-4,
+        &.span-5 {
+          width: 111%;
+        }
+        &.span-6 {
+          width: 98%;
+        }
+        &.span-8 {
+          width: 115%;
+        }
+      }
+      &:hover span {
+        visibility: visible;
+      }
+    }
+  }
+  .article-2 {
+    text-align: center;
+    h2 {
+      @include head-font();
+      font-size: 1.25rem;
+    }
+    a {
+      text-decoration: none;
+      b {
+        font-family: "Audiowide";
+        font-size: 2.25rem;
+        margin-bottom: 1.875rem;
+      }
+    }
+  }
 }
