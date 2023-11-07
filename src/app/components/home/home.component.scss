@@ -19,6 +19,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
 
     h1 {
       font-family: "Audiowide";
@@ -49,14 +50,6 @@ main {
   ul {
     li {
         list-style: none;
-    }
-  }
-}
-
-@media (max-width:420px) {
-  main {
-    .heading{
-      flex-direction: column;
     }
   }
 }
