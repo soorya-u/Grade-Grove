@@ -1,6 +1,9 @@
 @mixin blur-effect() {
   background-color: rgba(0, 0, 0, 0.15);
 }
+@mixin head-font() {
+  font-family: "Poppins";
+}
 
 main {
   display: flex;
@@ -10,6 +13,7 @@ main {
   h1 {
     margin: 1.875rem;
     text-align: center;
+    @include head-font();
   }
 
   table {
@@ -45,12 +49,12 @@ main {
   main {
     table {
       margin-bottom: 1.875rem;
-        .usn-column {
-            display: none;
-        }
-        .sgpa-column {
-            display: none;
-        }
+      .usn-column {
+        display: none;
+      }
+      .sgpa-column {
+        display: none;
+      }
     }
   }
 }

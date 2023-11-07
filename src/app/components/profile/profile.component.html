@@ -3,7 +3,7 @@
     <ng-container *ngIf="usn === data?.rank[i].usn.substring(7, 10)">
       <h1>
         {{ i + 1
-        }}<sup class="head-font">{{ calculateSuperScript(i + 1) }}</sup> Rank -
+        }}<sup>{{ calculateSuperScript(i + 1) }}</sup> Rank -
         {{ data?.rank[i].name }}
       </h1>
       <div class="main-container">

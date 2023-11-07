@@ -7,6 +7,10 @@
   user-select: none;
 }
 
+@mixin head-font() {
+  font-family: "Poppins";
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -123,6 +127,7 @@ nav {
 
     h1 {
       @include no-select();
+      @include head-font();
 
       .nav-brand {
         font-family: "Audiowide";

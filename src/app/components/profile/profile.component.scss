@@ -2,10 +2,19 @@
   background-color: rgba(0, 0, 0, 0.15);
 }
 
+@mixin head-font() {
+  font-family: "Poppins";
+}
+
 main {
   h1 {
     text-align: center;
     margin: 1.875rem;
+    @include head-font();
+
+    sup {
+      @include head-font();
+    }
   }
 
   .main-container {
