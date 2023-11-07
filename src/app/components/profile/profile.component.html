@@ -1,59 +1,94 @@
-<ng-container *ngFor="let item1 of [].constructor(10); let i = index">
-    <ng-container *ngIf="usn===data?.rank[i].usn.substring(7,10)">
-        <h1>{{i+1}}<sup class="head-font">{{calculateSuperScript(i+1)}}</sup> Rank - {{data?.rank[i].name}}</h1>
-        <div class="main">
-            <div class="blur-effect container">
-                <img [src]="'https://soorya-u.github.io/Elite-AIML/assets/'+usn+'.jpg'" class="profile-photo" alt="profile-picture">
-                <table class="detail-table">
-                    <tr class="detail-table-row">
-                        <th class="detail-table-heading">Name :</th>
-                        <td class="detail-table-data">{{data?.rank[i].name}}</td>
-                    </tr>
-                    <tr class="detail-table-row">
-                        <th class="detail-table-heading">USN :</th>
-                        <td class="detail-table-data">{{data?.rank[i].usn}}</td>
-                    </tr>
-                    <tr class="detail-table-row">
-                        <th class="detail-table-heading">Semester :</th>
-                        <td class="detail-table-data">{{name}} Semester</td>
-                    </tr>
-                    <tr class="detail-table-row" *ngIf="is_first_or_second">
-                        <th class="detail-table-heading">Cycle :</th>
-                        <td class="detail-table-data">{{data?.rank[i].cycle}}</td>
-                    </tr>
-                    <tr class="detail-table-row">
-                        <th class="detail-table-heading">Total Marks :</th>
-                        <td class="detail-table-data">{{data?.rank[i].total}}</td>
-                    </tr>
-                    <tr class="detail-table-row">
-                        <th class="detail-table-heading">SGPA :</th>
-                        <td class="detail-table-data">{{data?.rank[i].spga}}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="container-2">
-                <table [cellSpacing]="0" class="marks-table">
-                    <thead>
-                        <tr class="marks-table-row">
-                            <th class="blur-effect marks-table-heading">Subject</th>
-                            <th class="blur-effect marks-table-heading">Subject Code</th>
-                            <th class="blur-effect marks-table-heading">Internal Assessment</th>
-                            <th class="blur-effect marks-table-heading">External Assessment</th>
-                            <th class="blur-effect marks-table-heading">Total Marks</th>
-                        </tr>
-                    </thead>
-                    <!-- <ng-template *ngIf="is_first_or_second; else newDeb"> -->
-                    <tbody *ngFor="let item2 of [].constructor(is_first_or_second? 9:8); let j = index">
-                        <tr class="marks-table-row">
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].subject}}</td>
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].subject_code}}</td>
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].int_marks}}</td>
-                            <td class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].ext_marks}}</td>
-                            <td [style]="data?.rank[i].subjects[j].total_marks===100?'color:#ffbb00;font-weight:bold;':'color:white'" class="blur-effect marks-table-data">{{data?.rank[i].subjects[j].total_marks}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<main>
+  <ng-container *ngFor="let item1 of [].constructor(10); let i = index">
+    <ng-container *ngIf="usn === data?.rank[i].usn.substring(7, 10)">
+      <div class="heading">
+        <h1 class="heading-rank">
+          {{ i + 1 }}<sup>{{ calculateSuperScript(i + 1) }}</sup> Rank
+          <span>-</span>
+        </h1>
+        <h1 class="heading-name">
+          {{ data?.rank[i].name }}
+        </h1>
+      </div>
+      <div class="main-container">
+        <div class="container-1">
+          <div class="sub-container">
+            <img [src]="getProfilePicture(usn)" alt="profile-picture" />
+            <table>
+              <tr>
+                <th>Name :</th>
+                <td>{{ data?.rank[i].name }}</td>
+              </tr>
+              <tr>
+                <th>USN :</th>
+                <td>{{ data?.rank[i].usn }}</td>
+              </tr>
+              <tr>
+                <th>Semester :</th>
+                <td>{{ name }} Semester</td>
+              </tr>
+              <tr *ngIf="is_first_or_second">
+                <th>Cycle :</th>
+                <td>{{ data?.rank[i].cycle }}</td>
+              </tr>
+              <tr>
+                <th>Total Marks :</th>
+                <td>{{ data?.rank[i].total }}</td>
+              </tr>
+              <tr>
+                <th>SGPA :</th>
+                <td>{{ data?.rank[i].spga }}</td>
+              </tr>
+            </table>
+          </div>
         </div>
+        <div class="container-2">
+          <table [cellSpacing]="0">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th class="subject-code-column">Subject Code</th>
+                <th class="ia-column">Internal Assessment</th>
+                <th class="ea-column">External Assessment</th>
+                <th>Total Marks</th>
+              </tr>
+            </thead>
+            <tbody
+              *ngFor="
+                let item2 of [].constructor(is_first_or_second ? 9 : 8);
+                let j = index
+              "
+            >
+              <tr>
+                <td>
+                  {{ data?.rank[i].subjects[j].subject }}
+                </td>
+                <td class="subject-code-column">
+                  {{ data?.rank[i].subjects[j].subject_code }}
+                </td>
+                <td class="ia-column">
+                  {{ data?.rank[i].subjects[j].int_marks }}
+                </td>
+                <td class="ea-column">
+                  {{ data?.rank[i].subjects[j].ext_marks }}
+                </td>
+                <td
+                  [style]="
+                    data?.rank[i].subjects[j].total_marks === 100
+                      ? { color: '#ffbb00', 'font-weight': 'bold' }
+                      : {
+                          color: 'white'
+                        }
+                  "
+                  class="marks-table-data"
+                >
+                  {{ data?.rank[i].subjects[j].total_marks }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </ng-container>
-</ng-container>
+  </ng-container>
+</main>

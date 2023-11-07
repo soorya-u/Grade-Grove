@@ -1,23 +1,23 @@
-<div class="container">
-    <h1 class="heading">{{name}} Semester Top 10 List</h1>
-    <table [cellSpacing]="0" class="main-table">
+<main>
+    <h1>{{name}} Semester Top 10 List</h1>
+    <table [cellSpacing]="0">
         <thead>
-            <tr class="main-table-row">
-                <th class="main-table-heading blur-effect">Rank</th>
-                <th class="main-table-heading blur-effect">Student Name</th>
-                <th class="main-table-heading blur-effect">USN</th>
-                <th class="main-table-heading blur-effect">Total Marks</th>
-                <th class="main-table-heading blur-effect">SGPA</th>
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th class="usn-column">USN</th>
+                <th>Total Marks</th>
+                <th class="sgpa-column">SGPA</th>
             </tr>
         </thead>
         <tbody *ngFor="let item of [].constructor(10); let i = index">
             <tr>
-                <td class="main-table-data blur-effect">{{i+1}}</td>
-                <td class="main-table-data blur-effect"><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
-                <td class="main-table-data blur-effect">{{data?.rank[i].usn}}</td>
-                <td class="main-table-data blur-effect">{{data?.rank[i].total}}</td>
-                <td class="main-table-data blur-effect">{{data?.rank[i].spga}}</td>
+                <td>{{i+1}}</td>
+                <td><a [routerLink]="next_path+data?.rank[i].usn.substring(7,10)">{{data?.rank[i].name}}</a></td>
+                <td class="usn-column">{{data?.rank[i].usn}}</td>
+                <td>{{data?.rank[i].total}}</td>
+                <td class="sgpa-column">{{data?.rank[i].spga}}</td>
             </tr>
         </tbody>
     </table>
-</div>
+</main>
