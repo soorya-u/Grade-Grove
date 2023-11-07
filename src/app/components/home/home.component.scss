@@ -52,3 +52,11 @@ main {
     }
   }
 }
+
+@media (max-width:420px) {
+  main {
+    .heading{
+      flex-direction: column;
+    }
+  }
+}
