@@ -7,13 +7,21 @@
 }
 
 main {
-  h1 {
-    text-align: center;
-    margin: 1.875rem;
-    @include head-font();
-
-    sup {
+  .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      text-align: center;
+      margin: 1.875rem 0;
       @include head-font();
+
+      sup {
+        @include head-font();
+      }
+      span {
+        @include head-font();
+      }
     }
   }
 
@@ -115,6 +123,19 @@ main {
 
 @media (max-width: 575px) {
   main {
+    .heading {
+      flex-direction: column;
+
+      .heading-rank {
+        margin-bottom: 0;
+      }
+      span {
+        display: none;
+      }
+      .heading-name {
+        margin-top: 0;
+      }
+    }
     .main-container {
       .container-1 {
         min-width: 285px;

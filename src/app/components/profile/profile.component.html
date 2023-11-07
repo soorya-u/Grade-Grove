@@ -1,11 +1,14 @@
 <main>
   <ng-container *ngFor="let item1 of [].constructor(10); let i = index">
     <ng-container *ngIf="usn === data?.rank[i].usn.substring(7, 10)">
-      <h1>
-        {{ i + 1
-        }}<sup>{{ calculateSuperScript(i + 1) }}</sup> Rank -
-        {{ data?.rank[i].name }}
-      </h1>
+      <div class="heading">
+        <h1 class="heading-rank">
+          {{ i + 1 }}<sup>{{ calculateSuperScript(i + 1) }}</sup> Rank <span>-</span>
+        </h1>
+        <h1 class="heading-name">
+          {{ data?.rank[i].name }}
+        </h1>
+      </div>
       <div class="main-container">
         <div class="container-1">
           <div class="sub-container">
