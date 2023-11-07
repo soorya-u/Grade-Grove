@@ -35,7 +35,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     gap: 0.75rem;
     
     article {
@@ -44,6 +44,9 @@ main {
       font-size: larger;
 
       ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
         li {
           list-style: none;
         }
@@ -60,6 +63,8 @@ main {
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   width: 80vw;
 
   .first-footer {
@@ -67,6 +72,9 @@ main {
     flex-direction: column;
     align-items: center;
     font-size: large;
+    b, p {
+      text-align: center;
+    }
   }
 
   .second-footer {
@@ -74,5 +82,17 @@ main {
     flex-direction: column;
     align-items: center;
     font-size: large;
+
+    b, p {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
   }
 }
