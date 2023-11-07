@@ -3,7 +3,8 @@
     <ng-container *ngIf="usn === data?.rank[i].usn.substring(7, 10)">
       <div class="heading">
         <h1 class="heading-rank">
-          {{ i + 1 }}<sup>{{ calculateSuperScript(i + 1) }}</sup> Rank <span>-</span>
+          {{ i + 1 }}<sup>{{ calculateSuperScript(i + 1) }}</sup> Rank
+          <span>-</span>
         </h1>
         <h1 class="heading-name">
           {{ data?.rank[i].name }}
@@ -12,12 +13,7 @@
       <div class="main-container">
         <div class="container-1">
           <div class="sub-container">
-            <img
-              [src]="
-                'https://soorya-u.github.io/Elite-AIML/assets/' + usn + '.jpg'
-              "
-              alt="profile-picture"
-            />
+            <img [src]="getProfilePicture(usn)" alt="profile-picture" />
             <table>
               <tr>
                 <th>Name :</th>
