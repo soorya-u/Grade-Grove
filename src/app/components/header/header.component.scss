@@ -174,34 +174,6 @@ nav {
   }
 }
 
-@media (max-width: 1400px) {
-  nav {
-    .nav-child-1 {
-      .navbar-nav {
-        .nav-item {
-          .dropdown-content {
-            min-width: 150px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-height: 550px) {
-  nav {
-    .nav-child-1 {
-      .navbar-nav {
-        .nav-item {
-          .dropdown-content {
-            min-height: 82px;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 300px) {
   nav {
     padding: 1rem 0;
