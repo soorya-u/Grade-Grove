@@ -11,6 +11,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
+    gap: 0.5rem;
     h1 {
       text-align: center;
       margin: 1.875rem 0;
@@ -32,6 +34,7 @@ main {
     align-items: center;
     gap: 7rem;
     background-color: transparent;
+    padding: 0 1rem;
 
     .container-1 {
       @include blur-effect();
@@ -125,6 +128,7 @@ main {
   main {
     .heading {
       flex-direction: column;
+      gap: 0;
 
       .heading-rank {
         margin-bottom: 0;

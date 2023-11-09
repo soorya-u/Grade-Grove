@@ -15,7 +15,7 @@ main {
   }
 
   .heading {
-    // margin-top: 1.875rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +39,7 @@ main {
     font-size: 1.25rem;
     width: 90vw;
     margin: auto;
+    padding: 0 1rem;
   }
 
   h2 {
@@ -47,14 +48,17 @@ main {
     text-align: center;
     align-self: center;
     @include head-font();
+    padding: 0 1rem;
   }
   ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0 1rem;
     li {
       list-style: none;
       font-size: larger;
+      text-align: center;
     }
   }
 }
