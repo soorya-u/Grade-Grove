@@ -28,6 +28,12 @@ export class HeaderComponent {
     }
   }
 
+  checkDropdown() {
+    if(this.isDropdownOpen) {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    }
+  }
+
   subRouter(event:any){
     let element = event.target || event.srcElement || event.currentTarget;
     let elementId = element.id;

@@ -3,7 +3,7 @@
     <div class="nav-child-1">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a routerLink="/" class="hover-text">
+          <a (click)="checkDropdown()" routerLink="/" class="hover-text">
             <img
               class="nav-image"
               src="https://soorya-u.github.io/Elite-AIML/assets/home.png"
@@ -34,11 +34,13 @@
                 >First Semester</a
               >
             </li>
+            <hr />
             <li>
               <a id="sec-sem" (click)="subRouter($event)" class="dropdown-item"
                 >Second Semester</a
               >
             </li>
+            <hr />
             <li>
               <a
                 id="third-sem"
@@ -50,7 +52,11 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="hover-text" routerLink="/department">
+          <a
+            (click)="checkDropdown()"
+            class="hover-text"
+            routerLink="/department"
+          >
             <img
               class="nav-image"
               src="https://soorya-u.github.io/Elite-AIML/assets/department.png"
@@ -59,7 +65,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="hover-text" routerLink="/about">
+          <a (click)="checkDropdown()" class="hover-text" routerLink="/about">
             <img
               class="nav-image"
               src="https://soorya-u.github.io/Elite-AIML/assets/about.png"
