@@ -1,4 +1,4 @@
-const { FirstSem, SecondSem, ThirdSem } = require("../models/topTen");
+const { FirstSem, SecondSem, ThirdSem } = require("../models/sem");
 
 async function handleSemResult(req, res) {
   const sem = req.params.sem;
