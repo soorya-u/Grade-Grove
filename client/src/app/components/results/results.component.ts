@@ -58,7 +58,3 @@ export class ResultsComponent implements OnInit {
     });
   }
 }
-
-// this.next_path = this.location.path() + '/usn/';
-// this.sem = this.next_path.split('/')[2];
-// this.name = '';
