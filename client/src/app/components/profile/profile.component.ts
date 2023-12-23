@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { MarksService } from 'src/app/services/marks.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Student } from '../../interfaces';
 
 @Component({
   selector: 'app-profile',
@@ -10,42 +11,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
-  total_path: string[];
-  sem: string;
-  usn: string;
-  data: any;
+  sem: string = this.route.snapshot.params['sem'];
+  usn: string = this.route.snapshot.params['id'];
+  rank = this.route.snapshot.queryParams['rank'];
+  observable: Observable<Student> = this.api.getUsnResult(this.sem, this.usn);
   name: string;
-  is_first_or_second: boolean;
+  student: Student | any;
 
-  constructor(private location: Location, private api: MarksService) {
-    
-    this.total_path = this.location.path().split('/');
-    this.sem = this.total_path[2];
-    this.usn = this.total_path[4];
-    this.name = '';
-    this.is_first_or_second = false;
+  constructor(private api: MarksService) {
+    switch (this.sem) {
+      case 'first-sem':
+        this.name = 'First';
+        break;
+      case 'second-sem':
+        this.name = 'Second';
+        break;
+      case 'third-sem':
+        this.name = 'Third';
+        break;
+      default:
+        this.name = '';
+    }
   }
   ngOnInit() {
-    console.log(this.route);
-    if (this.sem === 'first-sem') {
-      this.api.getFirstSemMarks().subscribe((res) => {
-        this.data = res;
-        this.name = 'First';
-        this.is_first_or_second = true;
-      });
-    } else if (this.sem === 'sec-sem') {
-      this.api.getSecondSemMarks().subscribe((res) => {
-        this.data = res;
-        this.name = 'Second';
-        this.is_first_or_second = true;
-      });
-    } else {
-      this.api.getThirdSemMarks().subscribe((res) => {
-        this.data = res;
-        this.name = 'Third';
-        this.is_first_or_second = false;
-      });
-    }
+    this.observable.subscribe((res) => (this.student = res));
   }
 
   calculateSuperScript(n: number): string {
@@ -57,7 +46,7 @@ export class ProfileComponent implements OnInit {
 
   getProfilePicture(usn: string) {
     return (
-      'https://alpha-tech-pvt.github.io/TopTenList-API/assets/' + usn + '.jpg'
+      `http://localhost:7000/static/${usn}.jpg`
     );
   }
 }
