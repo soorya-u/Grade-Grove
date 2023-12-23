@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   usn: string = this.route.snapshot.params['id'];
   rank = this.route.snapshot.queryParams['rank'];
   observable: Observable<Student> = this.api.getUsnResult(this.sem, this.usn);
+  profileUrl: string = this.api.getProfilePicture(this.usn);
   name: string;
   student: Student | any;
 
@@ -42,9 +43,5 @@ export class ProfileComponent implements OnInit {
     else if (n == 2) return 'nd';
     else if (n == 3) return 'rd';
     else return 'th';
-  }
-
-  getProfilePicture(usn: string) {
-    return `http://localhost:7000/static/${usn}.jpg`;
   }
 }
