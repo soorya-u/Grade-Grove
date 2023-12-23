@@ -36,7 +36,6 @@ export class HeaderComponent {
   subRouting(event: any) {
     let element = event.target || event.srcElement || event.currentTarget;
     let elementId = element.id;
-    this.toggleDropdown();
 
     this.router
       .navigate(['/result', elementId], { relativeTo: null, onSameUrlNavigation: 'reload' })
