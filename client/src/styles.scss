@@ -18,6 +18,12 @@ body {
   background-color: #89196c;
   background-size: 465% 465%;
   animation: color 12s ease-in-out infinite;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes color {
