@@ -5,15 +5,15 @@ async function handleSemResult(req, res) {
   switch (sem) {
     case "first-sem":
       const firstSemResults = await FirstSem.findOne({});
-      return res.send(firstSemResults.rank);
+      return res.json(firstSemResults.rank);
 
     case "second-sem":
       const secSemResults = await SecondSem.findOne({});
-      return res.send(secSemResults.rank);
+      return res.json(secSemResults.rank);
 
     case "third-sem":
       const thirdSemResults = await ThirdSem.findOne({});
-      return res.send(thirdSemResults.rank);
+      return res.json(thirdSemResults.rank);
   }
 }
 
@@ -26,21 +26,39 @@ async function handleUsnResult(req, res) {
         { "rank.usn": usn },
         { "rank.$": 1 }
       );
-      return res.send(firstSemResults.rank[0]);
+
+      if (!firstSemResults)
+        return res.json({
+          error: "No Match Found",
+        });
+
+      return res.json(firstSemResults.rank[0]);
 
     case "second-sem":
       const secSemResults = await SecondSem.findOne(
         { "rank.usn": usn },
         { "rank.$": 1 }
       );
-      return res.send(secSemResults.rank[0]);
+
+      if (!secSemResults)
+        return res.json({
+          error: "No Match Found",
+        });
+
+      return res.json(secSemResults.rank[0]);
 
     case "third-sem":
       const thirdSemResults = await ThirdSem.findOne(
         { "rank.usn": usn },
         { "rank.$": 1 }
       );
-      return res.send(thirdSemResults.rank[0]);
+
+      if (!thirdSemResults)
+        return res.json({
+          error: "No Match Found",
+        });
+
+      return res.json(thirdSemResults.rank[0]);
   }
 }
 
