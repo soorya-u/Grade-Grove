@@ -1,0 +1,77 @@
+@mixin blur-effect() {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+@mixin head-font() {
+  font-family: "Poppins";
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+
+  &::before, &::after {
+    content: '';
+  }
+
+  app-spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    overflow: hidden;
+    gap: 5rem;
+  }
+
+  h1 {
+    text-align: center;
+    @include head-font();
+    padding: 0 1rem;
+  }
+
+  table {
+    width: 80vw;
+    height: 70vh;
+    border: 0.5px solid white;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin: 0 1rem;
+
+    th {
+      border: 0.5px solid #a2a2a2;
+      padding: 1rem 1rem;
+      text-align: center;
+      @include blur-effect();
+    }
+    td {
+      border: 0.5px solid #a2a2a2;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      @include blur-effect();
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  main {
+    table {
+      margin-bottom: 1.875rem;
+      .usn-column {
+        display: none;
+      }
+      .sgpa-column {
+        display: none;
+      }
+    }
+  }
+}
