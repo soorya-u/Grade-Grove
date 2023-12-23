@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MarksService } from 'src/app/services/marks.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import {Rankers} from '../../interfaces'
+import { Rankers } from '../../interfaces';
 
 @Component({
   selector: 'app-results',
@@ -33,8 +33,6 @@ export class ResultsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.observable.subscribe((res) => {
-      this.rankings = res;
-    });
+    this.observable.subscribe((res) => (this.rankings = res));
   }
 }
