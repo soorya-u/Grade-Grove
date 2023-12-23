@@ -14,6 +14,7 @@ import { DepartmentComponent } from './components/department/department.componen
 
 import { RouteReuseStrategy } from '@angular/router';
 import { ActivatedRouteSnapshot, DetachedRouteHandle } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export class CustomReuseStrategy implements RouteReuseStrategy {
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
@@ -51,7 +52,7 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
     AboutComponent,
     DepartmentComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, FontAwesomeModule],
   providers: [{ provide: RouteReuseStrategy, useClass: CustomReuseStrategy }],
   bootstrap: [AppComponent],
 })

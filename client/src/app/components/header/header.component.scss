@@ -45,7 +45,7 @@ nav {
       flex-shrink: 0;
 
       .nav-item {
-        font-size: 1rem;
+        font-size: 1.2rem;
         position: relative;
 
         .hover-text {
@@ -80,7 +80,7 @@ nav {
               transition: filter 0.15s linear, transform 0.15s linear;
             }
 
-            i {
+            fa-icon {
               font-size: 0.8rem;
               transition: font-size 0.15s linear;
             }
