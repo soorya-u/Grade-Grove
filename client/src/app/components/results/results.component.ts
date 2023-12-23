@@ -1,28 +1,8 @@
-import { Component, OnInit, inject, OnDestroy } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
 import { MarksService } from 'src/app/services/marks.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-
-type Subject = {
-  _id: string;
-  subject: string;
-  subject_code: string;
-  int_marks: number;
-  ext_marks: number;
-  total_marks: number;
-};
-
-type Student = {
-  _id: string;
-  name: string;
-  usn: string;
-  subjects: Subject[];
-  total: number;
-  spga: number;
-};
-
-type Rankers = Student[];
+import {Rankers} from '../../interfaces'
 
 @Component({
   selector: 'app-results',
