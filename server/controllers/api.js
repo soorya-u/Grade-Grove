@@ -19,7 +19,7 @@ async function handleSemResult(req, res) {
 
 async function handleUsnResult(req, res) {
   const sem = req.params.sem;
-  const usn = "4AI21AI" + req.params.usn;
+  const usn = req.params.usn;
   switch (sem) {
     case "first-sem":
       const firstSemResults = await FirstSem.findOne(
