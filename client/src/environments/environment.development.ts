@@ -1,3 +1,3 @@
 export const environment = {
-    BACKEND_URL: 'http://localhost:7000'
+    BACKEND_URL: 'https://elite-aiml.onrender.com'
 };
