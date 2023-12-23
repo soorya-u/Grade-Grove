@@ -271,7 +271,7 @@ $delay: calc($duration / 6);
 
 @for $i from 2 through 7 {
   .loading__letter:nth-child(#{$i}) {
-    animation-delay: #{(($i - 1) / 10)}s;
+    animation-delay: #{calc(($i - 1) / 10)}s;
   }
 }
 
