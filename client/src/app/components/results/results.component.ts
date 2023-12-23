@@ -2,53 +2,63 @@ import { Component, OnInit, inject, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 import { MarksService } from 'src/app/services/marks.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
+type Subject = {
+  _id: string;
+  subject: string;
+  subject_code: string;
+  int_marks: number;
+  ext_marks: number;
+  total_marks: number;
+};
+
+type Student = {
+  _id: string;
+  name: string;
+  usn: string;
+  subjects: Subject[];
+  total: number;
+  spga: number;
+};
+
+type Rankers = Student[];
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
 })
-export class ResultsComponent implements OnInit, OnDestroy {
+export class ResultsComponent implements OnInit {
   name: string;
-  sem: string;
-  next_path: string;
-  data: Object | any;
-  rank: any;
   route: ActivatedRoute = inject(ActivatedRoute);
+  sem = this.route.snapshot.params['sem'];
+  observable: Observable<Rankers> = this.api.getSemResult(this.sem);
+  rankings: Rankers | any;
 
-  constructor(
-    private location: Location,
-    private api: MarksService,
-    private router: Router
-  ) {
-    console.log(this.route.snapshot.params['sem'])
-    this.next_path = this.location.path() + '/usn/';
-    this.sem = this.next_path.split('/')[2];
-    this.name = '';
-  }
-
-  ngOnInit(): void {
-
-    if (this.sem === 'first-sem') {
-      this.api.getFirstSemMarks().subscribe((res) => {
-        this.data = res;
+  constructor(private api: MarksService) {
+    switch (this.sem) {
+      case 'first-sem':
         this.name = 'First';
-      });
-    } else if (this.sem === 'second-sem') {
-      this.api.getSecondSemMarks().subscribe((res) => {
-        this.data = res;
+        break;
+      case 'second-sem':
         this.name = 'Second';
-      });
-    } else {
-      this.api.getThirdSemMarks().subscribe((res) => {
-        this.data = res;
+        break;
+      case 'third-sem':
         this.name = 'Third';
-      });
+        break;
+      default:
+        this.name = '';
     }
   }
 
-  ngOnDestroy(): void {
-      console.log("Component Destroyed");
+  ngOnInit(): void {
+    this.observable.subscribe((res) => {
+      this.rankings = res;
+    });
   }
 }
+
+// this.next_path = this.location.path() + '/usn/';
+// this.sem = this.next_path.split('/')[2];
+// this.name = '';
