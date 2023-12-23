@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { MarksService } from 'src/app/services/marks.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+  route: ActivatedRoute = inject(ActivatedRoute);
   total_path: string[];
   sem: string;
   usn: string;
@@ -16,13 +18,15 @@ export class ProfileComponent {
   is_first_or_second: boolean;
 
   constructor(private location: Location, private api: MarksService) {
+    
     this.total_path = this.location.path().split('/');
-    console.log(this.total_path);
     this.sem = this.total_path[2];
     this.usn = this.total_path[4];
     this.name = '';
     this.is_first_or_second = false;
-
+  }
+  ngOnInit() {
+    console.log(this.route);
     if (this.sem === 'first-sem') {
       this.api.getFirstSemMarks().subscribe((res) => {
         this.data = res;
