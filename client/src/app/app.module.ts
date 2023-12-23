@@ -12,6 +12,35 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
 import { DepartmentComponent } from './components/department/department.component';
 
+import { RouteReuseStrategy } from '@angular/router';
+import { ActivatedRouteSnapshot, DetachedRouteHandle } from '@angular/router';
+
+export class CustomReuseStrategy implements RouteReuseStrategy {
+  shouldDetach(route: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+
+  store(
+    route: ActivatedRouteSnapshot,
+    handle: DetachedRouteHandle | null
+  ): void {}
+
+  shouldAttach(route: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+
+  retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle | null {
+    return null;
+  }
+
+  shouldReuseRoute(
+    future: ActivatedRouteSnapshot,
+    curr: ActivatedRouteSnapshot
+  ): boolean {
+    return false;
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,15 +49,10 @@ import { DepartmentComponent } from './components/department/department.componen
     ResultsComponent,
     ProfileComponent,
     AboutComponent,
-    DepartmentComponent
+    DepartmentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: CustomReuseStrategy }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

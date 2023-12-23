@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  constructor(private router: Router) {}
 
-  constructor(private router:Router){}
-  
   @ViewChild('dropdownButton') dropdownButton!: ElementRef;
   @ViewChild('dropdownContent') dropdownContent!: ElementRef;
 
@@ -29,20 +28,19 @@ export class HeaderComponent {
   }
 
   checkDropdown() {
-    if(this.isDropdownOpen) {
+    if (this.isDropdownOpen) {
       this.isDropdownOpen = !this.isDropdownOpen;
     }
   }
 
-  subRouter(event:any){
+  subRouting(event: any) {
     let element = event.target || event.srcElement || event.currentTarget;
     let elementId = element.id;
-    this.toggleDropdown()
+    this.toggleDropdown();
 
-    this.router.navigate(['/result',elementId]).then(
-      ()=>{
-      // window.location.reload();
-      }
-    )
+    this.router
+      .navigate(['/result', elementId], { relativeTo: null, onSameUrlNavigation: 'reload' })
+
+    this.toggleDropdown();
   }
 }

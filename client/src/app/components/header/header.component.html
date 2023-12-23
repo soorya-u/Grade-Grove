@@ -4,19 +4,13 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a (click)="checkDropdown()" routerLink="/" class="hover-text">
-            <img
-              class="nav-image"
-              src="../../../assets/home.png"
-            />
+            <img class="nav-image" src="../../../assets/home.png" />
             <span class="tooltip-text">Home</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="hover-text dropdown-button" (click)="toggleDropdown()">
-            <img
-              class="nav-image"
-              src="../../../assets/results.png"
-            />
+            <img class="nav-image" src="../../../assets/results.png" />
             <span class="tooltip-text">Result</span>
             <i class="bi bi-caret-down-fill"></i>
           </a>
@@ -29,14 +23,17 @@
             <li>
               <a
                 id="first-sem"
-                (click)="subRouter($event)"
+                (click)="subRouting($event)"
                 class="dropdown-item"
                 >First Semester</a
               >
             </li>
             <hr />
             <li>
-              <a id="sec-sem" (click)="subRouter($event)" class="dropdown-item"
+              <a
+                id="second-sem"
+                (click)="subRouting($event)"
+                class="dropdown-item"
                 >Second Semester</a
               >
             </li>
@@ -44,7 +41,7 @@
             <li>
               <a
                 id="third-sem"
-                (click)="subRouter($event)"
+                (click)="subRouting($event)"
                 class="dropdown-item"
                 >Third Semester</a
               >
@@ -57,19 +54,13 @@
             class="hover-text"
             routerLink="/department"
           >
-            <img
-              class="nav-image"
-              src="../../../assets/department.png"
-            />
+            <img class="nav-image" src="../../../assets/department.png" />
             <span class="tooltip-text tooltip-text-dept">AIML</span>
           </a>
         </li>
         <li class="nav-item">
           <a (click)="checkDropdown()" class="hover-text" routerLink="/about">
-            <img
-              class="nav-image"
-              src="../../../assets/about.png"
-            />
+            <img class="nav-image" src="../../../assets/about.png" />
             <span class="tooltip-text">About</span>
           </a>
         </li>
