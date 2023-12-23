@@ -27,6 +27,18 @@ main {
     }
   }
 
+  app-spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    overflow: hidden;
+    gap: 5rem;
+    margin: 1.8rem;
+  }
+
   .main-container {
     width: 100vw;
     display: flex;

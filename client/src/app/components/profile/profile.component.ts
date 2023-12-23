@@ -45,8 +45,6 @@ export class ProfileComponent implements OnInit {
   }
 
   getProfilePicture(usn: string) {
-    return (
-      `http://localhost:7000/static/${usn}.jpg`
-    );
+    return `http://localhost:7000/static/${usn}.jpg`;
   }
 }
