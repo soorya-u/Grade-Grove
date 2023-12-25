@@ -9,13 +9,12 @@ async function handleLogs(req, res, next) {
   const osMatch = userAgent.match(osRegex);
   const browserMatch = userAgent.match(browserRegex);
 
-  let ua_mobile, isMobile;
+  let platform;
 
   try {
-    ua_mobile = +req.headers["sec-ch-ua-mobile"][1];
-    isMobile = ua_mobile ? true : false;
+    platform = req.headers["sec-ch-ua-platform"].slice(1, -1);
   } catch (e) {
-    uaMobile = "Unknown";
+    platform = "Unknown Platform";
   }
 
   const logData = {
@@ -24,8 +23,7 @@ async function handleLogs(req, res, next) {
     method: req.method,
     os: osMatch ? osMatch[0] : "Unknown OS",
     browser: browserMatch ? browserMatch[0] : "Unknown Browser",
-    platform:
-      req.headers["sec-ch-ua-platform"].slice(1, -1) ?? "Unknown Platform",
+    platform: platform,
     ipAddress: req.ip ?? "Unknown IP Address",
   };
   await logs.create(logData);
