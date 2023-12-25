@@ -11,10 +11,7 @@ const logSchema = new mongoose.Schema(
     method: {
       type: String,
     },
-    isMobile: {
-      type: Boolean,
-    },
-    OS: {
+    os: {
       type: String,
     },
     browser: {
