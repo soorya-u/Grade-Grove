@@ -11,11 +11,20 @@ const logSchema = new mongoose.Schema(
     method: {
       type: String,
     },
+    isMobile: {
+      type: Boolean,
+    },
+    OS: {
+      type: String,
+    },
+    browser: {
+      type: String,
+    },
     platform: {
       type: String,
     },
-    isMobile: {
-      type: Boolean,
+    ipAddress: {
+      type: String,
     },
   },
   { timestamps: true }
