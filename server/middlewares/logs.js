@@ -24,7 +24,6 @@ async function handleLogs(req, res, next) {
     os: osMatch ? osMatch[0] : "Unknown OS",
     browser: browserMatch ? browserMatch[0] : "Unknown Browser",
     platform: platform,
-    ipAddress: req.ip ?? "Unknown IP Address",
   };
   await logs.create(logData);
 

@@ -20,9 +20,6 @@ const logSchema = new mongoose.Schema(
     platform: {
       type: String,
     },
-    ipAddress: {
-      type: String,
-    },
   },
   { timestamps: true }
 );
