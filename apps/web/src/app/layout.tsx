@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu } from "next/font/google";
+
+import { cn } from "@/lib/utils";
 
 import ReduxProvider from "@/providers/ReactProvider";
 
+import Header from "@/components/custom/Header";
+
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Elite AIML",
@@ -19,9 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ReduxProvider>{children}</ReduxProvider>
-      </body>
+      <ReduxProvider>
+        <body className={ubuntu.className}>
+          <Header />
+          {children}
+        </body>
+      </ReduxProvider>
     </html>
   );
 }
