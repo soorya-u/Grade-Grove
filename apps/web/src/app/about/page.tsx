@@ -67,7 +67,7 @@ function About() {
           ))}
         </div>
 
-        <div className="text-center px-20">
+        <div className="text-center px-4">
           <h2 className={cn(poppins.className, "text-xl")}>Contact Our Team</h2>
           <a href="mailto:sooryau7@gmail.com">
             <b className={cn(audiowide.className, "text-4xl")}>Alpha Tech</b>

@@ -41,6 +41,9 @@ function Hamburger({ className }: { className: string }) {
           <div className="flex flex-col justify-center gap-6 mt-10">
             <Link
               href="/"
+              onClick={() =>
+                document.getElementById("sheet-close-button")?.click()
+              }
               className={cn(
                 quicksand.className,
                 "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
@@ -68,6 +71,9 @@ function Hamburger({ className }: { className: string }) {
                     <Link
                       key={idx}
                       href={`/${elem.link}-sem`}
+                      onClick={() =>
+                        document.getElementById("sheet-close-button")?.click()
+                      }
                       className={cn(
                         quicksand.className,
                         "text-lg flex items-center gap-3 border-2 border-white py-3 px-4 rounded-xl my-3 ml-4",
@@ -81,6 +87,9 @@ function Hamburger({ className }: { className: string }) {
             </Accordion>
             <Link
               href="/department"
+              onClick={() =>
+                document.getElementById("sheet-close-button")?.click()
+              }
               className={cn(
                 quicksand.className,
                 "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
@@ -94,6 +103,9 @@ function Hamburger({ className }: { className: string }) {
             </Link>
             <Link
               href="/about"
+              onClick={() =>
+                document.getElementById("sheet-close-button")?.click()
+              }
               className={cn(
                 quicksand.className,
                 "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",

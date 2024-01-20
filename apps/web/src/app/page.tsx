@@ -26,7 +26,7 @@ export default function Home() {
           className="invert"
         ></Image>
       </div>
-      <article className="text-center text-xl px-20">
+      <article className="text-center text-xl px-4">
         Our Website is Dedicated for Providing a Comprehensive List of AIML
         students who have Achieved the Highest Scores and Good Rankings in the
         Semester Examinations. We typically Aim to Recognize and Celebrate the
@@ -37,7 +37,7 @@ export default function Home() {
         inspiration and information for those striving for excellence.
       </article>
 
-      <article className="text-center text-xl px-20">
+      <article className="text-center text-xl px-4">
         Academic Excellence is a pursuit that has been Cherished across Cultures
         and Generations. Recognizing and celebrating the achievements of
         academic toppers has become a tradition in educational Institutions
