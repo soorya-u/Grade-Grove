@@ -26,7 +26,7 @@ function DevAvatar({ name, imgPath }: { name: string; imgPath: string }) {
               <AvatarFallback>{name}</AvatarFallback>
             </Avatar>
           </TooltipTrigger>
-          <TooltipContent className={cn(rubik.className, "text-base")}>
+          <TooltipContent side="bottom" className={cn(rubik.className, "text-base")}>
             {name}
           </TooltipContent>
         </Tooltip>
