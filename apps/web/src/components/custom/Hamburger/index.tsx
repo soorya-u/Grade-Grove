@@ -65,7 +65,7 @@ function Hamburger({ className }: { className: string }) {
                 <AccordionContent className="mt-5">
                   {[
                     { link: "first", title: "First", icon: fa1 },
-                    { link: "sec", title: "Second", icon: fa2 },
+                    { link: "second", title: "Second", icon: fa2 },
                     { link: "third", title: "Third", icon: fa3 },
                   ].map((elem, idx) => (
                     <Link

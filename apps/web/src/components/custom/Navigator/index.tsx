@@ -35,7 +35,7 @@ function Navigator({ className }: { className: string }) {
               <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent">
                 {[
                   { link: "first", title: "First" },
-                  { link: "sec", title: "Second" },
+                  { link: "second", title: "Second" },
                   { link: "third", title: "Third" },
                 ].map((elem, idx) => (
                   <li
