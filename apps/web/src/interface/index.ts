@@ -11,6 +11,7 @@ export type Student = {
   _id: string;
   name: string;
   usn: string;
+  cycle?: string;
   subjects: Subject[];
   total: number;
   spga: number;
