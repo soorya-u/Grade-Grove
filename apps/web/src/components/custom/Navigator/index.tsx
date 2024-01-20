@@ -19,7 +19,7 @@ function Navigator() {
   return (
     <>
       <NavigationMenu className="w-1/2">
-        <NavigationMenuList className="w-full gap-[4.2rem] flex-shrink-0">
+        <NavigationMenuList className="w-full gap-12 flex-shrink-0">
           <NavigationMenuItem>
             <Link href="/" className={cn(quicksand.className, "text-lg")}>
               Home
@@ -27,11 +27,11 @@ function Navigator() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger
-              className={cn(quicksand.className, "text-lg ")}
+              className={cn(quicksand.className, "text-lg p-0 m-0")}
             >
               Result
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="">
+            <NavigationMenuContent>
               <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent">
                 {[
                   { link: "first", title: "First" },
