@@ -15,10 +15,10 @@ import {
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
-function Navigator() {
+function Navigator({ className }: { className: string }) {
   return (
     <>
-      <NavigationMenu className="w-1/2">
+      <NavigationMenu className={cn("w-1/2", className)}>
         <NavigationMenuList className="w-full gap-12 flex-shrink-0">
           <NavigationMenuItem>
             <Link href="/" className={cn(quicksand.className, "text-lg")}>
@@ -46,9 +46,7 @@ function Navigator() {
                       idx !== 0 && "border-t-2",
                     )}
                   >
-                    <Link href={`/result/${elem.link}-sem`}>
-                      {elem.title} Sem
-                    </Link>
+                    <Link href={`/${elem.link}-sem`}>{elem.title} Sem</Link>
                   </li>
                 ))}
               </ul>
