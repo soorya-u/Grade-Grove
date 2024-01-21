@@ -7,20 +7,18 @@ import { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
-import { Skeleton } from "@/components/ui/skeleton";
-
 import { getSemResults } from "@/lib/axios";
 
 import { Rankers } from "@/interface";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Loading from "./loading";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
@@ -31,11 +29,9 @@ function SemTable({ semester }: { semester: string }) {
 
   useEffect(() => {
     setLoading(true);
-    getSemResults(semester).then((res) => {
-      setResult(res.data);
-      setLoading(false);
-      console.log("22222");
-    });
+    getSemResults(semester)
+      .then((res) => setResult(res.data))
+      .finally(() => setLoading(false));
   }, []);
   return (
     <>
@@ -129,23 +125,7 @@ function SemTable({ semester }: { semester: string }) {
             {Array(10)
               .fill(0)
               .map((elem, idx) => (
-                <TableRow key={idx}>
-                  <TableCell>
-                    <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
-                  </TableCell>
-                  <TableCell>
-                    <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
-                  </TableCell>
-                  <TableCell className="hidden md:table-cell">
-                    <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
-                  </TableCell>
-                  <TableCell>
-                    <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
-                  </TableCell>
-                  <TableCell className="hidden md:table-cell">
-                    <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
-                  </TableCell>
-                </TableRow>
+                <Loading key={idx} />
               ))}
           </TableBody>
         )}
