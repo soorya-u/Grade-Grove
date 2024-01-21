@@ -1,4 +1,4 @@
-type Subject = {
+type ISubject = {
   _id: string;
   subject: string;
   subject_code: string;
@@ -7,14 +7,14 @@ type Subject = {
   total_marks: number;
 };
 
-export type Student = {
+export type IStudent = {
   _id: string;
   name: string;
   usn: string;
   cycle?: string;
-  subjects: Subject[];
+  subjects: ISubject[];
   total: number;
   spga: number;
 };
 
-export type Rankers = Student[];
+export type IRankers = IStudent[];

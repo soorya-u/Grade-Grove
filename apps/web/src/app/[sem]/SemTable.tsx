@@ -15,7 +15,7 @@ import {
 
 import { getSemResults } from "@/lib/axios";
 
-import { Rankers } from "@/interface";
+import { IRankers } from "@/interface";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Loading from "./loading";
@@ -24,7 +24,7 @@ const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
 function SemTable({ semester }: { semester: string }) {
-  const [result, setResult] = useState<Rankers>([]);
+  const [result, setResult] = useState<IRankers>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -94,7 +94,14 @@ function SemTable({ semester }: { semester: string }) {
                     textUnderlineOffset: 3,
                   }}
                 >
-                  <Link href={`/${semester}/${elem.usn}`}>{elem.name}</Link>
+                  <Link
+                    href={{
+                      pathname: `/${semester}/${elem.usn}`,
+                      query: { rank: idx + 1 },
+                    }}
+                  >
+                    {elem.name}
+                  </Link>
                 </TableCell>
                 <TableCell
                   className={cn(
