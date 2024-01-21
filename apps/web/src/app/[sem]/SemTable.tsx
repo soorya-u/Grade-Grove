@@ -35,7 +35,7 @@ function SemTable({ semester }: { semester: string }) {
   }, []);
   return (
     <>
-      <Table>
+      <Table className="w-[95vw] sm:w-[80vw]">
         <TableHeader>
           <TableRow>
             <TableHead
