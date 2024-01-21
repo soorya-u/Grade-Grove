@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Loading from "./loading";
 
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
 function SemTable({ semester }: { semester: string }) {

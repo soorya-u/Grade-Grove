@@ -8,7 +8,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function Home() {
   return (

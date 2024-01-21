@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 import SemTable from "./SemTable";
 
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const sem = {
   "first-sem": "First",

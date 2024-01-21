@@ -6,7 +6,7 @@ import DevAvatar from "@/components/custom/DevAvatar";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const devs = [
   {
