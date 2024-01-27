@@ -6,7 +6,7 @@ import { cn } from "@/utils/shadcn";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-function StudentHeading({ rank, name }: { rank: string; name: string }) {
+function StudentHeading({ rank, name }: { rank: number; name: string }) {
   return (
     <>
       <div className="flex flex-col sm:flex-row sm:gap-2 justify-center items-center px-4 gap-0">

@@ -4,6 +4,8 @@ import { Rubik, Poppins } from "next/font/google";
 
 import { useEffect, useState } from "react";
 
+import { setReduxRank } from "@/utils/custom/setReduxRank";
+
 import {
   Table,
   TableBody,
@@ -12,6 +14,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/shadcn/table";
+
+import { useDispatch } from "react-redux";
 
 import { getSemResults } from "@/lib/axios";
 
@@ -26,6 +30,8 @@ const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 function SemTable({ semester }: { semester: string }) {
   const [result, setResult] = useState<IRankers>([]);
   const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setLoading(true);
@@ -51,7 +57,7 @@ function SemTable({ semester }: { semester: string }) {
             <TableHead
               className={cn(
                 poppins.className,
-                "hidden md:table-cell text-center text-base",
+                "hidden md:table-cell text-center text-base"
               )}
             >
               USN
@@ -64,7 +70,7 @@ function SemTable({ semester }: { semester: string }) {
             <TableHead
               className={cn(
                 poppins.className,
-                "hidden md:table-cell text-center text-base",
+                "hidden md:table-cell text-center text-base"
               )}
             >
               SGPA
@@ -78,7 +84,7 @@ function SemTable({ semester }: { semester: string }) {
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "font-medium text-center text-base",
+                    "font-medium text-center text-base"
                   )}
                 >
                   {idx + 1}
@@ -86,7 +92,7 @@ function SemTable({ semester }: { semester: string }) {
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-center cursor-pointer text-base",
+                    "text-center cursor-pointer text-base"
                   )}
                   style={{
                     fontStyle: "italic",
@@ -95,10 +101,8 @@ function SemTable({ semester }: { semester: string }) {
                   }}
                 >
                   <Link
-                    href={{
-                      pathname: `/${semester}/${elem.usn}`,
-                      query: { rank: idx + 1 },
-                    }}
+                    href={`/${semester}/${elem.usn}`}
+                    onClick={() => setReduxRank(idx + 1, dispatch)}
                   >
                     {elem.name}
                   </Link>
@@ -106,7 +110,7 @@ function SemTable({ semester }: { semester: string }) {
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "hidden md:table-cell text-center text-base",
+                    "hidden md:table-cell text-center text-base"
                   )}
                 >
                   {elem.usn}
@@ -119,7 +123,7 @@ function SemTable({ semester }: { semester: string }) {
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "hidden md:table-cell text-center text-base",
+                    "hidden md:table-cell text-center text-base"
                   )}
                 >
                   {elem.spga}
@@ -131,7 +135,7 @@ function SemTable({ semester }: { semester: string }) {
           <TableBody>
             {Array(10)
               .fill(0)
-              .map((elem, idx) => (
+              .map((_, idx) => (
                 <Loading key={idx} />
               ))}
           </TableBody>
