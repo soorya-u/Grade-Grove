@@ -1,6 +1,6 @@
 import { Poppins } from "next/font/google";
 
-import getSuperScript from "@/utils/getSuperScript";
+import getSuperScript from "@/utils/custom/getSuperScript";
 
 import { cn } from "@/lib/utils";
 
@@ -13,7 +13,7 @@ function StudentHeading({ rank, name }: { rank: string; name: string }) {
         <h1
           className={cn(
             poppins.className,
-            "text-center mb-0 mt-7 sm:my-7 text-4xl",
+            "text-center mb-0 mt-7 sm:my-7 text-4xl"
           )}
         >
           {rank}
@@ -26,7 +26,7 @@ function StudentHeading({ rank, name }: { rank: string; name: string }) {
         <h1
           className={cn(
             poppins.className,
-            "text-center  mt-0 mb-7 sm:my-7 text-4xl",
+            "text-center  mt-0 mb-7 sm:my-7 text-4xl"
           )}
         >
           {name}
