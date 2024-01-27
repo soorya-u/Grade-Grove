@@ -33,7 +33,7 @@ function Hamburger({ className }: { className: string }) {
     <>
       <Sheet>
         <SheetTrigger className={className}>
-          <FontAwesomeIcon icon={faBars} className="text-2xl" />
+          <FontAwesomeIcon icon={faBars} className="w-6" />
         </SheetTrigger>
         <SheetContent side="left" className={`bg-[#00000040] backdrop-blur-sm`}>
           <div className="flex flex-col justify-center gap-6 mt-10">
@@ -42,7 +42,7 @@ function Hamburger({ className }: { className: string }) {
                 href="/"
                 className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
               >
-                <FontAwesomeIcon icon={faHome} className="text-2xl pr-1" />
+                <FontAwesomeIcon icon={faHome} className="w-6 pr-1" />
                 <p>Home</p>
               </Link>
             </SheetClose>
@@ -50,10 +50,7 @@ function Hamburger({ className }: { className: string }) {
             <Accordion type="multiple">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-lg w-full flex justify-start items-center gap-3 border-2 border-white py-3 px-2 rounded-xl">
-                  <FontAwesomeIcon
-                    icon={faChartColumn}
-                    className="text-2xl pr-1"
-                  />
+                  <FontAwesomeIcon icon={faChartColumn} className="w-6 pr-1" />
                   <p>Results</p>
                 </AccordionTrigger>
                 <AccordionContent className="mt-5">
@@ -81,10 +78,7 @@ function Hamburger({ className }: { className: string }) {
                 href="/department"
                 className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
               >
-                <FontAwesomeIcon
-                  icon={faGraduationCap}
-                  className="text-2xl pr-1"
-                />
+                <FontAwesomeIcon icon={faGraduationCap} className="w-6 pr-1" />
                 <p>Department</p>
               </Link>
             </SheetClose>
@@ -93,10 +87,7 @@ function Hamburger({ className }: { className: string }) {
                 href="/about"
                 className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
               >
-                <FontAwesomeIcon
-                  icon={faCircleInfo}
-                  className="text-2xl pr-1"
-                />
+                <FontAwesomeIcon icon={faCircleInfo} className="w-6 pr-1" />
                 <p>About</p>
               </Link>
             </SheetClose>

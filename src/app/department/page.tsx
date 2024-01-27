@@ -36,30 +36,45 @@ export default function () {
             Intelligence on Machines. In achieving Machine Intelligence, Machine
             Learning (ML) plays a vital role. Hence AI & ML are bought Together.
           </article>
-          <h2 className={cn(poppins.className, "text-left text-3xl")}>Vision</h2>
+          <h2 className={cn(poppins.className, "text-left text-3xl")}>
+            Vision
+          </h2>
           <article className="w-[90vw] text-lg">
             To Achieve excellent standards of quality education in Artificial
             Intelligence and Machine Learning to cater the needs of emerging
             fields.
           </article>
-          <h2 className={cn(poppins.className, "text-left text-3xl")}>Mission</h2>
+          <h2 className={cn(poppins.className, "text-left text-3xl")}>
+            Mission
+          </h2>
           <article className="w-[90vw] text-lg">
             <ul className="flex flex-col gap-2">
-              <li className="list-none">
-                <FontAwesomeIcon icon={faArrowRight} /> To nurture students with
-                strong fundamentals in the stream of Artificial Intelligence and
-                Machine Learning for their successful Career.
+              <li>
+                <FontAwesomeIcon
+                  className="w-3 inline mr-2"
+                  icon={faArrowRight}
+                />{" "}
+                To nurture students with strong fundamentals in the stream of
+                Artificial Intelligence and Machine Learning for their
+                successful Career.
               </li>
 
               <li>
-                <FontAwesomeIcon icon={faArrowRight} /> To build a Conducive
-                Environment to learn Professional and Technical Skills through
-                value based Education.
+                <FontAwesomeIcon
+                  className="w-3 inline mr-2"
+                  icon={faArrowRight}
+                />{" "}
+                To build a Conducive Environment to learn Professional and
+                Technical Skills through value based Education.
               </li>
 
               <li>
-                <FontAwesomeIcon icon={faArrowRight} /> To Enrich and Empower
-                students caliber to Contribute towards Research and Innovations.
+                <FontAwesomeIcon
+                  className="w-3 inline mr-2"
+                  icon={faArrowRight}
+                />{" "}
+                To Enrich and Empower students caliber to Contribute towards
+                Research and Innovations.
               </li>
             </ul>
           </article>

@@ -48,20 +48,23 @@ export default function Home() {
       <h2
         className={cn(
           poppins.className,
-          "text-3xl text-center self-center px-4",
+          "text-3xl text-center self-center px-4"
         )}
       >
         Significance of Academic Toppers Lists
       </h2>
       <ul className="flex flex-col gap-2 px-4">
         <li className="list-none text-lg">
-          <FontAwesomeIcon icon={faArrowRight} /> Fostering Healthy Competition
+          <FontAwesomeIcon className="w-3 inline mr-2" icon={faArrowRight} />{" "}
+          Fostering Healthy Competition
         </li>
         <li className="list-none text-lg">
-          <FontAwesomeIcon icon={faArrowRight} /> Acknowledging Achievements
+          <FontAwesomeIcon className="w-3 inline mr-2" icon={faArrowRight} />{" "}
+          Acknowledging Achievements
         </li>
         <li className="list-none text-lg">
-          <FontAwesomeIcon icon={faArrowRight} /> Encouraging Excellence
+          <FontAwesomeIcon className="w-3 inline mr-2" icon={faArrowRight} />{" "}
+          Encouraging Excellence
         </li>
       </ul>
     </main>
