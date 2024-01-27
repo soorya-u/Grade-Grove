@@ -6,9 +6,9 @@ import { getUsnResult } from "@/lib/axios";
 
 import { IStudent } from "@/interface";
 
-import StudentHeading from "./StudentHeading";
-import StudentProfile from "./StudentProfile";
-import StudentTable from "./StudentTable";
+import StudentHeading from "@/components/pages/student/StudentHeading";
+import StudentProfile from "@/components/pages/student/StudentProfile";
+import StudentTable from "@/components/pages/student/StudentTable";
 
 function Profile({
   params,

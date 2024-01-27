@@ -1,8 +1,8 @@
 import { Poppins } from "next/font/google";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
-import SemTable from "./SemTable";
+import SemTable from "@/components/pages/semester/SemTable";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

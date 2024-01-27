@@ -9,7 +9,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@/components/shadcn/navigation-menu";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 

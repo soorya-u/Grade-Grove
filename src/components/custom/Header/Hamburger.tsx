@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { Quicksand } from "next/font/google";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/shadcn/sheet";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/shadcn/accordion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

@@ -1,6 +1,6 @@
-import { TableCell, TableRow } from "@/components/ui/table";
+import { TableCell, TableRow } from "@/components/shadcn/table";
 
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/shadcn/skeleton";
 
 function Loading() {
   return (

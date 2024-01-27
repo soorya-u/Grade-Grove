@@ -7,11 +7,11 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/shadcn/tooltip";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/shadcn/avatar";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 

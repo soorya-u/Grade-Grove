@@ -1,8 +1,8 @@
 import { Audiowide, Poppins } from "next/font/google";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
-import DevAvatar from "@/components/custom/DevAvatar";
+import DevAvatar from "@/components/pages/about/DevAvatar";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 

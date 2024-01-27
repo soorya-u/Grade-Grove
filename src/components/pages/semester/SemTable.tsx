@@ -11,14 +11,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/components/shadcn/table";
 
 import { getSemResults } from "@/lib/axios";
 
 import { IRankers } from "@/interface";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 import Link from "next/link";
-import Loading from "./loading";
+import Loading from "@/app/[sem]/loading";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });

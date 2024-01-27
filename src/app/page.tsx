@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Audiowide, Poppins } from "next/font/google";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";

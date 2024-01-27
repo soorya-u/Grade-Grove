@@ -2,7 +2,7 @@ import { Poppins } from "next/font/google";
 
 import getSuperScript from "@/utils/custom/getSuperScript";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

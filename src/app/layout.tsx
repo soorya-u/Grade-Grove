@@ -3,7 +3,7 @@ import { Ubuntu } from "next/font/google";
 
 import ReduxProvider from "@/providers/ReactProvider";
 
-import Header from "./(header)";
+import Header from "../components/custom/Header";
 
 import "./globals.css";
 

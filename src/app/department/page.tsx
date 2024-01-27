@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

@@ -9,9 +9,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/components/shadcn/table";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/shadcn";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
