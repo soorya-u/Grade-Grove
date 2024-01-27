@@ -11,8 +11,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { cn } from "@/lib/utils";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -34,20 +32,14 @@ function Hamburger({ className }: { className: string }) {
         <SheetTrigger className={className}>
           <FontAwesomeIcon icon={faBars} className="text-2xl" />
         </SheetTrigger>
-        <SheetContent
-          side="left"
-          className={cn("bg-[#00000040] backdrop-blur-sm")}
-        >
+        <SheetContent side="left" className={`bg-[#00000040] backdrop-blur-sm`}>
           <div className="flex flex-col justify-center gap-6 mt-10">
             <Link
               href="/"
               onClick={() =>
                 document.getElementById("sheet-close-button")?.click()
               }
-              className={cn(
-                quicksand.className,
-                "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
-              )}
+              className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
             >
               <FontAwesomeIcon icon={faHome} className="text-2xl pr-1" />
               <p>Home</p>
@@ -74,10 +66,8 @@ function Hamburger({ className }: { className: string }) {
                       onClick={() =>
                         document.getElementById("sheet-close-button")?.click()
                       }
-                      className={cn(
-                        quicksand.className,
-                        "text-lg flex items-center gap-3 border-2 border-white py-3 px-4 rounded-xl my-3 ml-4",
-                      )}
+                      className={`
+                        ${quicksand.className} text-lg flex items-center gap-3 border-2 border-white py-3 px-4 rounded-xl my-3 ml-4`}
                     >
                       <p>{elem.title} Sem</p>
                     </Link>
@@ -90,10 +80,7 @@ function Hamburger({ className }: { className: string }) {
               onClick={() =>
                 document.getElementById("sheet-close-button")?.click()
               }
-              className={cn(
-                quicksand.className,
-                "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
-              )}
+              className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
             >
               <FontAwesomeIcon
                 icon={faGraduationCap}
@@ -106,10 +93,7 @@ function Hamburger({ className }: { className: string }) {
               onClick={() =>
                 document.getElementById("sheet-close-button")?.click()
               }
-              className={cn(
-                quicksand.className,
-                "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
-              )}
+              className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
             >
               <FontAwesomeIcon icon={faCircleInfo} className="text-2xl pr-1" />
               <p>About</p>

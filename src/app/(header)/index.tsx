@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { Audiowide } from "next/font/google";
 
-import { cn } from "@/lib/utils";
-
-import Navigator from "../Navigator";
-import Hamburger from "../Hamburger";
+import Navigator from "./Navigator";
+import Hamburger from "./Hamburger";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
@@ -24,7 +22,7 @@ function Header() {
           <section className="flex justify-end">
             <Link
               href="https://github.com/soorya-u/Elite-AIML"
-              className={cn(audiowide.className, "text-3xl md:text-4xl text-nowrap")}
+              className={`${audiowide.className} text-3xl md:text-4xl text-nowrap`}
               target="_blank"
             >
               elite-AIML

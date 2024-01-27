@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 
-import { cn } from "@/lib/utils";
-
 import ReduxProvider from "@/providers/ReactProvider";
 
-import Header from "@/components/custom/Header";
+import Header from "./(header)";
 
 import "./globals.css";
 
