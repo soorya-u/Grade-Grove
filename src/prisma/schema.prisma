@@ -10,10 +10,16 @@ datasource db {
   url      = env("POSTGRES_DATABASE_URL")
 }
 
+enum Cycle {
+  Physics
+  Chemistry
+}
+
 model Student {
   fullName String  @map("full_name")
   usn      String  @id
   cgpa     Float?
+  cycle    Cycle?  @map("cycle")
   marks    Marks[]
   sgpa     Sgpa[]
 
@@ -21,7 +27,7 @@ model Student {
 }
 
 model Semester {
-  semesterNumber Int       @id @default(autoincrement()) @map("semester_number")
+  semesterNumber String    @id @map("semester_number")
   semCredits     Int       @map("semester_credits")
   subjects       Subject[]
   sgpa           Sgpa[]
@@ -34,7 +40,7 @@ model Subject {
   subjectCode    String   @id @map("subject_code")
   subjectCredits Int      @map("subject_credits")
   semester       Semester @relation(fields: [semesterNumber], references: [semesterNumber])
-  semesterNumber Int      @map("semester_number")
+  semesterNumber String   @map("semester_number")
   marks          Marks[]
 
   @@map("SUBJECT")
@@ -60,7 +66,7 @@ model Sgpa {
   student        Student  @relation(fields: [studentUsn], references: [usn])
   semester       Semester @relation(fields: [semesterNumber], references: [semesterNumber])
   studentUsn     String   @map("student_usn")
-  semesterNumber Int      @map("semester_number")
+  semesterNumber String   @map("semester_number")
 
   @@map("SGPA")
 }
