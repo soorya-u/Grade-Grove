@@ -16,12 +16,12 @@ enum Cycle {
 }
 
 model Student {
-  fullName String  @map("full_name")
-  usn      String  @id
+  fullName String   @map("full_name")
+  usn      String   @id
   cgpa     Float?
-  cycle    Cycle?  @map("cycle")
+  cycle    Cycle?   @map("cycle")
   marks    Marks[]
-  sgpa     Sgpa[]
+  sgpa     Result[]
 
   @@map("STUDENT")
 }
@@ -30,7 +30,7 @@ model Semester {
   semesterNumber String    @id @map("semester_number")
   semCredits     Int       @map("semester_credits")
   subjects       Subject[]
-  sgpa           Sgpa[]
+  sgpa           Result[]
 
   @@map("SEMESTER")
 }
@@ -59,13 +59,14 @@ model Marks {
   @@map("MARKS")
 }
 
-model Sgpa {
+model Result {
   id             String   @id @default(uuid())
   sgpa           Float
+  totalMarks     Int
   student        Student  @relation(fields: [studentUsn], references: [usn])
   semester       Semester @relation(fields: [semesterNumber], references: [semesterNumber])
   studentUsn     String   @map("student_usn")
   semesterNumber String   @map("semester_number")
 
-  @@map("SGPA")
+  @@map("RESULT")
 }
