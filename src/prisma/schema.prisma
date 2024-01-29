@@ -28,7 +28,7 @@ model Student {
 
 model Semester {
   semesterNumber String    @id @map("semester_number")
-  semCredits     Int       @map("semester_credits")
+  semesterCredits     Int       @map("semester_credits")
   subjects       Subject[]
   sgpa           Result[]
 
