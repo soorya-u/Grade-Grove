@@ -36,11 +36,10 @@ model Semester {
 }
 
 model Subject {
-  subjectName    String   @map("subject_name")
-  subjectCode    String   @id @map("subject_code")
-  subjectCredits Int      @map("subject_credits")
-  semester       Semester @relation(fields: [semesterNumber], references: [semesterNumber])
-  semesterNumber String   @map("semester_number")
+  subjectName    String     @map("subject_name")
+  subjectCode    String     @id @map("subject_code")
+  subjectCredits Int        @map("subject_credits")
+  semester       Semester[]
   marks          Marks[]
 
   @@map("SUBJECT")
