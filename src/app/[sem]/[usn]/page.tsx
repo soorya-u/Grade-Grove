@@ -1,36 +1,21 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
-import { getUsnResult } from "@/lib/axios";
-
-import { useReduxRankGetter } from "@/hooks/redux/rank";
-
-import { IStudent } from "@/interface";
+import { Student } from "@/services/student";
 
 import StudentHeading from "@/components/pages/student/StudentHeading";
 import StudentProfile from "@/components/pages/student/StudentProfile";
 import StudentTable from "@/components/pages/student/StudentTable";
 
-function Profile({ params }: { params: { sem: string; usn: string } }) {
-  const [student, setStudent] = useState<IStudent>();
+async function Profile({ params }: { params: { sem: string; usn: string } }) {
+  const [details, scores] = await Student.getStudent(params.sem, params.usn);
 
-  const rank = useReduxRankGetter();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      getUsnResult(params.sem, params.usn).then((res) => setStudent(res.data));
-    };
-
-    fetchData();
-  }, []);
+  if (details instanceof Error)
+    return <h1>{JSON.stringify(details.message)}</h1>;
 
   return (
     <>
-      <StudentHeading rank={rank} name={student?.name || ""} />
+      <StudentHeading rank={1} name={"Soorya"} />
       <section className="w-full flex flex-col xl:flex-row justify-center items-center bg-transparent px-4 gap-28">
-        <StudentProfile semester={params.sem} student={student} />
-        <StudentTable student={student} />
+        <StudentProfile semester={params.sem} usn={params.usn} data={details} />
+        <StudentTable data={scores} />
       </section>
     </>
   );

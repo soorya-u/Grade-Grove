@@ -1,4 +1,4 @@
-import { IStudent } from "@/interface";
+import { IStudentScores } from "@/interface/student";
 
 import { Poppins, Rubik } from "next/font/google";
 
@@ -16,7 +16,7 @@ import { cn } from "@/utils/shadcn";
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
-function StudentTable({ student }: { student: IStudent | undefined }) {
+function StudentTable({ data }: { data: IStudentScores[] }) {
   return (
     <>
       <section>
@@ -27,7 +27,7 @@ function StudentTable({ student }: { student: IStudent | undefined }) {
               <TableHead
                 className={cn(
                   poppins.className,
-                  "text-base text-center hidden md:table-cell",
+                  "text-base text-center hidden md:table-cell"
                 )}
               >
                 Subject Code
@@ -35,7 +35,7 @@ function StudentTable({ student }: { student: IStudent | undefined }) {
               <TableHead
                 className={cn(
                   poppins.className,
-                  "text-base text-center hidden xs:table-cell",
+                  "text-base text-center hidden xs:table-cell"
                 )}
               >
                 Internal Assessment
@@ -43,7 +43,7 @@ function StudentTable({ student }: { student: IStudent | undefined }) {
               <TableHead
                 className={cn(
                   poppins.className,
-                  "text-base text-center hidden xs:table-cell",
+                  "text-base text-center hidden xs:table-cell"
                 )}
               >
                 External Assessment
@@ -56,41 +56,41 @@ function StudentTable({ student }: { student: IStudent | undefined }) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {student?.subjects.map((elem) => (
-              <TableRow key={elem._id}>
+            {data.map((elem, idx) => (
+              <TableRow key={idx}>
                 <TableCell
                   className={cn(rubik.className, "text-base text-center")}
                 >
-                  {elem.subject}
+                  {elem.subjectName}
                 </TableCell>
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-base text-center hidden md:table-cell",
+                    "text-base text-center hidden md:table-cell"
                   )}
                 >
-                  {elem.subject_code}
+                  {elem.subjectCode}
                 </TableCell>
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-base text-center hidden xs:table-cell",
+                    "text-base text-center hidden xs:table-cell"
                   )}
                 >
-                  {elem.int_marks}
+                  {elem.internalMarks}
                 </TableCell>
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-base text-center hidden xs:table-cell",
+                    "text-base text-center hidden xs:table-cell"
                   )}
                 >
-                  {elem.ext_marks}
+                  {elem.externalMarks}
                 </TableCell>
                 <TableCell
                   className={cn(rubik.className, "text-base text-center")}
                 >
-                  {elem.total_marks}
+                  {elem.totalMarks}
                 </TableCell>
               </TableRow>
             ))}
