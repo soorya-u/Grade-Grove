@@ -4,7 +4,7 @@ import { cn } from "@/utils/shadcn";
 
 import SemTable from "@/components/pages/semester/SemTable";
 
-import { Result as ResultService } from "@/services/results";
+import { Result as ResultService } from "@/services/result";
 
 import getSuperScript from "@/utils/custom/getSuperScript";
 
