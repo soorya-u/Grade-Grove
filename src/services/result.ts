@@ -1,25 +1,17 @@
 import { IResultPayload } from "@/interface/result";
 import prismaClient from "@/prisma";
+import getSemesterNumber from "@/utils/custom/getSemesterNumber";
 
 export class Result {
   public static async getResult(semester: string) {
-    const semNumber = {
-      "first-sem": 1,
-      "second-sem": 2,
-      "third-sem": 3,
-    };
-
     if (semester === "first-sem" || semester === "second-sem")
-      return await Result.getFirstYearResult(semNumber[semester]);
-    else
-      return await Result.getOtherYearResult(
-        semNumber[semester as keyof typeof semNumber]
-      );
+      return await Result.getFirstYearResult(getSemesterNumber(semester));
+    else return await Result.getOtherYearResult(getSemesterNumber(semester));
   }
 
   private static async getFirstYearResult(
     semester: number
-  ): Promise<[number, IResultPayload[]]> {
+  ): Promise<IResultPayload[]> {
     const result = await prismaClient.result.findMany({
       where: {
         OR: [
@@ -53,12 +45,12 @@ export class Result {
       };
     });
 
-    return [semester, payload];
+    return payload;
   }
 
   private static async getOtherYearResult(
     semester: number
-  ): Promise<[number, IResultPayload[]]> {
+  ): Promise<IResultPayload[]> {
     const result = await prismaClient.result.findMany({
       where: {
         OR: [{ semesterNumber: `${semester}` }],
@@ -89,6 +81,6 @@ export class Result {
       };
     });
 
-    return [semester, payload];
+    return payload;
   }
 }

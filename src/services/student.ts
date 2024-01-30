@@ -1,11 +1,6 @@
 import { IStudentDetails, IStudentScores } from "@/interface/student";
 import prismaClient from "@/prisma";
-
-const semNumber = {
-  "first-sem": 1,
-  "second-sem": 2,
-  "third-sem": 3,
-};
+import getSemesterNumber from "@/utils/custom/getSemesterNumber";
 
 export class Student {
   public static async getStudent(
@@ -14,17 +9,23 @@ export class Student {
   ): Promise<[Error | IStudentDetails, IStudentScores[]]> {
     if (semester === "first-sem" || semester === "second-sem")
       return [
-        await Student.getFirstYearStudentDetails(semNumber[semester], usn),
-        await Student.getFirstYearStudentScores(semNumber[semester], usn),
+        await Student.getFirstYearStudentDetails(
+          getSemesterNumber(semester),
+          usn
+        ),
+        await Student.getFirstYearStudentScores(
+          getSemesterNumber(semester),
+          usn
+        ),
       ];
     else
       return [
         await Student.getOtherYearStudentDetails(
-          semNumber[semester as keyof typeof semNumber],
+          getSemesterNumber(semester),
           usn
         ),
         await Student.getOtherYearStudentScores(
-          semNumber[semester as keyof typeof semNumber],
+          getSemesterNumber(semester),
           usn
         ),
       ];
