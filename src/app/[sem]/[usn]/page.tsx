@@ -5,7 +5,10 @@ import StudentProfile from "@/components/pages/student/StudentProfile";
 import StudentTable from "@/components/pages/student/StudentTable";
 
 async function Profile({ params }: { params: { sem: string; usn: string } }) {
-  const [heading, details, scores] = await Student.getStudent(params.sem, params.usn);
+  const [heading, details, scores] = await Student.getStudent(
+    params.sem,
+    params.usn
+  );
 
   if (details instanceof Error)
     return <h1>{JSON.stringify(details.message)}</h1>;
