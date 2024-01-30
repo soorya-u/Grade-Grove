@@ -7,43 +7,33 @@ export class Student {
     semester: string,
     usn: string
   ): Promise<[Error | IStudentDetails, IStudentScores[]]> {
-    if (semester === "first-sem" || semester === "second-sem")
-      return [
-        await Student.getFirstYearStudentDetails(
-          getSemesterNumber(semester),
-          usn
-        ),
-        await Student.getFirstYearStudentScores(
-          getSemesterNumber(semester),
-          usn
-        ),
-      ];
-    else
-      return [
-        await Student.getOtherYearStudentDetails(
-          getSemesterNumber(semester),
-          usn
-        ),
-        await Student.getOtherYearStudentScores(
-          getSemesterNumber(semester),
-          usn
-        ),
-      ];
+    const details = await Student.getStudentDetails(
+      getSemesterNumber(semester),
+      usn
+    );
+    const scores = await Student.getStudentScores(
+      getSemesterNumber(semester),
+      usn
+    );
+
+    return [details, scores];
   }
 
-  private static async getFirstYearStudentDetails(
-    semester: number,
-    usn: string
-  ) {
+  private static async getStudentDetails(semester: number, usn: string) {
+    const queryParams =
+      semester === 1 || semester === 2
+        ? [
+            { semesterNumber: `${semester}P` },
+            { semesterNumber: `${semester}C` },
+          ]
+        : [{ semesterNumber: `${semester}` }];
+
     const result = await prismaClient.student.findUnique({
       where: {
         usn,
         result: {
           some: {
-            OR: [
-              { semesterNumber: `${semester}P` },
-              { semesterNumber: `${semester}C` },
-            ],
+            OR: queryParams,
           },
         },
       },
@@ -65,7 +55,7 @@ export class Student {
       totalMarks: result.result[0].totalMarks,
       sgpa: result.result[0].sgpa,
       cycle:
-        semester === 1
+        (semester === 1 || semester === 2) && semester === 1
           ? result.cycle
           : result.cycle === "Physics"
           ? "Chemistry"
@@ -74,99 +64,22 @@ export class Student {
 
     return payload;
   }
-  private static async getOtherYearStudentDetails(
-    semester: number,
-    usn: string
-  ) {
-    const result = await prismaClient.student.findUnique({
-      where: {
-        usn,
-        result: {
-          some: {
-            semesterNumber: `${semester}`,
-          },
-        },
-      },
-      select: {
-        fullName: true,
-        cycle: true,
-        result: {
-          select: {
-            totalMarks: true,
-            sgpa: true,
-          },
-        },
-      },
-    });
 
-    if (!result) return new Error("Student Not Found");
-    const payload = {
-      name: result.fullName,
-      totalMarks: result.result[0].totalMarks,
-      sgpa: result.result[0].sgpa,
-    };
-
-    return payload;
-  }
-
-  private static async getFirstYearStudentScores(
-    semester: number,
-    usn: string
-  ) {
+  private static async getStudentScores(semester: number, usn: string) {
+    const queryParams =
+      semester === 1 || semester === 2
+        ? [
+            { semesterNumber: `${semester}P` },
+            { semesterNumber: `${semester}C` },
+          ]
+        : [{ semesterNumber: `${semester}` }];
     const result = await prismaClient.marks.findMany({
       where: {
         studentUsn: usn,
         subject: {
           semester: {
             some: {
-              OR: [
-                {
-                  semesterNumber: `${semester}P`,
-                },
-                {
-                  semesterNumber: `${semester}C`,
-                },
-              ],
-            },
-          },
-        },
-      },
-      select: {
-        subject: {
-          select: {
-            subjectName: true,
-          },
-        },
-        subjectCode: true,
-        internalMarks: true,
-        externalMarks: true,
-        totalMarks: true,
-      },
-    });
-
-    const payload = result.map((elem) => {
-      return {
-        subjectName: elem.subject.subjectName,
-        subjectCode: elem.subjectCode,
-        internalMarks: elem.internalMarks,
-        externalMarks: elem.externalMarks,
-        totalMarks: elem.totalMarks,
-      };
-    });
-
-    return payload;
-  }
-  private static async getOtherYearStudentScores(
-    semester: number,
-    usn: string
-  ) {
-    const result = await prismaClient.marks.findMany({
-      where: {
-        studentUsn: usn,
-        subject: {
-          semester: {
-            some: {
-              semesterNumber: `${semester}`,
+              OR: queryParams,
             },
           },
         },
