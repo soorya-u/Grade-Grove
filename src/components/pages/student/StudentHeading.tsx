@@ -4,9 +4,11 @@ import getSuperScript from "@/utils/custom/getSuperScript";
 
 import { cn } from "@/utils/shadcn";
 
+import { IStudentHeading } from "@/interface/student";
+
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-function StudentHeading({ rank, name }: { rank: number; name: string }) {
+function StudentHeading({ data }: { data: IStudentHeading }) {
   return (
     <>
       <div className="flex flex-col sm:flex-row sm:gap-2 justify-center items-center px-4 gap-0">
@@ -16,9 +18,9 @@ function StudentHeading({ rank, name }: { rank: number; name: string }) {
             "text-center mb-0 mt-7 sm:my-7 text-4xl"
           )}
         >
-          {rank}
+          {data.rank}
           <sup className={cn(poppins.className)}>
-            {getSuperScript(rank)}
+            {getSuperScript(data.rank)}
           </sup>{" "}
           Rank
           <span className={cn(poppins.className, "hidden sm:inline")}> - </span>
@@ -29,7 +31,7 @@ function StudentHeading({ rank, name }: { rank: number; name: string }) {
             "text-center  mt-0 mb-7 sm:my-7 text-4xl"
           )}
         >
-          {name}
+          {data.name}
         </h1>
       </div>
     </>

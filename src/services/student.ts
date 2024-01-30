@@ -1,4 +1,8 @@
-import { IStudentDetails, IStudentScores } from "@/interface/student";
+import {
+  IStudentHeading,
+  IStudentDetails,
+  IStudentScores,
+} from "@/interface/student";
 import prismaClient from "@/prisma";
 import getSemesterNumber from "@/utils/custom/getSemesterNumber";
 
@@ -6,17 +10,51 @@ export class Student {
   public static async getStudent(
     semester: string,
     usn: string
-  ): Promise<[Error | IStudentDetails, IStudentScores[]]> {
-    const details = await Student.getStudentDetails(
-      getSemesterNumber(semester),
-      usn
-    );
-    const scores = await Student.getStudentScores(
-      getSemesterNumber(semester),
-      usn
-    );
+  ): Promise<[IStudentHeading, Error | IStudentDetails, IStudentScores[]]> {
+    const semNumber = getSemesterNumber(semester);
 
-    return [details, scores];
+    const header = await Student.getStudentHeading(semNumber, usn);
+    const details = await Student.getStudentDetails(semNumber, usn);
+    const scores = await Student.getStudentScores(semNumber, usn);
+
+    return [header, details, scores];
+  }
+
+  private static async getStudentHeading(semester: number, usn: string) {
+    const queryParams =
+      semester === 1 || semester === 2
+        ? [
+            { semesterNumber: `${semester}P` },
+            { semesterNumber: `${semester}C` },
+          ]
+        : [{ semesterNumber: `${semester}` }];
+
+    const result = await prismaClient.result.findMany({
+      where: {
+        OR: queryParams,
+      },
+      orderBy: {
+        totalMarks: "desc",
+      },
+      select: {
+        student: {
+          select: {
+            fullName: true,
+            usn: true,
+          },
+        },
+      },
+    });
+
+    const payload = result
+      .map((elem, idx) => ({ ...elem, idx }))
+      .filter((elem) => elem.student.usn === usn)
+      .map((elem) => ({
+        rank: elem.idx + 1,
+        name: elem.student.fullName,
+      }));
+
+    return payload[0];
   }
 
   private static async getStudentDetails(semester: number, usn: string) {
