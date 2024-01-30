@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_DATABASE_URL")
+}
+
+enum Cycle {
+  Physics
+  Chemistry
+}
+
+model Student {
+  fullName String   @map("full_name")
+  usn      String   @id
+  cgpa     Float?
+  cycle    Cycle?   @map("cycle")
+  marks    Marks[]
+  result   Result[]
+
+  @@map("STUDENT")
+}
+
+model Semester {
+  semesterNumber  String    @id @map("semester_number")
+  semesterCredits Int       @map("semester_credits")
+  subjects        Subject[]
+  result          Result[]
+
+  @@map("SEMESTER")
+}
+
+model Subject {
+  subjectName    String     @map("subject_name")
+  subjectCode    String     @id @map("subject_code")
+  subjectCredits Int        @map("subject_credits")
+  semester       Semester[]
+  marks          Marks[]
+
+  @@map("SUBJECT")
+}
+
+model Marks {
+  id               String  @id @default(uuid())
+  internalMarks    Float   @map("internal_marks")
+  externalMarks    Float   @map("external_marks")
+  revaluationMarks Float?  @map("revaluation_marks")
+  totalMarks       Float   @map("total_marks")
+  subject          Subject @relation(fields: [subjectCode], references: [subjectCode])
+  student          Student @relation(fields: [studentUsn], references: [usn])
+  subjectCode      String  @map("subject_code")
+  studentUsn       String  @map("student_usn")
+
+  @@map("MARKS")
+}
+
+model Result {
+  id             String   @id @default(uuid())
+  sgpa           Float
+  totalMarks     Int
+  student        Student  @relation(fields: [studentUsn], references: [usn])
+  semester       Semester @relation(fields: [semesterNumber], references: [semesterNumber])
+  studentUsn     String   @map("student_usn")
+  semesterNumber String   @map("semester_number")
+
+  @@map("RESULT")
+}

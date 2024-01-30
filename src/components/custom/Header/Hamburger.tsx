@@ -59,9 +59,8 @@ function Hamburger({ className }: { className: string }) {
                     { link: "second", title: "Second", icon: fa2 },
                     { link: "third", title: "Third", icon: fa3 },
                   ].map((elem, idx) => (
-                    <SheetClose asChild>
+                    <SheetClose key={idx} asChild>
                       <Link
-                        key={idx}
                         href={`/${elem.link}-sem`}
                         className={`
                       ${quicksand.className} text-lg flex items-center gap-3 border-2 border-white py-3 px-4 rounded-xl my-3 ml-4`}
