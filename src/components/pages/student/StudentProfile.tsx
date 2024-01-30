@@ -4,12 +4,7 @@ import {
   AvatarImage,
 } from "@/components/shadcn/avatar";
 import { IStudentDetails } from "@/interface/student";
-
-const sem = {
-  "first-sem": "First",
-  "second-sem": "Second",
-  "third-sem": "Third",
-};
+import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
 
 function StudentProfile({
   semester,
@@ -33,7 +28,7 @@ function StudentProfile({
           <h3 className="text-right text-lg font-bold">USN: </h3>
           <h3 className="text-lg">{usn}</h3>
           <h3 className="text-right text-lg font-bold">Semester: </h3>
-          <h3 className="text-lg">{sem[semester as keyof typeof sem]}</h3>
+          <h3 className="text-lg">{getOrdinalSemester(semester)}</h3>
           {data.cycle && (
             <>
               <h3 className="text-right text-lg font-bold">Cycle: </h3>

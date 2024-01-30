@@ -20,6 +20,7 @@ function Loading() {
               .fill(0)
               .map((_, idx) => (
                 <TableCell
+                  key={idx}
                   className={`${
                     (idx === 2 || idx === 4) && "hidden md:table-cell"
                   }`}
@@ -38,6 +39,7 @@ function Loading() {
                   .fill(0)
                   .map((_, idx) => (
                     <TableCell
+                      key={idx}
                       className={`${
                         (idx === 2 || idx === 4) && "hidden md:table-cell"
                       }`}
