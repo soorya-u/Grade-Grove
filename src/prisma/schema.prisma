@@ -21,16 +21,16 @@ model Student {
   cgpa     Float?
   cycle    Cycle?   @map("cycle")
   marks    Marks[]
-  sgpa     Result[]
+  result   Result[]
 
   @@map("STUDENT")
 }
 
 model Semester {
-  semesterNumber String    @id @map("semester_number")
-  semesterCredits     Int       @map("semester_credits")
-  subjects       Subject[]
-  sgpa           Result[]
+  semesterNumber  String    @id @map("semester_number")
+  semesterCredits Int       @map("semester_credits")
+  subjects        Subject[]
+  result          Result[]
 
   @@map("SEMESTER")
 }
