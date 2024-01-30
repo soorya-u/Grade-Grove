@@ -10,9 +10,9 @@ export class Result {
     };
 
     if (semester === "first-sem" || semester === "second-sem")
-      return Result.getFirstYearResult(semNumber[semester]);
+      return await Result.getFirstYearResult(semNumber[semester]);
     else
-      return Result.getOtherYearResult(
+      return await Result.getOtherYearResult(
         semNumber[semester as keyof typeof semNumber]
       );
   }

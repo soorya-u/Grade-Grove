@@ -1,4 +1,8 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/shadcn/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/shadcn/avatar";
 import { IStudent } from "@/interface";
 
 const sem = {
@@ -27,7 +31,7 @@ function StudentProfile({
           <h3 className="text-right text-lg font-bold">USN: </h3>
           <h3 className="text-lg">{student?.usn}</h3>
           <h3 className="text-right text-lg font-bold">Semester: </h3>
-          <h3>{sem[semester as keyof typeof sem]}</h3>
+          <h3 className="text-lg">{sem[semester as keyof typeof sem]}</h3>
           {student?.cycle && (
             <>
               <h3 className="text-right text-lg font-bold">Cycle: </h3>
