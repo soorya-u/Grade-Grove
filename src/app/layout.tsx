@@ -24,7 +24,9 @@ export default function RootLayout({
       <ReduxProvider>
         <body className={ubuntu.className}>
           <Header />
-          {children}
+          <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-['']">
+            {children}
+          </main>
         </body>
       </ReduxProvider>
     </html>

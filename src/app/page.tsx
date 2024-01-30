@@ -12,7 +12,7 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-['']">
+    <>
       <div className="flex justify-center items-center gap-6 flex-wrap px-4">
         <h1 className={cn(audiowide.className, "text-5xl text-center")}>
           elite-AIML
@@ -67,6 +67,6 @@ export default function Home() {
           Encouraging Excellence
         </li>
       </ul>
-    </main>
+    </>
   );
 }

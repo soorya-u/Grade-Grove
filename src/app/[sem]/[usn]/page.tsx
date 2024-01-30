@@ -27,13 +27,11 @@ function Profile({ params }: { params: { sem: string; usn: string } }) {
 
   return (
     <>
-      <main className="flex flex-col justify-center items-center gap-7">
-        <StudentHeading rank={rank} name={student?.name || ""} />
-        <section className="w-full flex flex-col xl:flex-row justify-center items-center bg-transparent px-4 gap-28">
-          <StudentProfile semester={params.sem} student={student} />
-          <StudentTable student={student} />
-        </section>
-      </main>
+      <StudentHeading rank={rank} name={student?.name || ""} />
+      <section className="w-full flex flex-col xl:flex-row justify-center items-center bg-transparent px-4 gap-28">
+        <StudentProfile semester={params.sem} student={student} />
+        <StudentTable student={student} />
+      </section>
     </>
   );
 }

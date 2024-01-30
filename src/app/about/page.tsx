@@ -46,34 +46,31 @@ const devs = [
 function About() {
   return (
     <>
-      <main className="flex flex-col justify-center items-center gap-8 before:content-[''] after:content-['']">
-        <h1 className={cn(poppins.className, "text-center text-5xl px-4")}>
-          About Us
-        </h1>
+      <h1 className={cn(poppins.className, "text-center text-5xl px-4")}>
+        About Us
+      </h1>
 
-        <div className="text-center text-xl px-18">
-          We the Students of AIML department, group of 8 members have Developed
-          a Webpage named{" "}
-          <span className={audiowide.className}>elite-AIML</span> on listing Top
-          10 Student Marks of 2021-2025 batch.
-        </div>
-        <h2 className={cn(poppins.className, "text-center px-4")}>
-          Contributers
-        </h2>
+      <div className="text-center text-xl px-18">
+        We the Students of AIML department, group of 8 members have Developed a
+        Webpage named <span className={audiowide.className}>elite-AIML</span> on
+        listing Top 10 Student Marks of 2021-2025 batch.
+      </div>
+      <h2 className={cn(poppins.className, "text-center px-4")}>
+        Contributers
+      </h2>
 
-        <div className="flex justify-center flex-wrap px-4">
-          {devs.map((elem, idx) => (
-            <DevAvatar key={idx} name={elem.name} imgPath={elem.imgPath} />
-          ))}
-        </div>
+      <div className="flex justify-center flex-wrap px-4">
+        {devs.map((elem, idx) => (
+          <DevAvatar key={idx} name={elem.name} imgPath={elem.imgPath} />
+        ))}
+      </div>
 
-        <div className="text-center px-4">
-          <h2 className={cn(poppins.className, "text-xl")}>Contact Our Team</h2>
-          <a href="mailto:sooryau7@gmail.com">
-            <b className={cn(audiowide.className, "text-4xl")}>Alpha Tech</b>
-          </a>
-        </div>
-      </main>
+      <div className="text-center px-4">
+        <h2 className={cn(poppins.className, "text-xl")}>Contact Our Team</h2>
+        <a href="mailto:sooryau7@gmail.com">
+          <b className={cn(audiowide.className, "text-4xl")}>Alpha Tech</b>
+        </a>
+      </div>
     </>
   );
 }
