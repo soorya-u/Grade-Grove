@@ -3,7 +3,7 @@
 import { Rubik, Poppins } from "next/font/google";
 import { useRouter } from "next/navigation";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import {
   ColumnDef,
@@ -12,6 +12,7 @@ import {
   useReactTable,
   SortingState,
   getSortedRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 
 import {
@@ -22,6 +23,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/shadcn/table";
+
+import { Input } from "@/components/shadcn/input";
 
 import { cn } from "@/utils/shadcn";
 
@@ -42,6 +45,7 @@ function SemTable<TData, TValue>({
   const router = useRouter();
 
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [filterValue, setFilterValue] = useState("");
 
   const table = useReactTable({
     data,
@@ -49,12 +53,28 @@ function SemTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      globalFilter: filterValue,
     },
+    onGlobalFilterChange: setFilterValue,
   });
+
   return (
     <>
+      <Input
+        type="text"
+        placeholder="Search by Name or USN..."
+        className={cn(
+          "w-[95vw] sm:w-[80vw] bg-[#00000030] outline-none border-[2px] border-white",
+          poppins.className
+        )}
+        value={filterValue}
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+          setFilterValue(event.target.value)
+        }
+      />
       <Table className="w-[95vw] sm:w-[80vw]">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -82,8 +102,8 @@ function SemTable<TData, TValue>({
           ))}
         </TableHeader>
 
-        <TableBody>
-          {table.getRowModel().rows?.length &&
+        <TableBody className="w-full">
+          {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
@@ -106,7 +126,16 @@ function SemTable<TData, TValue>({
                   </TableCell>
                 ))}
               </TableRow>
-            ))}
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={5}>
+                <h1 className={cn(poppins.className, "text-xl w-full text-center")}>
+                  No Match Found
+                </h1>
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
     </>
