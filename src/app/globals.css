@@ -98,6 +98,12 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+div[data-side="bottom"][role="dialog"] {
+  background-color: #00000030;
+  border: 2px solid white;
+  backdrop-filter: blur(8px);
+}
+
 @keyframes color {
   0% {
     background-position: 0 0;
