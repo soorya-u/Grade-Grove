@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { cn } from "@/utils/shadcn";
 
 import SemTable from "@/components/pages/semester/SemTable";
+import { columns } from "@/components/pages/semester/columns";
 
 import { Result as ResultService } from "@/services/result";
 
@@ -17,7 +18,7 @@ async function Result({ params }: { params: { sem: string } }) {
       <h1 className={cn(poppins.className, "px-4 text-center text-3xl")}>
         {getOrdinalSemester(params.sem)} Semester Top 10 List
       </h1>
-      <SemTable semester={params.sem} data={payload} />
+      <SemTable columns={columns} semester={params.sem} data={payload} />
     </>
   );
 }
