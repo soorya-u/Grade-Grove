@@ -20,7 +20,10 @@ export class Student {
     return [header, details, scores];
   }
 
-  private static async getStudentHeading(semester: number, usn: string) {
+  private static async getStudentHeading(
+    semester: number,
+    usn: string
+  ): Promise<IStudentHeading> {
     const queryParams =
       semester === 1 || semester === 2
         ? [
@@ -57,7 +60,10 @@ export class Student {
     return payload[0];
   }
 
-  private static async getStudentDetails(semester: number, usn: string) {
+  private static async getStudentDetails(
+    semester: number,
+    usn: string
+  ): Promise<IStudentDetails | Error> {
     const queryParams =
       semester === 1 || semester === 2
         ? [
@@ -103,7 +109,10 @@ export class Student {
     return payload;
   }
 
-  private static async getStudentScores(semester: number, usn: string) {
+  private static async getStudentScores(
+    semester: number,
+    usn: string
+  ): Promise<IStudentScores[]> {
     const queryParams =
       semester === 1 || semester === 2
         ? [
