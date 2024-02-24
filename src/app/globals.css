@@ -104,6 +104,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #fff;
+  border-radius: 100px;
 }
 
 body::-webkit-scrollbar {
@@ -116,6 +117,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #fff;
+  border-radius: 100px;
 }
 
 div[data-side="bottom"][role="dialog"] {
