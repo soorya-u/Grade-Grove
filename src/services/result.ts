@@ -3,7 +3,7 @@ import prismaClient from "@/prisma";
 import getSemesterNumber from "@/utils/custom/getSemesterNumber";
 
 export class Result {
-  public static async getResult(semester: string) {
+  public static async getResult(semester: string): Promise<IResultPayload[]> {
     const semNumber = getSemesterNumber(semester);
     const queryParams =
       semester === "first-sem" || semester === "second-sem"
