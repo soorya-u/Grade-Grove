@@ -94,8 +94,28 @@ body {
   scrollbar-width: none;
 }
 
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #00000030;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
 body::-webkit-scrollbar {
-  display: none;
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #00000030;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
 }
 
 div[data-side="bottom"][role="dialog"] {
