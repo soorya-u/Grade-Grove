@@ -28,7 +28,7 @@ function Navigator({ className }: { className: string }) {
               Result
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent">
+              <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent divide-y-2 divide-white">
                 {[
                   { link: "first", title: "First" },
                   { link: "second", title: "Second" },
@@ -36,11 +36,7 @@ function Navigator({ className }: { className: string }) {
                 ].map((elem, idx) => (
                   <li
                     key={idx}
-                    className={`${
-                      quicksand.className
-                    } w-full text-center border-white py-1 ${
-                      idx !== 0 && "border-t-2"
-                    }`}
+                    className={`${quicksand.className} w-full text-center py-1`}
                   >
                     <Link href={`/${elem.link}-sem`}>{elem.title} Sem</Link>
                   </li>
