@@ -26,8 +26,10 @@ import { cn } from "@/utils/shadcn";
 
 export const sortedTableHeader = ({
   column,
+  name,
 }: {
   column: Column<IResultPayload, unknown>;
+  name: string;
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -40,7 +42,7 @@ export const sortedTableHeader = ({
           className="px-1 2xs:px-4"
           aria-expanded={open}
         >
-          Rank
+          {name}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 hidden 3xs:inline" />
         </Button>
       </PopoverTrigger>
@@ -92,8 +94,10 @@ export const sortedTableHeader = ({
 
 export const unsortedTableHeader = ({
   column,
+  name,
 }: {
   column: Column<IResultPayload, unknown>;
+  name: string;
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -106,7 +110,7 @@ export const unsortedTableHeader = ({
           className="px-1 2xs:px-4"
           aria-expanded={open}
         >
-          USN
+          {name}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 hidden 3xs:inline" />
         </Button>
       </PopoverTrigger>

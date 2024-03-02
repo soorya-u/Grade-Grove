@@ -9,22 +9,23 @@ import { sortedTableHeader, unsortedTableHeader } from "./TableHeaders";
 export const columns: ColumnDef<IResultPayload>[] = [
   {
     accessorKey: "rank",
-    header: sortedTableHeader,
+    header: ({ column }) => sortedTableHeader({ column, name: "Rank" }),
   },
   {
     accessorKey: "studentName",
-    header: unsortedTableHeader,
+    header: ({ column }) =>
+      unsortedTableHeader({ column, name: "Student Name" }),
   },
   {
     accessorKey: "usn",
-    header: unsortedTableHeader,
+    header: ({ column }) => unsortedTableHeader({ column, name: "USN" }),
   },
   {
     accessorKey: "totalMarks",
-    header: sortedTableHeader,
+    header: ({ column }) => sortedTableHeader({ column, name: "Total Marks" }),
   },
   {
     accessorKey: "sgpa",
-    header: unsortedTableHeader,
+    header: ({ column }) => unsortedTableHeader({ column, name: "SGPA" }),
   },
 ];
