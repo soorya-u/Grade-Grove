@@ -1,0 +1,60 @@
+import { Poppins, Rubik } from "next/font/google";
+
+import { CardContent, Card } from "@/components/shadcn/card";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/shadcn/avatar";
+
+import { cn } from "@/utils/shadcn";
+import Link from "next/link";
+
+const rubik = Rubik({ weight: "400", subsets: ["latin"] });
+const poppins = Poppins({ weight: "400", subsets: ["latin"] });
+
+function ProfileCard({
+  name,
+  imgPath,
+  description,
+  githubLink,
+}: {
+  name: string;
+  imgPath: string;
+  description: string | JSX.Element;
+  githubLink: string;
+}) {
+  return (
+    <>
+      <Card>
+        <CardContent className="pt-4">
+          <div className="flex items-center space-x-4">
+            <Avatar className="aspect-square border-2 border-[#ccc] scale-100 hover:scale-[1.2] transition-transform duration-150 ease-linear cursor-pointer">
+              <Link href={githubLink}>
+                <AvatarImage src={imgPath} />
+                <AvatarFallback>{name}</AvatarFallback>
+              </Link>
+            </Avatar>
+            <Link
+              href={githubLink}
+              className={cn(
+                poppins.className,
+                "text-lg text-white cursor-pointer hover:text-[#f64444] transition-[color] duration-150 ease-linear"
+              )}
+            >
+              {name}
+            </Link>
+            <div className="flex-1 border-t border-[#ffffff49]" />
+          </div>
+        </CardContent>
+        <CardContent className="py-2">
+          <div className="prose prose-sm max-w-none">
+            <p className={cn(rubik.className)}>{description}</p>
+          </div>
+        </CardContent>
+      </Card>
+    </>
+  );
+}
+
+export default ProfileCard;
