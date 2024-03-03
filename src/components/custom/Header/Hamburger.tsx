@@ -18,7 +18,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faHome,
-  faGraduationCap,
   faCircleInfo,
   faChartColumn,
   fa1,
@@ -72,15 +71,6 @@ function Hamburger({ className }: { className: string }) {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <SheetClose asChild>
-              <Link
-                href="/department"
-                className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
-              >
-                <FontAwesomeIcon icon={faGraduationCap} className="w-6 pr-1" />
-                <p>Department</p>
-              </Link>
-            </SheetClose>
             <SheetClose asChild>
               <Link
                 href="/about"
