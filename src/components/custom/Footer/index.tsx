@@ -44,7 +44,7 @@ const Footer = () => {
               Get in Touch
             </h2>
             <div className="flex justify-center items-center gap-6">
-              <a href="https://github.com/soorya-u/Belief" target="_blank">
+              <a href="https://github.com/soorya-u/" target="_blank">
                 <FontAwesomeIcon icon={faGithub} className="w-8 h-8" />
               </a>
 

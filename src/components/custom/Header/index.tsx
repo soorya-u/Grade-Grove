@@ -9,14 +9,8 @@ const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 function Header() {
   return (
     <>
-      <header>
-        <nav
-          className="h-[11vh] flex justify-between items-center p-4 rounded-b-xl border-b-2 border-b-white gap-8 px-10"
-          style={{
-            background:
-              "linear-gradient(to bottom, #00000040 90%, transparent)",
-          }}
-        >
+      <header className="sticky top-0 w-full z-50">
+        <nav className="h-[10vh] flex justify-between items-center p-2 backdrop-blur-sm border-b border-[#ffffff49] rounded-b-md gap-8 px-10">
           <Navigator className="hidden md:flex" />
           <Hamburger className="block md:hidden" />
           <section className="flex justify-end">
