@@ -65,18 +65,6 @@ function Navigator({ className }: { className: string }) {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link
-              href="/department"
-              className={cn(
-                quicksand.className,
-                "text-lg hover:text-white",
-                pathname === "/department" ? "text-white" : "text-[#ccccd2]"
-              )}
-            >
-              Department
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
               href="/about"
               className={cn(
                 quicksand.className,
