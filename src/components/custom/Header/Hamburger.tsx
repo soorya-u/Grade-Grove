@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Quicksand } from "next/font/google";
+import { usePathname } from "next/navigation";
 
 import {
   Sheet,
@@ -20,51 +23,98 @@ import {
   faHome,
   faCircleInfo,
   faChartColumn,
-  fa1,
-  fa2,
-  fa3,
 } from "@fortawesome/free-solid-svg-icons";
+import { ChevronDown } from "lucide-react";
+
+import { cn } from "@/utils/shadcn";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
 function Hamburger({ className }: { className: string }) {
+  const pathname = usePathname();
+
+  console.log(pathname);
+
   return (
     <>
       <Sheet>
         <SheetTrigger className={className}>
-          <FontAwesomeIcon icon={faBars} className="w-6" />
+          <FontAwesomeIcon icon={faBars} className="text-3xl" />
         </SheetTrigger>
         <SheetContent side="left" className={`bg-[#00000040] backdrop-blur-sm`}>
           <div className="flex flex-col justify-center gap-6 mt-10">
             <SheetClose asChild>
               <Link
                 href="/"
-                className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
+                className={cn(
+                  quicksand.className,
+                  "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                  pathname === "/"
+                    ? "bg-white text-[#BE2E58]"
+                    : "bg-transparent text-white"
+                )}
               >
-                <FontAwesomeIcon icon={faHome} className="w-6 pr-1" />
-                <p>Home</p>
+                <FontAwesomeIcon
+                  icon={faHome}
+                  className={cn(
+                    "w-6 pr-1",
+                    pathname === "/"
+                      ? "[&_path]:fill-[#BE2E58]"
+                      : "[&_path]:fill-[#fff]"
+                  )}
+                />
+                Home
               </Link>
             </SheetClose>
 
             <Accordion type="multiple">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg w-full flex justify-start items-center gap-3 border-2 border-white py-3 px-2 rounded-xl">
-                  <FontAwesomeIcon icon={faChartColumn} className="w-6 pr-1" />
-                  <p>Results</p>
+                <AccordionTrigger
+                  className={cn(
+                    quicksand.className,
+                    "text-lg w-full flex justify-start items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                    pathname.includes("sem")
+                      ? "bg-white text-[#BE2E58]"
+                      : "bg-transparent text-white"
+                  )}
+                >
+                  <FontAwesomeIcon
+                    icon={faChartColumn}
+                    className={cn(
+                      "w-6 pr-1",
+                      pathname.includes("sem")
+                        ? "[&_path]:fill-[#BE2E58]"
+                        : "[&_path]:fill-[#fff]"
+                    )}
+                  />
+                  Results
+                  <ChevronDown
+                    className={cn(
+                      "h-4 w-4 shrink-0 transition-transform duration-200",
+                      pathname.includes("sem")
+                        ? "[&_path]:fill-[#BE2E58] h-8 w-8"
+                        : "[&_path]:fill-[#fff]"
+                    )}
+                  />
                 </AccordionTrigger>
                 <AccordionContent className="mt-5">
                   {[
-                    { link: "first", title: "First", icon: fa1 },
-                    { link: "second", title: "Second", icon: fa2 },
-                    { link: "third", title: "Third", icon: fa3 },
+                    { link: "first", title: "First" },
+                    { link: "second", title: "Second" },
+                    { link: "third", title: "Third" },
                   ].map((elem, idx) => (
                     <SheetClose key={idx} asChild>
                       <Link
                         href={`/${elem.link}-sem`}
-                        className={`
-                      ${quicksand.className} text-lg flex items-center gap-3 border-2 border-white py-3 px-4 rounded-xl my-3 ml-4`}
+                        className={cn(
+                          quicksand.className,
+                          "text-lg w-[90%] flex items-center gap-3 border-2 border-white py-3 pl-2 rounded-xl my-3 ml-4",
+                          pathname === `/${elem.link}-sem`
+                            ? "bg-white text-[#BE2E58]"
+                            : "bg-transparent text-white"
+                        )}
                       >
-                        <p>{elem.title} Sem</p>
+                        {elem.title} Sem
                       </Link>
                     </SheetClose>
                   ))}
@@ -74,10 +124,24 @@ function Hamburger({ className }: { className: string }) {
             <SheetClose asChild>
               <Link
                 href="/about"
-                className={`${quicksand.className} text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl`}
+                className={cn(
+                  quicksand.className,
+                  "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                  pathname === "/about"
+                    ? "bg-white text-[#BE2E58]"
+                    : "bg-transparent text-white"
+                )}
               >
-                <FontAwesomeIcon icon={faCircleInfo} className="w-6 pr-1" />
-                <p>About</p>
+                <FontAwesomeIcon
+                  icon={faCircleInfo}
+                  className={cn(
+                    "w-6 pr-1",
+                    pathname === `/about`
+                      ? "[&_path]:fill-[#BE2E58]"
+                      : "[&_path]:fill-[#fff]"
+                  )}
+                />
+                About
               </Link>
             </SheetClose>
           </div>
