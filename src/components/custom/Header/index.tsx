@@ -15,7 +15,7 @@ function Header() {
       <header className="sticky top-0 w-full z-50">
         <nav className="h-[10vh] flex justify-between items-center p-2 backdrop-blur-sm border-b border-[#ffffff49] rounded-b-md px-10">
           <div className="flex justify-start items-center gap-8">
-            <Hamburger className="block md:hidden" />
+            <Hamburger className="block sm:hidden" />
             <Link
               href="https://github.com/soorya-u/Elite-AIML"
               className={cn(
@@ -26,7 +26,7 @@ function Header() {
             >
               elite-AIML
             </Link>
-            <Navigator className="hidden md:flex" />
+            <Navigator className="hidden sm:flex" />
           </div>
           <div className="ml-8">
             <Button size="sm" className={cn(poppins.className, "text-md")}>
