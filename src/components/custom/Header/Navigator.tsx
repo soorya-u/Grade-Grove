@@ -47,7 +47,7 @@ function Navigator({ className }: { className: string }) {
               Result
             </NavigationMenuTrigger>
             <NavigationMenuContent className="backdrop-blur-none">
-              <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent divide-y-2 divide-white backdrop-blur">
+              <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent divide-y-2 divide-white ">
                 {[
                   { link: "first", title: "First" },
                   { link: "second", title: "Second" },
