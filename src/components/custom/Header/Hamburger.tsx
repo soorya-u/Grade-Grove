@@ -33,8 +33,6 @@ const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 function Hamburger({ className }: { className: string }) {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <>
       <Sheet>

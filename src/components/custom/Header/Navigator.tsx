@@ -18,8 +18,7 @@ const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
 function Navigator({ className }: { className: string }) {
   const pathname = usePathname();
-
-  console.log(pathname);
+  
   return (
     <>
       <NavigationMenu className={`w-1/2 ${className}`}>
