@@ -13,7 +13,7 @@ export default function VerticalTimeCard() {
           <Timestamp
             name="Migration to T3 Stack"
             href="https://github.com/soorya-u/Elite-AIML/commits/mean-stack"
-            date={new Date("12/23/2023")}
+            date={new Date("01/19/2024")}
           />
           <div className="grid grid-cols-1 gap-5 w-full">
             <ProfileCard
