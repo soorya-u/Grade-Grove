@@ -30,10 +30,8 @@ function ProfileCard({
         <CardContent className="pt-4">
           <div className="flex items-center space-x-4">
             <Avatar className="aspect-square border-2 border-[#ccc] scale-100 hover:scale-[1.2] transition-transform duration-150 ease-linear cursor-pointer">
-              <Link href={githubLink}>
-                <AvatarImage src={imgPath} />
-                <AvatarFallback>{name}</AvatarFallback>
-              </Link>
+              <AvatarImage src={imgPath} />
+              <AvatarFallback>{name}</AvatarFallback>
             </Avatar>
             <Link
               href={githubLink}
