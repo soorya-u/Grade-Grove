@@ -1,8 +1,7 @@
 import { Student } from "@/services/student";
 
 const domain =
-  process.env.NEXT_PUBLIC_VERCEL_URL ||
-  (`https://elite-aiml.soorya-u.dev` as const);
+  process.env.NEXT_PUBLIC_URL || (`https://elite-aiml.soorya-u.dev` as const);
 
 export default async function sitemap() {
   const routes = ["", "/about"].map((route) => ({
@@ -24,7 +23,7 @@ export default async function sitemap() {
 
   const allUsn = await Student.getAllUsn();
 
-  const usnRoutes = semDynamicPath.map((sem) => {
+  const usnRoutes = semDynamicPath.flatMap((sem) => {
     return allUsn.map((usn) => ({
       url: `${domain}${sem}/${usn}`,
       lastModified: new Date().toISOString(),
