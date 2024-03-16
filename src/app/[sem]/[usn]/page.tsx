@@ -1,8 +1,26 @@
+import { Metadata } from "next/types";
+
 import { Student } from "@/services/student";
 
 import StudentHeading from "@/components/pages/student/StudentHeading";
 import StudentProfile from "@/components/pages/student/StudentProfile";
 import StudentTable from "@/components/pages/student/StudentTable";
+
+import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { sem: string; usn: string };
+}): Promise<Metadata> {
+  const studentName = Student.getStudentName(params.usn);
+  const semester = `${getOrdinalSemester(params.sem)} Semester`;
+
+  return {
+    title: `${studentName} - ${semester} | Elite AIML`,
+    description: `Discover detailed information on ${studentName} of USN ${params.usn}, including all marks and grades attained during ${semester}. This page offers a comprehensive overview of academic performance, providing insight into individual achievements and facilitating efficient monitoring of student progress`,
+  };
+}
 
 async function Profile({ params }: { params: { sem: string; usn: string } }) {
   const [heading, details, scores] = await Student.getStudent(

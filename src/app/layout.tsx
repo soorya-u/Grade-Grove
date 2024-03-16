@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next/types";
 import { Ubuntu } from "next/font/google";
 
 import Header from "../components/custom/Header";
@@ -10,7 +10,14 @@ const ubuntu = Ubuntu({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Elite AIML",
-  description: "",
+  description:
+    "Take a panoramic dive into your academic progress by effortlessly reviewing, analyzing and tracking every mark and grade earned throughout each semester",
+  authors: [
+    {
+      name: "Soorya U",
+      url: "https://github.com/soorya-u/",
+    },
+  ],
 };
 
 export default function RootLayout({

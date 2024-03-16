@@ -1,3 +1,4 @@
+import { Metadata } from "next/types";
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/utils/shadcn";
@@ -10,6 +11,25 @@ import { Result as ResultService } from "@/services/result";
 import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { sem: string };
+}): Promise<Metadata> {
+  const semester = `${getOrdinalSemester(params.sem)} Semester`;
+
+  return {
+    title: `${semester} | Elite AIML`,
+    description: `Explore comprehensive ${semester} results for all students. Easily scores and GPAs enhancing transparency and communication within the educational institution.`,
+    authors: [
+      {
+        name: "Soorya U",
+        url: "https://github.com/soorya-u/",
+      },
+    ],
+  };
+}
 
 async function Result({ params }: { params: { sem: string } }) {
   const payload = await ResultService.getResult(params.sem);

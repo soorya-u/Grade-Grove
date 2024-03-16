@@ -3,8 +3,6 @@ import { Noto_Sans, Poppins } from "next/font/google";
 
 import { cn } from "@/utils/shadcn";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@/components/shadcn/button";
 import Link from "next/link";
 
@@ -43,7 +41,7 @@ export default function Home() {
         </h2>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
           <Button variant="outline">
-            <Link href="#">Check out your Result</Link>
+            <Link href="/">Check out your Result</Link>
           </Button>
           <Button variant="outline">
             <Link href="https://github.com/soorya-u/Belief">
