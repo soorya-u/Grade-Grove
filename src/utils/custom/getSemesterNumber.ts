@@ -6,6 +6,8 @@ export default function getSemesterNumber(semester: string) {
       return 2;
     case "third-sem":
       return 3;
+    case "fourth-sem":
+      return 4;
     default:
       return 0;
   }

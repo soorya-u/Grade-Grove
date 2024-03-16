@@ -6,5 +6,7 @@ export default function getOrdinalSemester(semester: string) {
       return "Second";
     case "third-sem":
       return "Third";
+    case "fourth-sem":
+      return "Fourth";
   }
 }
