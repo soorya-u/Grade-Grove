@@ -14,11 +14,13 @@ import {
 
 import { cn } from "@/utils/shadcn";
 
+import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
 function Navigator({ className }: { className: string }) {
   const pathname = usePathname();
-  
+
   return (
     <>
       <NavigationMenu className={`w-1/2 ${className}`}>
@@ -47,16 +49,14 @@ function Navigator({ className }: { className: string }) {
             </NavigationMenuTrigger>
             <NavigationMenuContent className="backdrop-blur-none">
               <ul className="grid place-items-center w-[150px] grid-cols-1 bg-transparent divide-y-2 divide-white ">
-                {[
-                  { link: "first", title: "First" },
-                  { link: "second", title: "Second" },
-                  { link: "third", title: "Third" },
-                ].map((elem, idx) => (
+                {["first", "second", "third", "fourth"].map((link, idx) => (
                   <li
                     key={idx}
                     className={`${quicksand.className} w-full text-center py-1`}
                   >
-                    <Link href={`/${elem.link}-sem`}>{elem.title} Sem</Link>
+                    <Link href={`/${link}-sem`}>
+                      {getOrdinalSemester(`${link}-sem`)} Sem
+                    </Link>
                   </li>
                 ))}
               </ul>

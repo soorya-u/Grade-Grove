@@ -28,6 +28,8 @@ import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/utils/shadcn";
 
+import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
 function Hamburger({ className }: { className: string }) {
@@ -96,23 +98,19 @@ function Hamburger({ className }: { className: string }) {
                   />
                 </AccordionTrigger>
                 <AccordionContent className="mt-5">
-                  {[
-                    { link: "first", title: "First" },
-                    { link: "second", title: "Second" },
-                    { link: "third", title: "Third" },
-                  ].map((elem, idx) => (
+                  {["first", "second", "third", "fourth"].map((link, idx) => (
                     <SheetClose key={idx} asChild>
                       <Link
-                        href={`/${elem.link}-sem`}
+                        href={`/${link}-sem`}
                         className={cn(
                           quicksand.className,
                           "text-lg w-[90%] flex items-center gap-3 border-2 border-white py-3 pl-2 rounded-xl my-3 ml-4",
-                          pathname === `/${elem.link}-sem`
+                          pathname === `/${link}-sem`
                             ? "bg-white text-[#BE2E58]"
                             : "bg-transparent text-white"
                         )}
                       >
-                        {elem.title} Sem
+                        {getOrdinalSemester(`${link}-sem`)} Sem
                       </Link>
                     </SheetClose>
                   ))}
