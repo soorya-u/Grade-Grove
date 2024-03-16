@@ -20,7 +20,6 @@ export class Result {
       orderBy: {
         totalMarks: "desc",
       },
-      take: 10,
       select: {
         studentUsn: true,
         totalMarks: true,
