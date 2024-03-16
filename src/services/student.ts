@@ -156,4 +156,30 @@ export class Student {
 
     return payload;
   }
+
+  public static async getAllUsn() {
+    const allUsn = await prismaClient.student.findMany({
+      orderBy: {
+        usn: "asc",
+      },
+      select: {
+        usn: true,
+      },
+    });
+
+    return allUsn.map((elem) => elem.usn);
+  }
+
+  public static async getStudentName(usn: string) {
+    const student = await prismaClient.student.findUnique({
+      where: {
+        usn,
+      },
+      select: {
+        fullName: true,
+      },
+    });
+
+    return student?.fullName;
+  }
 }

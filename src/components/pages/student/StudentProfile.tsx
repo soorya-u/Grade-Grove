@@ -3,8 +3,11 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/shadcn/avatar";
+
 import { IStudentDetails } from "@/interface/student";
+
 import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+import getImagePath from "@/utils/custom/getImagePath";
 
 function StudentProfile({
   semester,
@@ -19,7 +22,7 @@ function StudentProfile({
     <section className="w-1/4 min-w-[250px] sm:min-w-[400px] min-h-[375px] bg-[#00000026] border border-white rounded-[0.45rem] shadow shadow-[#00000026] p-4">
       <div className="w-full h-full flex flex-col justify-center items-center gap-6">
         <Avatar className="h-[60%] w-[60%] aspect-square border-2 border-[#ccc]">
-          <AvatarImage src={`/rankers/${usn}.jpg`} />
+          <AvatarImage src={getImagePath(usn)} />
           <AvatarFallback>{usn}</AvatarFallback>
         </Avatar>
         <div className="grid grid-cols-2 gap-x-4">
