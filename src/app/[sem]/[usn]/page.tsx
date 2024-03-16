@@ -13,7 +13,7 @@ export async function generateMetadata({
 }: {
   params: { sem: string; usn: string };
 }): Promise<Metadata> {
-  const studentName = Student.getStudentName(params.usn);
+  const studentName = await Student.getStudentName(params.usn);
   const semester = `${getOrdinalSemester(params.sem)} Semester`;
 
   return {
