@@ -62,7 +62,7 @@ const sassStyling: Commit = {
       imgPath: "/devs/soorya.jpg",
       github: "https://github.com/soorya-u",
       description:
-        "Accomplished the design of a comprehensive UI and the Integration of backend API calls using the Angular Framework.",
+        "Implemented Sass for enhanced styling and responsiveness, leveraging its syntactically improved stylesheet features within the UI design process.",
     },
   ],
 };
