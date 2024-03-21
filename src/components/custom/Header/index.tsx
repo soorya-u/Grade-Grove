@@ -24,7 +24,7 @@ function Header() {
               )}
               target="_blank"
             >
-              elite-AIML
+              Grade Grove
             </Link>
             <Navigator className="hidden sm:flex" />
           </div>

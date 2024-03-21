@@ -29,7 +29,7 @@ function About() {
       </h1>
 
       <div className="text-center text-xl px-18 text-[#ccccd2] w-3/4">
-        <span className={audiowide.className}>elite-AIML</span> serves as a
+        <span className={audiowide.className}>Grade Grove</span> serves as a
         comprehensive platform dedicated to presenting and celebrating the
         outstanding academic achievements of students of the 2021-2025 batch,
         showcasing the top marks attained during this period.
