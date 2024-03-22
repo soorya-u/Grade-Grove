@@ -1,4 +1,4 @@
-# Elite-AIML
+# Grade-Grove
 
 Our Website is Dedicated for Providing a Comprehensive List of AIML students who have Achieved the Highest Scores and Good Rankings in the Semester Examinations.
 
@@ -10,4 +10,3 @@ Achievers, their Achievements, and often find Resources or Tips for Aspiring Ind
 
 Toppers List websites serve as a source of inspiration and information for those striving for excellence.
 
-API Used: [Alpha Tech - Top 10 List](https://alpha-tech-pvt.github.io/TopTenList-API/)
