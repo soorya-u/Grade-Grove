@@ -5,6 +5,7 @@ import {
 } from "@/interface/student";
 import prismaClient from "@/prisma";
 import getSemesterNumber from "@/utils/custom/getSemesterNumber";
+import { truncate } from "fs/promises";
 
 export class Student {
   public static async getStudent(
@@ -88,22 +89,30 @@ export class Student {
           select: {
             totalMarks: true,
             sgpa: true,
+            semesterNumber: true,
           },
         },
       },
     });
 
     if (!result) return new Error("Student Not Found");
+
+    const actResult = result.result.filter((r) =>
+      r.semesterNumber.includes(`${semester}`)
+    )[0];
+
     const payload = {
       name: result.fullName,
-      totalMarks: result.result[0].totalMarks,
-      sgpa: result.result[0].sgpa,
+      totalMarks: actResult.totalMarks,
+      sgpa: actResult.sgpa,
       cycle:
-        (semester === 1 || semester === 2) && semester === 1
-          ? result.cycle
-          : result.cycle === "Physics"
-          ? "Chemistry"
-          : "Physics",
+        semester === 1 || semester === 2
+          ? semester === 1
+            ? result.cycle
+            : result.cycle === "Physics"
+            ? "Chemistry"
+            : "Physics"
+          : null,
     };
 
     return payload;
