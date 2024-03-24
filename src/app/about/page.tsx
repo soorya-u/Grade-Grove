@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       url: "https://github.com/soorya-u/",
     },
   ],
-  metadataBase: new URL('https://elite-aiml.soorya-u.dev'),
+  metadataBase: new URL("https://grade-grove.soorya-u.dev"),
 };
 
 function About() {
