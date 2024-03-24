@@ -17,7 +17,7 @@ function Header() {
           <div className="flex justify-start items-center gap-8">
             <Hamburger className="block sm:hidden" />
             <Link
-              href="https://github.com/soorya-u/Elite-AIML"
+              href="https://github.com/soorya-u/Grade-Grove"
               className={cn(
                 audiowide.className,
                 "text-2xl text-nowrap hidden xs:block"

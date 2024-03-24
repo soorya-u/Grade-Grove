@@ -17,8 +17,9 @@ export async function generateMetadata({
   const semester = `${getOrdinalSemester(params.sem)} Semester`;
 
   return {
-    title: `${studentName} - ${semester} | Elite AIML`,
+    title: `${studentName} - ${semester} | Grade Grove`,
     description: `Discover detailed information on ${studentName} of USN ${params.usn}, including all marks and grades attained during ${semester}. This page offers a comprehensive overview of academic performance, providing insight into individual achievements and facilitating efficient monitoring of student progress`,
+    metadataBase: new URL("https://elite-aiml.soorya-u.dev"),
   };
 }
 

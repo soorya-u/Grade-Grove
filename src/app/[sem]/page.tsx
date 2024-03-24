@@ -20,7 +20,7 @@ export async function generateMetadata({
   const semester = `${getOrdinalSemester(params.sem)} Semester`;
 
   return {
-    title: `${semester} | Elite AIML`,
+    title: `${semester} | Grade Grove`,
     description: `Explore comprehensive ${semester} results for all students. Easily scores and GPAs enhancing transparency and communication within the educational institution.`,
     authors: [
       {
@@ -28,6 +28,7 @@ export async function generateMetadata({
         url: "https://github.com/soorya-u/",
       },
     ],
+    metadataBase: new URL('https://elite-aiml.soorya-u.dev'),
   };
 }
 
