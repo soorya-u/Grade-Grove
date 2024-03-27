@@ -1,7 +1,7 @@
 import { Student } from "@/services/student";
 
 const domain =
-  process.env.NEXT_PUBLIC_URL || (`https://elite-aiml.soorya-u.dev` as const);
+  process.env.NEXT_PUBLIC_URL || (`https://grade-grove.soorya-u.dev` as const);
 
 export default async function sitemap() {
   const routes = ["", "/about"].map((route) => ({
