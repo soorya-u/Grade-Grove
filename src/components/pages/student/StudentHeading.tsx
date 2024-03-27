@@ -4,7 +4,7 @@ import getSuperScript from "@/utils/custom/getSuperScript";
 
 import { cn } from "@/utils/shadcn";
 
-import { IStudentHeading } from "@/interface/student";
+import { IStudentHeading } from "@/types/student";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

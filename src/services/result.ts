@@ -1,4 +1,4 @@
-import { IResultPayload } from "@/interface/result";
+import { IResultPayload } from "@/types/result";
 import prismaClient from "@/prisma";
 import getSemesterNumber from "@/utils/custom/getSemesterNumber";
 

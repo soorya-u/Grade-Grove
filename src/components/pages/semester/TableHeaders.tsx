@@ -20,7 +20,7 @@ import {
   PopoverTrigger,
 } from "@/components/shadcn/popover";
 
-import { IResultPayload } from "@/interface/result";
+import { IResultPayload } from "@/types/result";
 
 import { cn } from "@/utils/shadcn";
 

@@ -4,7 +4,7 @@ import {
   AvatarImage,
 } from "@/components/shadcn/avatar";
 
-import { IStudentDetails } from "@/interface/student";
+import { IStudentDetails } from "@/types/student";
 
 import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
 import getImagePath from "@/utils/custom/getImagePath";

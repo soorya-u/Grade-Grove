@@ -2,7 +2,7 @@ import {
   IStudentHeading,
   IStudentDetails,
   IStudentScores,
-} from "@/interface/student";
+} from "@/types/student";
 import prismaClient from "@/prisma";
 import getSemesterNumber from "@/utils/custom/getSemesterNumber";
 import { truncate } from "fs/promises";

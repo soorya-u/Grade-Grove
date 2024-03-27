@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { IResultPayload } from "@/interface/result";
+import { IResultPayload } from "@/types/result";
 
 import { sortedTableHeader, unsortedTableHeader } from "./TableHeaders";
 

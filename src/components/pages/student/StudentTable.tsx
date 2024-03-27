@@ -1,4 +1,4 @@
-import { IStudentScores } from "@/interface/student";
+import { IStudentScores } from "@/types/student";
 
 import { Poppins, Rubik } from "next/font/google";
 
