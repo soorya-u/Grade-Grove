@@ -3,6 +3,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Poppins, Chakra_Petch } from "next/font/google";
+import Link from "next/link";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 const chakraPetch = Chakra_Petch({ weight: "600", subsets: ["latin"] });
@@ -22,7 +23,7 @@ const Footer = () => {
               Our Projects
             </h2>
             <h4 className="self-center 2xs:self-start">
-              <a
+              <Link
                 className={cn(
                   chakraPetch.className,
                   "text-[1.7rem] no-underline text-[#1da1f2]"
@@ -30,7 +31,7 @@ const Footer = () => {
                 href="https://belief.soorya-u.dev/"
               >
                 Belief
-              </a>
+              </Link>
             </h4>
           </div>
 
@@ -44,17 +45,20 @@ const Footer = () => {
               Get in Touch
             </h2>
             <div className="flex justify-center items-center gap-6">
-              <a href="https://github.com/soorya-u/" target="_blank">
+              <Link href="https://github.com/soorya-u/" target="_blank">
                 <FontAwesomeIcon icon={faGithub} className="w-8 h-8" />
-              </a>
+              </Link>
 
-              <a href="mailto:sooryau7@gmail.com" target="_blank">
+              <Link href="mailto:sooryau7@gmail.com" target="_blank">
                 <FontAwesomeIcon icon={faEnvelope} className="w-8 h-8" />
-              </a>
+              </Link>
 
-              <a href="https://www.linkedin.com/in/soorya-u/" target="_blank">
+              <Link
+                href="https://www.linkedin.com/in/soorya-u/"
+                target="_blank"
+              >
                 <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8" />
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -12,7 +12,7 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "About | Grade Grove",
   description:
-    "elite-AIML serves as a comprehensive platform dedicated to presenting and celebrating the outstanding academic achievements of students of the 2021-2025 batch, showcasing the top marks attained during this period.",
+    "Grade Grove serves as a comprehensive platform dedicated to presenting and celebrating the outstanding academic achievements of students of the 2021-2025 batch, showcasing the top marks attained during this period.",
   authors: [
     {
       name: "Soorya U",
