@@ -13,7 +13,7 @@ export default function NotFound() {
       <h2 className={cn("text-7xl text-center px-3", poppins.className)}>
         Error 404: Page Not Found
       </h2>
-      <p className={cn("text-3xl text-center px-3", natoSans.className)}>
+      <p className={cn("text-3xl text-center px-3 text-[#ccccd2]", natoSans.className)}>
         Could not find requested resource
       </p>
       <Button variant={"outline"}>
