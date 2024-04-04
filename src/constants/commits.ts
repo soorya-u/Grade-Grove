@@ -2,7 +2,7 @@ import {
   meanStackDescription,
   saanviT3StackDescription,
   sooryaT3StackDescription,
-} from "./Descriptions";
+} from "@/components/pages/about/Descriptions";
 
 type Devs = {
   name: string;

@@ -1,7 +1,7 @@
 import ProfileCard from "./ProfileCard";
 import Timestamp from "./Timestamp";
 
-import { commits } from "./Commits";
+import { commits } from "@/constants/commits";
 import { cn } from "@/utils/shadcn";
 
 export default function VerticalTimeCard() {
