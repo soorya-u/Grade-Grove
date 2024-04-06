@@ -1,21 +1,18 @@
 import { PrismaClient, Student } from "@prisma/client";
 import env from "@/schema/env";
 
-import students from "../data/v2/students.json";
-import semesters from "../data/v2/semesters.json";
-
-import subjects from "../data/v2/subjects.json";
-
-import fis_marks from "../data/v2/1st_sem.json";
-import ss_marks from "../data/v2/2nd_sem.json";
-import ts_marks from "../data/v2/3rd_sem.json";
-import fos_marks from "../data/v2/4th_sem.json";
-
-import results from "../data/v2/results.json";
-
 const dbClient = new PrismaClient();
 
 if (env.BUN_ENV === "production") process.exit(0);
+
+const { default: students } = await import("../data/v2/students.json");
+const { default: semesters } = await import("../data/v2/semesters.json");
+const { default: subjects } = await import("../data/v2/subjects.json");
+const { default: fis_marks } = await import("../data/v2/1st_sem.json");
+const { default: ss_marks } = await import("../data/v2/2nd_sem.json");
+const { default: ts_marks } = await import("../data/v2/3rd_sem.json");
+const { default: fos_marks } = await import("../data/v2/4th_sem.json");
+const { default: results } = await import("../data/v2/results.json");
 
 async function deleteAll() {
   await dbClient.marks.deleteMany({});
@@ -27,7 +24,8 @@ async function deleteAll() {
 
 async function insertStudent() {
   await dbClient.student.createMany({
-    data: students as unknown as Student,
+    // @ts-ignore
+    data: students,
   });
 }
 
@@ -80,17 +78,11 @@ async function insertResult() {
 }
 
 try {
-  // @ts-ignore - Top level await
   await deleteAll();
-  // @ts-ignore - Top level await
   await insertStudent();
-  // @ts-ignore - Top level await
   await insertSemester();
-  // @ts-ignore - Top level await
   await insertSubject();
-  // @ts-ignore - Top level await
   await insertMarks();
-  // @ts-ignore - Top level await
   await insertResult();
 } catch (err) {
   console.log("Error: ", err);
