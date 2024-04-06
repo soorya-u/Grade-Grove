@@ -1,18 +1,15 @@
-import { PrismaClient, Student } from "@prisma/client";
-import env from "@/schema/env";
+const { PrismaClient } = require("@prisma/client");
 
 const dbClient = new PrismaClient();
 
-if (env.BUN_ENV === "production") process.exit(0);
-
-const { default: students } = await import("../data/v2/students.json");
-const { default: semesters } = await import("../data/v2/semesters.json");
-const { default: subjects } = await import("../data/v2/subjects.json");
-const { default: fis_marks } = await import("../data/v2/1st_sem.json");
-const { default: ss_marks } = await import("../data/v2/2nd_sem.json");
-const { default: ts_marks } = await import("../data/v2/3rd_sem.json");
-const { default: fos_marks } = await import("../data/v2/4th_sem.json");
-const { default: results } = await import("../data/v2/results.json");
+const students = require("../data/v2/students.json");
+const semesters = require("../data/v2/semesters.json");
+const subjects = require("../data/v2/subjects.json");
+const fis_marks = require("../data/v2/1st_sem.json");
+const ss_marks = require("../data/v2/2nd_sem.json");
+const ts_marks = require("../data/v2/3rd_sem.json");
+const fos_marks = require("../data/v2/4th_sem.json");
+const results = require("../data/v2/results.json");
 
 async function deleteAll() {
   await dbClient.marks.deleteMany({});
@@ -24,7 +21,6 @@ async function deleteAll() {
 
 async function insertStudent() {
   await dbClient.student.createMany({
-    // @ts-ignore
     data: students,
   });
 }
@@ -77,15 +73,16 @@ async function insertResult() {
   });
 }
 
-try {
+async function main() {
   await deleteAll();
   await insertStudent();
   await insertSemester();
   await insertSubject();
   await insertMarks();
   await insertResult();
-} catch (err) {
-  console.log("Error: ", err);
-} finally {
-  dbClient.$disconnect();
 }
+
+main()
+  .then(() => console.log("Transaction Successfull"))
+  .catch(() => console.log("Error: ", err))
+  .finally(() => dbClient.$disconnect());
