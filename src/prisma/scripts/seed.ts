@@ -1,4 +1,5 @@
 import { PrismaClient, Student } from "@prisma/client";
+import env from "@/schema/env";
 
 import students from "../data/v2/students.json";
 import semesters from "../data/v2/semesters.json";
@@ -13,6 +14,8 @@ import fos_marks from "../data/v2/4th_sem.json";
 import results from "../data/v2/results.json";
 
 const dbClient = new PrismaClient();
+
+if (env.BUN_ENV === "production") process.exit(0);
 
 async function deleteAll() {
   await dbClient.marks.deleteMany({});
