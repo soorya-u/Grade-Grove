@@ -1,5 +1,7 @@
 import { Metadata } from "next/types";
 
+import { defaultMetadata } from "@/constants/metadata";
+
 import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
 
 type SemesterLayoutProps = {
@@ -24,13 +26,7 @@ export async function generateMetadata({
   return {
     title: `${semester} | Grade Grove`,
     description: `Explore comprehensive ${semester} results for all students. Easily scores and GPAs enhancing transparency and communication within the educational institution.`,
-    authors: [
-      {
-        name: "Soorya U",
-        url: "https://github.com/soorya-u/",
-      },
-    ],
-    metadataBase: new URL("https://grade-grove.soorya-u.dev"),
+    ...defaultMetadata,
   };
 }
 

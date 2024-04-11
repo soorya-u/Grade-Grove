@@ -1,7 +1,9 @@
 import type { Metadata } from "next/types";
 import { Ubuntu } from "next/font/google";
 
-import Header from "../components/custom/Header";
+import { defaultMetadata } from "@/constants/metadata";
+
+import Header from "@/components/custom/Header";
 import Footer from "@/components/custom/Footer";
 
 import "./globals.css";
@@ -12,13 +14,7 @@ export const metadata: Metadata = {
   title: "Grade Grove",
   description:
     "Take a panoramic dive into your academic progress by effortlessly reviewing, analyzing and tracking every mark and grade earned throughout each semester",
-  authors: [
-    {
-      name: "Soorya U",
-      url: "https://github.com/soorya-u/",
-    },
-  ],
-  metadataBase: new URL("https://grade-grove.soorya-u.dev"),
+  ...defaultMetadata,
 };
 
 export default function RootLayout({

@@ -1,6 +1,7 @@
 import { Metadata } from "next/types";
 
 import { Student } from "@/services/student";
+import { defaultMetadata } from "@/constants/metadata";
 
 import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
 
@@ -12,12 +13,7 @@ type StudentPageProps = {
 export async function generateStaticParams() {
   const allUsn = await Student.getAllUsn();
 
-  const semDynamicPath = [
-    "first-sem",
-    "second-sem",
-    "third-sem",
-    "fourth-sem",
-  ];
+  const semDynamicPath = ["first-sem", "second-sem", "third-sem", "fourth-sem"];
 
   return semDynamicPath.flatMap((sem) => {
     return allUsn.map((usn) => ({
@@ -36,7 +32,7 @@ export async function generateMetadata({
   return {
     title: `${studentName} - ${semester} | Grade Grove`,
     description: `Discover detailed information on ${studentName} of USN ${params.usn}, including all marks and grades attained during ${semester}. This page offers a comprehensive overview of academic performance, providing insight into individual achievements and facilitating efficient monitoring of student progress`,
-    metadataBase: new URL("https://grade-grove.soorya-u.dev"),
+    ...defaultMetadata,
   };
 }
 
