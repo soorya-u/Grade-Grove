@@ -13,5 +13,5 @@ export const metadata: Metadata = {
   ...defaultMetadata,
 };
 export default function AboutLayout(props: AboutLayoutProps) {
-  return <>{props.children}</>;
+  return props.children as React.ReactElement;
 }

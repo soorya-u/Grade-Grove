@@ -5,7 +5,7 @@ import { defaultMetadata } from "@/constants/metadata";
 
 import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
 
-type StudentPageProps = {
+type StudentPageLayoutProps = {
   children: React.ReactNode;
   params: { sem: string; usn: string };
 };
@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: StudentPageProps): Promise<Metadata> {
+}: StudentPageLayoutProps): Promise<Metadata> {
   const studentName = await Student.getStudentName(params.usn);
   const semester = `${getOrdinalSemester(params.sem)} Semester`;
 
@@ -36,6 +36,6 @@ export async function generateMetadata({
   };
 }
 
-export default function StudentPage(props: StudentPageProps) {
-  return <>{props.children}</>;
+export default function StudentPageLayout(props: StudentPageLayoutProps) {
+  return props.children as React.ReactElement;
 }

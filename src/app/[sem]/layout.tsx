@@ -31,5 +31,5 @@ export async function generateMetadata({
 }
 
 export default function SemesterLayout(props: SemesterLayoutProps) {
-  return <>{props.children}</>;
+  return props.children as React.ReactElement;
 }
