@@ -9,9 +9,8 @@ export default function VerticalTimeCard() {
     <div className="w-full">
       <div className="mx-auto max-w-4xl w-full space-y-5">
         {commits.map((commit, idx) => (
-          <div className="space-y-4 w-full px-4">
+          <div key={idx} className="space-y-4 w-full px-4">
             <Timestamp
-              key={idx}
               name={commit.name}
               href={commit.branchLink}
               date={commit.date}
