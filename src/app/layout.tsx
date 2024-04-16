@@ -5,6 +5,7 @@ import { defaultMetadata } from "@/constants/metadata";
 
 import Header from "@/components/custom/Header";
 import Footer from "@/components/custom/Footer";
+import Providers from "@/providers";
 
 import "./globals.css";
 
@@ -25,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ubuntu.className}>
-        <Header />
-        <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-[''] min-h-[82vh]">
-          {children}
-        </main>
+        <Providers>
+          <Header />
+          <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-[''] min-h-[82vh]">
+            {children}
+          </main>
+        </Providers>
         <Footer />
       </body>
     </html>
