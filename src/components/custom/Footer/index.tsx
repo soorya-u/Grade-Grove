@@ -16,6 +16,7 @@ export default function Footer() {
           <Link
             href="https://twitter.com/sooryaa_u"
             className="underline underline-offset-2"
+            target="_blank"
           >
             soorya-u
           </Link>
@@ -23,6 +24,7 @@ export default function Footer() {
           <Link
             href="https://github.com/soorya-u/Grade-Grove"
             className="underline underline-offset-2"
+            target="_blank"
           >
             GitHub
           </Link>
@@ -33,7 +35,7 @@ export default function Footer() {
         <p className={cn(poppins.className, "text-gray-200 text-center")}>
           Check these Projects Out:
         </p>
-        <Link href="https://belief.soorya-u.dev">
+        <Link href="https://belief.soorya-u.dev" target="_blank">
           <Image
             src="https://belief.soorya-u.dev/logo.png"
             width={28}
