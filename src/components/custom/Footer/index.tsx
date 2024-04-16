@@ -9,7 +9,7 @@ const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-between items-center min-h-16 w-[85vw] m-auto gap-y-4 border-t-[2px] border-t-[#ffffff49] md-lg:flex-row py-3">
-      <div className="flex justify-center gap-x-2 items-center flex-wrap">
+      <div className="flex justify-center gap-x-2 gap-y-1 items-center flex-wrap">
         <Image src="/logo.png" width={28} height={28} alt="Elite-AIML-Logo" />
         <p className={cn(poppins.className, "text-gray-200 text-center")}>
           Built by{" "}
@@ -31,7 +31,7 @@ export default function Footer() {
           .
         </p>
       </div>
-      <div className="flex justify-center items-center gap-x-2 flex-wrap">
+      <div className="flex justify-center items-center gap-x-2 gap-y-1 flex-wrap">
         <p className={cn(poppins.className, "text-gray-200 text-center")}>
           Check these Projects Out:
         </p>
