@@ -5,6 +5,8 @@ import { Quicksand } from "next/font/google";
 import { Audiowide } from "next/font/google";
 import { usePathname } from "next/navigation";
 
+import { Menu, Info, LineChart } from "lucide-react";
+
 import {
   Sheet,
   SheetClose,
@@ -18,13 +20,6 @@ import {
   AccordionTrigger,
 } from "@/components/primitives/accordion";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faHome,
-  faCircleInfo,
-  faChartColumn,
-} from "@fortawesome/free-solid-svg-icons";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/utils/cn";
@@ -40,7 +35,7 @@ function Hamburger({ className }: { className: string }) {
   return (
     <Sheet>
       <SheetTrigger className={className}>
-        <FontAwesomeIcon icon={faBars} className="text-3xl" />
+        <Menu className="w-8 h-8" />
       </SheetTrigger>
       <SheetContent side="left" className={`bg-[#00000040] backdrop-blur-sm`}>
         <div className="flex flex-col justify-center gap-6 mt-10">
@@ -67,14 +62,9 @@ function Hamburger({ className }: { className: string }) {
                     : "bg-transparent text-white"
                 )}
               >
-                <FontAwesomeIcon
-                  icon={faChartColumn}
-                  className={cn(
-                    "w-6 pr-1",
-                    pathname.includes("sem")
-                      ? "[&_path]:fill-[#BE2E58]"
-                      : "[&_path]:fill-[#fff]"
-                  )}
+                <LineChart
+                  className={cn("h-6 w-6 pr-1")}
+                  color={pathname.includes("sem") ? "#BE2E58" : "#fff"}
                 />
                 Results
                 <ChevronDown
@@ -117,14 +107,9 @@ function Hamburger({ className }: { className: string }) {
                   : "bg-transparent text-white"
               )}
             >
-              <FontAwesomeIcon
-                icon={faCircleInfo}
-                className={cn(
-                  "w-6 pr-1",
-                  pathname === `/about`
-                    ? "[&_path]:fill-[#BE2E58]"
-                    : "[&_path]:fill-[#fff]"
-                )}
+              <Info
+                className={cn("h-6 w-6 pr-1")}
+                color={pathname === `/about` ? "#BE2E58" : "#fff"}
               />
               About
             </Link>
