@@ -12,7 +12,7 @@
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/utils/shadcn",
-    "ui": "@/components/shadcn"
+    "utils": "@/utils",
+    "ui": "@/components/primitives"
   }
 }

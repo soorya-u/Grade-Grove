@@ -10,13 +10,13 @@ import {
   SheetClose,
   SheetContent,
   SheetTrigger,
-} from "@/components/shadcn/sheet";
+} from "@/components/primitives/sheet";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/shadcn/accordion";
+} from "@/components/primitives/accordion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -27,9 +27,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { ChevronDown } from "lucide-react";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
-import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+import getOrdinalSemester from "@/utils/getOrdinalSemester";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });

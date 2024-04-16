@@ -1,8 +1,8 @@
 import { Poppins } from "next/font/google";
 
-import getSuperScript from "@/utils/custom/getSuperScript";
+import getSuperScript from "@/utils/getSuperScript";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
 import { IStudentHeading } from "@/types/student";
 

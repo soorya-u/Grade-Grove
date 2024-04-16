@@ -1,4 +1,4 @@
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

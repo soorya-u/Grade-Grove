@@ -4,9 +4,9 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from "@/components/shadcn/table";
+} from "@/components/primitives/table";
 
-import { Skeleton } from "@/components/shadcn/skeleton";
+import { Skeleton } from "@/components/primitives/skeleton";
 
 function Loading() {
   return (

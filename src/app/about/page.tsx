@@ -1,6 +1,6 @@
 import { Audiowide, Poppins } from "next/font/google";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
 import VerticalTimeCard from "@/components/pages/about/VerticalTimeCard";
 

@@ -3,7 +3,7 @@ import { Metadata } from "next/types";
 import { Student } from "@/services/student";
 import { defaultMetadata } from "@/constants/metadata";
 
-import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+import getOrdinalSemester from "@/utils/getOrdinalSemester";
 
 type StudentPageLayoutProps = {
   children: React.ReactNode;

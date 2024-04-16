@@ -3,8 +3,8 @@ import { Audiowide, Poppins } from "next/font/google";
 
 import Navigator from "./Navigator";
 import Hamburger from "./Hamburger";
-import { Button } from "@/components/shadcn/button";
-import { cn } from "@/utils/shadcn";
+import { Button } from "@/components/primitives/button";
+import { cn } from "@/utils/cn";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });

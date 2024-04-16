@@ -5,8 +5,8 @@ import { Result as ResultService } from "@/services/result";
 import SemTable from "@/components/pages/semester/SemTable";
 import { columns } from "@/components/pages/semester/columns";
 
-import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
-import { cn } from "@/utils/shadcn";
+import getOrdinalSemester from "@/utils/getOrdinalSemester";
+import { cn } from "@/utils/cn";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

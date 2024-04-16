@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });

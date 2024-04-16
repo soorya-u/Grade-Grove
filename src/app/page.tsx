@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Noto_Sans, Poppins } from "next/font/google";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
-import { Button } from "@/components/shadcn/button";
+import { Button } from "@/components/primitives/button";
 import Link from "next/link";
 
 const natoSans = Noto_Sans({ weight: "500", subsets: ["latin"] });

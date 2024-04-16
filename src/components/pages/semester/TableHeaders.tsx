@@ -6,23 +6,23 @@ import { Column } from "@tanstack/react-table";
 
 import { Check, ChevronsUpDown } from "lucide-react";
 
-import { Button } from "@/components/shadcn/button";
+import { Button } from "@/components/primitives/button";
 
 import {
   Command,
   CommandGroup,
   CommandItem,
-} from "@/components/shadcn/command";
+} from "@/components/primitives/command";
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/shadcn/popover";
+} from "@/components/primitives/popover";
 
 import { IResultPayload } from "@/types/result";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
 export const sortedTableHeader = ({
   column,

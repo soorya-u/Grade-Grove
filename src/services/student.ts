@@ -4,7 +4,7 @@ import {
   IStudentScores,
 } from "@/types/student";
 import prismaClient from "@/prisma";
-import getSemesterNumber from "@/utils/custom/getSemesterNumber";
+import getSemesterNumber from "@/utils/getSemesterNumber";
 import { truncate } from "fs/promises";
 
 export class Student {

@@ -22,11 +22,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/shadcn/table";
+} from "@/components/primitives/table";
 
-import { Input } from "@/components/shadcn/input";
+import { Input } from "@/components/primitives/input";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });

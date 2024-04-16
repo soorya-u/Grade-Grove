@@ -1,5 +1,5 @@
-import { Button } from "@/components/shadcn/button";
-import { cn } from "@/utils/shadcn";
+import { Button } from "@/components/primitives/button";
+import { cn } from "@/utils/cn";
 import { Noto_Sans, Poppins } from "next/font/google";
 import Link from "next/link";
 

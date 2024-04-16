@@ -1,11 +1,11 @@
-import { Skeleton } from "@/components/shadcn/skeleton";
+import { Skeleton } from "@/components/primitives/skeleton";
 import {
   Table,
   TableBody,
   TableCell,
   TableHeader,
   TableRow,
-} from "@/components/shadcn/table";
+} from "@/components/primitives/table";
 
 function Loading() {
   return (

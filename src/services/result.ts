@@ -1,6 +1,6 @@
 import { IResultPayload } from "@/types/result";
 import prismaClient from "@/prisma";
-import getSemesterNumber from "@/utils/custom/getSemesterNumber";
+import getSemesterNumber from "@/utils/getSemesterNumber";
 
 export class Result {
   public static async getResult(semester: string): Promise<IResultPayload[]> {

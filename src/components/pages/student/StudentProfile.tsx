@@ -2,12 +2,12 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/shadcn/avatar";
+} from "@/components/primitives/avatar";
 
 import { IStudentDetails } from "@/types/student";
 
-import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
-import getImagePath from "@/utils/custom/getImagePath";
+import getOrdinalSemester from "@/utils/getOrdinalSemester";
+import getImagePath from "@/utils/getImagePath";
 
 function StudentProfile({
   semester,

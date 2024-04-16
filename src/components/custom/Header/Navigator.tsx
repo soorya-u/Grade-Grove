@@ -10,11 +10,11 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/shadcn/navigation-menu";
+} from "@/components/primitives/navigation-menu";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
-import getOrdinalSemester from "@/utils/custom/getOrdinalSemester";
+import getOrdinalSemester from "@/utils/getOrdinalSemester";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 

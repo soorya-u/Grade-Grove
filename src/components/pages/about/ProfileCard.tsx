@@ -1,13 +1,13 @@
 import { Poppins, Rubik } from "next/font/google";
 
-import { CardContent, Card } from "@/components/shadcn/card";
+import { CardContent, Card } from "@/components/primitives/card";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/shadcn/avatar";
+} from "@/components/primitives/avatar";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 import Link from "next/link";
 
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });

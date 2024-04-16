@@ -9,9 +9,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/shadcn/table";
+} from "@/components/primitives/table";
 
-import { cn } from "@/utils/shadcn";
+import { cn } from "@/utils/cn";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });

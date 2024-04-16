@@ -6,8 +6,8 @@ import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 import { Quicksand } from "next/font/google";
 
-import { cn } from "@/utils/shadcn";
-import { Dialog, DialogContent } from "@/components/shadcn/dialog";
+import { cn } from "@/utils/cn";
+import { Dialog, DialogContent } from "@/components/primitives/dialog";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
