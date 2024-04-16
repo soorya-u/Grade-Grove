@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={ubuntu.className}>
         <Header />
-        <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-['']">
+        <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-[''] min-h-[82vh]">
           {children}
         </main>
         <Footer />

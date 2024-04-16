@@ -1,70 +1,47 @@
 import { cn } from "@/utils/cn";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Poppins, Chakra_Petch } from "next/font/google";
+import { Poppins } from "next/font/google";
+
 import Link from "next/link";
+import Image from "next/image";
 
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
-const chakraPetch = Chakra_Petch({ weight: "600", subsets: ["latin"] });
+const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <>
-      <footer className="flex justify-center items-center flex-col gap-4  mt-12 mb-6">
-        <section className="sticky flex flex-col justify-center w-[95vw] py-4 items-center border-t-[2px] border-t-[#ffffff49] gap-4 2xs:flex-row 2xs:justify-between 2xs:items-start 2xs:px-6">
-          <div className="flex justify-center items-center flex-col gap-3 2xs:gap-2">
-            <h2
-              className={cn(
-                poppins.className,
-                "text-[1.7rem] text-[#fff] font-extrabold"
-              )}
-            >
-              Our Projects
-            </h2>
-            <h4 className="self-center 2xs:self-start">
-              <Link
-                className={cn(
-                  chakraPetch.className,
-                  "text-[1.7rem] no-underline text-[#1da1f2]"
-                )}
-                href="https://belief.soorya-u.dev/"
-              >
-                Belief
-              </Link>
-            </h4>
-          </div>
-
-          <div className="flex justify-center items-center flex-col gap-2 2xs:gap-4">
-            <h2
-              className={cn(
-                poppins.className,
-                "text-[1.7rem] text-[#fff] font-extrabold"
-              )}
-            >
-              Get in Touch
-            </h2>
-            <div className="flex justify-center items-center gap-6">
-              <Link href="https://github.com/soorya-u/" target="_blank">
-                <FontAwesomeIcon icon={faGithub} className="w-8 h-8" />
-              </Link>
-
-              <Link href="mailto:sooryau7@gmail.com" target="_blank">
-                <FontAwesomeIcon icon={faEnvelope} className="w-8 h-8" />
-              </Link>
-
-              <Link
-                href="https://www.linkedin.com/in/soorya-u/"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      </footer>
-    </>
+    <footer className="flex flex-col justify-between items-center min-h-16 w-[85vw] m-auto gap-y-4 border-t-[2px] border-t-[#ffffff49] md-lg:flex-row py-3">
+      <div className="flex justify-center gap-x-2 items-center flex-wrap">
+        <Image src="/logo.png" width={28} height={28} alt="Elite-AIML-Logo" />
+        <p className={cn(poppins.className, "text-gray-200 text-center")}>
+          Built by{" "}
+          <Link
+            href="https://twitter.com/sooryaa_u"
+            className="underline underline-offset-2"
+          >
+            soorya-u
+          </Link>
+          . The source code is available on{" "}
+          <Link
+            href="https://github.com/soorya-u/Grade-Grove"
+            className="underline underline-offset-2"
+          >
+            GitHub
+          </Link>
+          .
+        </p>
+      </div>
+      <div className="flex justify-center items-center gap-x-2 flex-wrap">
+        <p className={cn(poppins.className, "text-gray-200 text-center")}>
+          Check these Projects Out:
+        </p>
+        <Link href="https://belief.soorya-u.dev">
+          <Image
+            src="https://belief.soorya-u.dev/logo.png"
+            width={28}
+            height={28}
+            alt="Belief-Logo"
+          ></Image>
+        </Link>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

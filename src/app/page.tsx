@@ -12,10 +12,10 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <section className="flex flex-col justify-center items-center gap-6 max-w-full flex-wrap mt-16">
+    <section className="flex flex-col justify-center items-center gap-6 max-w-full flex-wrap">
       <Image
         priority
-        src="/elite_aiml_white.png"
+        src="/logo.png"
         alt="logo"
         height={7 * 16}
         width={7 * 16}
