@@ -87,7 +87,7 @@ const NavigationMenuViewport = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      "backdrop-blur absolute left-20 top-full flex justify-center bg-transparent"
+      "backdrop-blur absolute -left-8 top-full flex justify-center bg-transparent"
     )}
   >
     <NavigationMenuPrimitive.Viewport
