@@ -5,7 +5,7 @@ import GithubProvider from "next-auth/providers/github";
 
 import env from "@/schema/env";
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
