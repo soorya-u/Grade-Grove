@@ -12,6 +12,7 @@ import {
 
 import LoginForm from "./LoginForm";
 import { cn } from "@/utils/cn";
+import OAuth from "@/components/custom/OAuth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function LoginCard() {
       </CardHeader>
       <CardContent>
         <LoginForm />
+        <OAuth />
       </CardContent>
       <CardFooter>
         <div

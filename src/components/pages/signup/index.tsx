@@ -7,10 +7,12 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/primitives/card";
 import { cn } from "@/utils/cn";
 
 import SignUpForm from "./SignUpForm";
+import OAuth from "@/components/custom/OAuth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -27,13 +29,16 @@ export default function SignUpCard() {
       </CardHeader>
       <CardContent>
         <SignUpForm />
+        <OAuth />
+      </CardContent>
+      <CardFooter className="flex justify-center items-center">
         <div className={cn(poppins.className, "mt-4 text-center text-sm")}>
           Already have an account?{" "}
           <Link href="/auth/login" className="underline">
             Login
           </Link>
         </div>
-      </CardContent>
+      </CardFooter>
     </Card>
   );
 }
