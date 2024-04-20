@@ -33,7 +33,8 @@ export default function SignUpForm() {
             First name
           </Label>
           <Input
-            disabled={isSubmitting}
+            disabled={true || isSubmitting}
+            aria-disabled={isSubmitting}
             {...register("firstName")}
             className={cn(
               poppins.className,
@@ -48,7 +49,8 @@ export default function SignUpForm() {
             Last name
           </Label>
           <Input
-            disabled={isSubmitting}
+            disabled={true || isSubmitting}
+            aria-disabled={isSubmitting}
             {...register("lastName")}
             className={cn(
               poppins.className,
@@ -74,7 +76,8 @@ export default function SignUpForm() {
           Username
         </Label>
         <Input
-          disabled={isSubmitting}
+          disabled={true || isSubmitting}
+          aria-disabled={isSubmitting}
           {...register("username")}
           className={cn(
             poppins.className,
@@ -94,7 +97,8 @@ export default function SignUpForm() {
           Password
         </Label>
         <Input
-          disabled={isSubmitting}
+          disabled={true || isSubmitting}
+          aria-disabled={isSubmitting}
           {...register("password")}
           className={cn(
             poppins.className,

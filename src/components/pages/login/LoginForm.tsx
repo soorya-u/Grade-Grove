@@ -31,7 +31,7 @@ export default function LoginForm() {
           Username
         </Label>
         <Input
-          disabled={isSubmitting}
+          disabled={true || isSubmitting}
           aria-disabled={isSubmitting}
           {...register("username")}
           type="text"
@@ -52,7 +52,7 @@ export default function LoginForm() {
           Password
         </Label>
         <Input
-          disabled={isSubmitting}
+          disabled={true || isSubmitting}
           aria-disabled={isSubmitting}
           {...register("password")}
           type="password"
