@@ -36,7 +36,7 @@ export default function LoginCard() {
           Don&apos;t have an account?{" "}
           <Link
             href="/auth/signup"
-            className="underline underline-offset-2 outline-none"
+            className="underline underline-offset-2 outline-none text-nowrap"
           >
             Sign up
           </Link>

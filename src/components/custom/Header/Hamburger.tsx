@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Quicksand } from "next/font/google";
+import { Poppins, Quicksand } from "next/font/google";
 import { Audiowide } from "next/font/google";
 import { usePathname } from "next/navigation";
 
-import { Menu, Info, LineChart } from "lucide-react";
+import { Menu, Info, LineChart, UserPlus, UserCheck } from "lucide-react";
 
 import {
   Sheet,
@@ -27,7 +27,6 @@ import { cn } from "@/utils/cn";
 import getOrdinalSemester from "@/utils/getOrdinalSemester";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
-const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
 function Hamburger({ className }: { className: string }) {
   const pathname = usePathname();
@@ -37,20 +36,8 @@ function Hamburger({ className }: { className: string }) {
       <SheetTrigger className={className}>
         <Menu className="w-8 h-8" />
       </SheetTrigger>
-      <SheetContent side="left" className={`bg-[#00000040] backdrop-blur-sm`}>
-        <div className="flex flex-col justify-center gap-6 mt-10">
-          <SheetClose asChild>
-            <Link
-              href="/"
-              className={cn(
-                audiowide.className,
-                "text-2xl text-nowrap self-center mb-6"
-              )}
-            >
-              Grade Grove
-            </Link>
-          </SheetClose>
-
+      <SheetContent side="left" className="bg-[#00000040] backdrop-blur-sm">
+        <div className="flex flex-col justify-start gap-6 mt-10 min-h-screen">
           <Accordion type="multiple">
             <AccordionItem value="item-1">
               <AccordionTrigger
@@ -112,6 +99,42 @@ function Hamburger({ className }: { className: string }) {
                 color={pathname === `/about` ? "#BE2E58" : "#fff"}
               />
               About
+            </Link>
+          </SheetClose>
+          <SheetClose className="justify-self-end" asChild>
+            <Link
+              href="/auth/signup"
+              className={cn(
+                quicksand.className,
+                "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                pathname === "/auth/signup"
+                  ? "bg-white text-[#BE2E58]"
+                  : "bg-transparent text-white"
+              )}
+            >
+              <UserPlus
+                className={cn("h-6 w-6 pr-1")}
+                color={pathname === "/auth/signup" ? "#BE2E58" : "#fff"}
+              />
+              Sign Up
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link
+              href="/auth/login"
+              className={cn(
+                quicksand.className,
+                "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                pathname === "/auth/login"
+                  ? "bg-white text-[#BE2E58]"
+                  : "bg-transparent text-white"
+              )}
+            >
+              <UserCheck
+                className={cn("h-6 w-6 pr-1")}
+                color={pathname === "/auth/login" ? "#BE2E58" : "#fff"}
+              />
+              Login
             </Link>
           </SheetClose>
         </div>

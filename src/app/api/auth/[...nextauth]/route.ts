@@ -13,10 +13,6 @@ const authOptions: AuthOptions = {
     }),
   ],
   secret: env.JWT_SECRET,
-  pages: {
-    newUser: "/auth/signup",
-    signIn: "/auth/login",
-  },
 };
 
 const handler = NextAuth(authOptions);
