@@ -1,19 +1,6 @@
 import NextAuth from "next-auth/next";
-import { AuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import GithubProvider from "next-auth/providers/github";
 
-import env from "@/schema/env";
-
-const authOptions: AuthOptions = {
-  providers: [
-    GoogleProvider({
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-    }),
-  ],
-  secret: env.JWT_SECRET,
-};
+import { authOptions } from "@/lib/auth";
 
 const handler = NextAuth(authOptions);
 
