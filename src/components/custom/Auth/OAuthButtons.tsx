@@ -9,6 +9,8 @@ import { cn } from "@/utils/cn";
 import { Button } from "@/components/primitives/button";
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useToast } from "@/components/primitives/use-toast";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -19,6 +21,19 @@ async function handleClick(provider: string, redirectUrl: string | null) {
 
 export default function OAuthButtons() {
   const searchPrarms = useSearchParams();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    const err = searchPrarms.get("error");
+    err &&
+      err === "OAuthAccountNotLinked" &&
+      toast({
+        title: "Email Already Exists",
+        description:
+          "The Email your are using to Login is already in use. Try Using Different Provider.",
+        variant: "destructive",
+      });
+  }, [searchPrarms]);
 
   return (
     <div className="flex flex-col justify-center items-center gap-4 xs:flex-row">

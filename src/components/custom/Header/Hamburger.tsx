@@ -40,7 +40,7 @@ function Hamburger({ className }: { className: string }) {
         <Menu className="w-8 h-8" />
       </SheetTrigger>
       <SheetContent side="left" className="bg-[#00000040] backdrop-blur-sm">
-        <div className="flex flex-col justify-between gap-6 mt-10 min-h-[88vh]">
+        <div className="flex flex-col justify-between gap-6 mt-10 min-h-[80vh]">
           <div className="flex flex-col gap-6">
             <Accordion type="multiple">
               <AccordionItem value="item-1">
