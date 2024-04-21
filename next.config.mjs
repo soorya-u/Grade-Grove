@@ -8,6 +8,18 @@ const nextConfig = {
         port: "",
         pathname: "/logo.png",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "**/*",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+        pathname: "**/*",
+      },
     ],
   },
 };

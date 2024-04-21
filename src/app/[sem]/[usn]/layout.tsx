@@ -10,18 +10,18 @@ type StudentPageLayoutProps = {
   params: { sem: string; usn: string };
 };
 
-export async function generateStaticParams() {
-  const allUsn = await Student.getAllUsn();
+// export async function generateStaticParams() {
+//   const allUsn = await Student.getAllUsn();
 
-  const semDynamicPath = ["first-sem", "second-sem", "third-sem", "fourth-sem"];
+//   const semDynamicPath = ["first-sem", "second-sem", "third-sem", "fourth-sem"];
 
-  return semDynamicPath.flatMap((sem) => {
-    return allUsn.map((usn) => ({
-      sem: sem,
-      usn: usn,
-    }));
-  });
-}
+//   return semDynamicPath.flatMap((sem) => {
+//     return allUsn.map((usn) => ({
+//       sem: sem,
+//       usn: usn,
+//     }));
+//   });
+// }
 
 export async function generateMetadata({
   params,

@@ -23,7 +23,7 @@ function Navigator({ className }: { className: string }) {
 
   return (
     <NavigationMenu className={`w-1/2 ${className}`}>
-      <NavigationMenuList className="w-full gap-12 flex-shrink-0">
+      <NavigationMenuList className="w-full gap-8 flex-shrink-0">
         <NavigationMenuItem>
           <NavigationMenuTrigger
             className={cn(

@@ -39,10 +39,10 @@ export default function Home() {
         each semester.
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
-        <Button variant="outline">
+        <Button className="hover:bg-white hover:text-[#931D68] text-md" variant="outline">
           <Link href="/">Check out your Result</Link>
         </Button>
-        <Button variant="outline">
+        <Button className="hover:bg-white hover:text-[#931D68] text-md" variant="outline">
           <Link href="https://github.com/soorya-u/Grade-Grove">
             View Source Code
           </Link>
