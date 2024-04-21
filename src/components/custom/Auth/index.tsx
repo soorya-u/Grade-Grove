@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/utils/cn";
@@ -24,7 +26,9 @@ export default function OAuth() {
         >
           Continue with
         </p>
-        <OAuthButtons />
+        <Suspense>
+          <OAuthButtons />
+        </Suspense>
       </div>
     </>
   );

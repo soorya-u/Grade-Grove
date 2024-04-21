@@ -16,7 +16,7 @@ import OAuth from "@/components/custom/Auth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-export default function SignUpCard() {
+export default async function SignUpCard() {
   return (
     <Card className="mx-auto max-w-sm border-none shadow-none bg-transparent">
       <CardHeader>
