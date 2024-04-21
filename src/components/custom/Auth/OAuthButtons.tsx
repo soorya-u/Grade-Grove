@@ -15,10 +15,7 @@ export default function OAuthButtons() {
   return (
     <div className="flex flex-col justify-center items-center gap-4 xs:flex-row">
       <Button
-        onClick={() => {
-          console.log("Hello");
-          signIn("google", { callbackUrl: "/", redirect: true });
-        }}
+        onClick={() => signIn("google", { callbackUrl: "/", redirect: true })}
         variant="outline"
         className={cn(
           poppins.className,
@@ -32,6 +29,7 @@ export default function OAuthButtons() {
         Contiue with Google
       </Button>
       <Button
+        onClick={() => signIn("github", { callbackUrl: "/", redirect: true })}
         variant="outline"
         className={cn(
           poppins.className,

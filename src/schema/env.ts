@@ -6,8 +6,8 @@ const envSchema = z.object({
   BUN_ENV: z.union([z.literal("development"), z.literal("production")]),
   GOOGLE_ID: z.string(),
   GOOGLE_SECRET: z.string(),
-  // GITHUB_ID: z.string(),
-  // GITHUB_SECRET: z.string(),
+  GITHUB_ID: z.string(),
+  GITHUB_SECRET: z.string(),
   JWT_SECRET: z.string(),
 });
 
@@ -17,8 +17,8 @@ const env = envSchema.safeParse({
   BUN_ENV: process.env.BUN_ENV,
   GOOGLE_ID: process.env.GOOGLE_ID,
   GOOGLE_SECRET: process.env.GOOGLE_SECRET,
-  // GITHUB_ID: process.env.GITHUB_ID,
-  // GITHUB_SECRET: process.env.GITHUB_SECRET,
+  GITHUB_ID: process.env.GITHUB_ID,
+  GITHUB_SECRET: process.env.GITHUB_SECRET,
   JWT_SECRET: process.env.JWT_SECRET,
 });
 

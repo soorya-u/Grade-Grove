@@ -10,6 +10,10 @@ export const authOptions: AuthOptions = {
       clientId: env.GOOGLE_ID,
       clientSecret: env.GOOGLE_SECRET,
     }),
+    GithubProvider({
+      clientId: env.GITHUB_ID,
+      clientSecret: env.GITHUB_SECRET,
+    }),
   ],
   secret: env.JWT_SECRET,
 };
