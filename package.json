@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "grade-grove",
   "version": "0.1.0",
   "private": true,
   "prisma": {
@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.0.0",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@hookform/resolvers": "^3.3.4",

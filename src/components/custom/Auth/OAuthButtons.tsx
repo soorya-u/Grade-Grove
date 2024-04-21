@@ -8,14 +8,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cn } from "@/utils/cn";
 import { Button } from "@/components/primitives/button";
 import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
+async function handleClick(provider: string, redirectUrl: string | null) {
+  const route = "/" + redirectUrl?.split("/").slice(3).join("/");
+  signIn(provider, { redirect: true, callbackUrl: route ?? "/" });
+}
+
 export default function OAuthButtons() {
+  const searchPrarms = useSearchParams();
+
   return (
     <div className="flex flex-col justify-center items-center gap-4 xs:flex-row">
       <Button
-        onClick={() => signIn("google", { callbackUrl: "/", redirect: true })}
+        onClick={async () =>
+          await handleClick("google", searchPrarms.get("callbackUrl"))
+        }
         variant="outline"
         className={cn(
           poppins.className,
@@ -29,7 +39,9 @@ export default function OAuthButtons() {
         Contiue with Google
       </Button>
       <Button
-        onClick={() => signIn("github", { callbackUrl: "/", redirect: true })}
+        onClick={async () =>
+          await handleClick("github", searchPrarms.get("callbackUrl"))
+        }
         variant="outline"
         className={cn(
           poppins.className,
