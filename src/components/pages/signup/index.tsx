@@ -12,7 +12,7 @@ import {
 import { cn } from "@/utils/cn";
 
 import SignUpForm from "./SignUpForm";
-import OAuth from "@/components/custom/OAuth";
+import OAuth from "@/components/custom/Auth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

@@ -4,7 +4,7 @@ import { Audiowide } from "next/font/google";
 import Navigator from "./Navigator";
 import Hamburger from "./Hamburger";
 import { cn } from "@/utils/cn";
-import AuthButton from "./AuthButton";
+import AuthButton from "../Auth/AuthButton";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ function Header() {
           </Link>
           <Navigator className="hidden sm:flex" />
         </div>
-        <div className="ml-8 hidden sm:flex">
+        <div className="ml-8 hidden xss:flex">
           <AuthButton />
         </div>
       </nav>

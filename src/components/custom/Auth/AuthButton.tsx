@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 
@@ -8,6 +7,7 @@ import { useSession, signOut } from "next-auth/react";
 
 import { Button } from "@/components/primitives/button";
 import { cn } from "@/utils/cn";
+import UserCard from "../UserCard";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -15,19 +15,7 @@ export default function AuthButton() {
   const { data: session } = useSession();
 
   return session && session.user ? (
-    <div>
-      {session.user.image && (
-        <Image src={session.user.image} alt="User" height={10} width={10} />
-      )}
-      <p className={cn(poppins.className, "text-base")}>{session.user.name}</p>
-      <Button
-        onClick={() => signOut()}
-        size="xs"
-        className={cn(poppins.className)}
-      >
-        Logout
-      </Button>
-    </div>
+    <UserCard imageLink={session.user.image} name={session.user.name} />
   ) : (
     <div className="flex gap-4 items-center justify-center">
       <Link href="/auth/signup">

@@ -10,12 +10,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/80",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: cn(
           poppins.className,
-          "border-[2px] border-white bg-transparent"
+          "border-[2px] border-primary bg-transparent hover:text-primary/70 hover:border-primary/70"
         ),
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
