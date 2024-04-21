@@ -113,7 +113,8 @@ export default function SignUpForm() {
         )}
       </div>
       <Button
-        disabled={isSubmitting}
+        disabled={true || isSubmitting}
+        aria-disabled={isSubmitting}
         type="submit"
         className={cn(poppins.className, "w-full")}
       >

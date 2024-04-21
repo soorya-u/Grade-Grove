@@ -67,7 +67,11 @@ export default function LoginForm() {
           </span>
         )}
       </div>
-      <Button className={cn(poppins.className, "w-full bg-primary text-base")}>
+      <Button
+        disabled={true || isSubmitting}
+        aria-disabled={isSubmitting}
+        className={cn(poppins.className, "w-full bg-primary text-base")}
+      >
         Sign in
       </Button>
     </form>
