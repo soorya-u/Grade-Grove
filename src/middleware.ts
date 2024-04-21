@@ -21,5 +21,5 @@ export default withAuth(
 
 export const config = {
   // TODO: Add /sem and /usn
-  matcher: ["/admin:path*", "/first-sem"],
+  matcher: ["/admin:path*"],
 };

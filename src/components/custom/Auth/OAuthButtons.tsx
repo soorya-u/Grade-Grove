@@ -13,8 +13,8 @@ import { useSearchParams } from "next/navigation";
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 async function handleClick(provider: string, redirectUrl: string | null) {
-  const route = "/" + redirectUrl?.split("/").slice(3).join("/");
-  signIn(provider, { redirect: true, callbackUrl: route ?? "/" });
+  const route = redirectUrl?.split("/").slice(3).join("/");
+  signIn(provider, { redirect: true, callbackUrl: "/" + (route ?? "/") });
 }
 
 export default function OAuthButtons() {
