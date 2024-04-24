@@ -15,7 +15,7 @@ const buttonVariants = cva(
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: cn(
           poppins.className,
-          "border-[2px] border-primary bg-transparent hover:text-primary/70 hover:border-primary/70"
+          "border-[2px] border-primary bg-transparent hover:text-primary/70 hover:border-primary/70",
         ),
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
@@ -34,7 +34,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -53,7 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

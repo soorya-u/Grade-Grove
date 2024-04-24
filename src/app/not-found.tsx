@@ -9,15 +9,25 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function NotFound() {
   return (
-    <section className="flex flex-col justify-center items-center gap-10 my-14 before:content-[''] after:content-['']">
-      <h2 className={cn("text-7xl text-center px-3", poppins.className)}>
+    <section className="my-14 flex flex-col items-center justify-center gap-10 before:content-[''] after:content-['']">
+      <h2 className={cn("px-3 text-center text-7xl", poppins.className)}>
         Error 404: Page Not Found
       </h2>
-      <p className={cn("text-3xl text-center px-3 text-[#ccccd2]", natoSans.className)}>
+      <p
+        className={cn(
+          "px-3 text-center text-3xl text-[#ccccd2]",
+          natoSans.className,
+        )}
+      >
         Could not find requested resource
       </p>
       <Button variant={"outline"}>
-        <Link className={cn("text-lg text-center", natoSans.className)} href="/">Return Home</Link>
+        <Link
+          className={cn("text-center text-lg", natoSans.className)}
+          href="/"
+        >
+          Return Home
+        </Link>
       </Button>
     </section>
   );

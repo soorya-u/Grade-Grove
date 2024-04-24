@@ -37,20 +37,20 @@ function Hamburger({ className }: { className: string }) {
   return (
     <Sheet>
       <SheetTrigger className={className}>
-        <Menu className="w-8 h-8" />
+        <Menu className="h-8 w-8" />
       </SheetTrigger>
       <SheetContent side="left" className="bg-[#00000040] backdrop-blur-sm">
-        <div className="flex flex-col justify-between gap-6 mt-10 min-h-[80vh]">
+        <div className="mt-10 flex min-h-[80vh] flex-col justify-between gap-6">
           <div className="flex flex-col gap-6">
             <Accordion type="multiple">
               <AccordionItem value="item-1">
                 <AccordionTrigger
                   className={cn(
                     quicksand.className,
-                    "text-lg w-full flex justify-start items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                    "flex w-full items-center justify-start gap-3 rounded-xl border-2 border-white px-2 py-3 text-lg",
                     pathname.includes("sem")
                       ? "bg-white text-[#BE2E58]"
-                      : "bg-transparent text-white"
+                      : "bg-transparent text-white",
                   )}
                 >
                   <LineChart
@@ -62,8 +62,8 @@ function Hamburger({ className }: { className: string }) {
                     className={cn(
                       "h-4 w-4 shrink-0 transition-transform duration-200",
                       pathname.includes("sem")
-                        ? "[&_path]:fill-[#BE2E58] h-8 w-8"
-                        : "[&_path]:fill-[#fff]"
+                        ? "h-8 w-8 [&_path]:fill-[#BE2E58]"
+                        : "[&_path]:fill-[#fff]",
                     )}
                   />
                 </AccordionTrigger>
@@ -74,10 +74,10 @@ function Hamburger({ className }: { className: string }) {
                         href={`/${link}-sem`}
                         className={cn(
                           quicksand.className,
-                          "text-lg w-[90%] flex items-center gap-3 border-2 border-white py-3 pl-2 rounded-xl my-3 ml-4",
+                          "my-3 ml-4 flex w-[90%] items-center gap-3 rounded-xl border-2 border-white py-3 pl-2 text-lg",
                           pathname === `/${link}-sem`
                             ? "bg-white text-[#BE2E58]"
-                            : "bg-transparent text-white"
+                            : "bg-transparent text-white",
                         )}
                       >
                         {getOrdinalSemester(`${link}-sem`)} Sem
@@ -92,10 +92,10 @@ function Hamburger({ className }: { className: string }) {
                 href="/about"
                 className={cn(
                   quicksand.className,
-                  "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                  "flex w-full items-center gap-3 rounded-xl border-2 border-white px-2 py-3 text-lg",
                   pathname === "/about"
                     ? "bg-white text-[#BE2E58]"
-                    : "bg-transparent text-white"
+                    : "bg-transparent text-white",
                 )}
               >
                 <Info
@@ -108,7 +108,7 @@ function Hamburger({ className }: { className: string }) {
           </div>
           {session && session.user ? (
             <UserCard
-              className="self-start ml-2"
+              className="ml-2 self-start"
               name={session.user.name}
               imageLink={session.user.image}
             />
@@ -119,10 +119,10 @@ function Hamburger({ className }: { className: string }) {
                   href="/auth/signup"
                   className={cn(
                     quicksand.className,
-                    "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                    "flex w-full items-center gap-3 rounded-xl border-2 border-white px-2 py-3 text-lg",
                     pathname === "/auth/signup"
                       ? "bg-white text-[#BE2E58]"
-                      : "bg-transparent text-white"
+                      : "bg-transparent text-white",
                   )}
                 >
                   <UserPlus
@@ -137,10 +137,10 @@ function Hamburger({ className }: { className: string }) {
                   href="/auth/login"
                   className={cn(
                     quicksand.className,
-                    "text-lg w-full flex items-center gap-3 border-2 border-white py-3 px-2 rounded-xl",
+                    "flex w-full items-center gap-3 rounded-xl border-2 border-white px-2 py-3 text-lg",
                     pathname === "/auth/login"
                       ? "bg-white text-[#BE2E58]"
-                      : "bg-transparent text-white"
+                      : "bg-transparent text-white",
                   )}
                 >
                   <UserCheck

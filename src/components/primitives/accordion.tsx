@@ -24,12 +24,11 @@ const AccordionTrigger = React.forwardRef<
       ref={ref}
       className={cn(
         "flex flex-1 items-center justify-between py-4 font-medium transition-all [&[data-state=open]>svg.lucide-chevron-down]:rotate-180 [&[data-state=open]>svg[data-prefix=fas]]:rotate-0",
-        className
+        className,
       )}
       {...props}
     >
       {children}
-      
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

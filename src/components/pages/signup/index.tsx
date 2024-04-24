@@ -18,7 +18,7 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default async function SignUpCard() {
   return (
-    <Card className="mx-auto max-w-sm border-none shadow-none bg-transparent">
+    <Card className="mx-auto max-w-sm border-none bg-transparent shadow-none">
       <CardHeader>
         <CardTitle className={cn(poppins.className, "text-2xl")}>
           Sign Up
@@ -31,7 +31,7 @@ export default async function SignUpCard() {
         <SignUpForm />
         <OAuth />
       </CardContent>
-      <CardFooter className="flex justify-center items-center">
+      <CardFooter className="flex items-center justify-center">
         <div className={cn(poppins.className, "mt-4 text-center text-sm")}>
           Already have an account?{" "}
           <Link href="/auth/login" className="underline">

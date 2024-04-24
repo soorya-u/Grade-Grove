@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={ubuntu.className}>
         <Providers>
           <Header />
-          <main className="flex flex-col justify-center items-center gap-7 before:content-[''] after:content-[''] min-h-[82vh]">
+          <main className="flex min-h-[82vh] flex-col items-center justify-center gap-7 before:content-[''] after:content-['']">
             {children}
           </main>
           <Toaster />

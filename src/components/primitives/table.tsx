@@ -6,10 +6,10 @@ const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
 >(({ className, ...props }, ref) => (
-  <div className="relative overflow-auto rounded-xl border-white border-2">
+  <div className="relative overflow-auto rounded-xl border-2 border-white">
     <table
       ref={ref}
-      className={cn("caption-bottom text-sm  bg-[#00000030]", className)}
+      className={cn("caption-bottom bg-[#00000030]  text-sm", className)}
       {...props}
     />
   </div>
@@ -58,7 +58,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "border-b-[#a2a2a2] border-b-2 transition-colors data-[state=selected]:bg-muted",
+      "border-b-2 border-b-[#a2a2a2] transition-colors data-[state=selected]:bg-muted",
       className,
     )}
     {...props}
@@ -87,7 +87,10 @@ const TableCell = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <td
     ref={ref}
-    className={cn("brightness-150 h-12 align-middle [&:has([role=checkbox])]:pr-0", className)}
+    className={cn(
+      "h-12 align-middle brightness-150 [&:has([role=checkbox])]:pr-0",
+      className,
+    )}
     {...props}
   />
 ));

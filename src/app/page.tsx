@@ -12,7 +12,7 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <section className="flex flex-col justify-center items-center gap-6 max-w-full flex-wrap">
+    <section className="flex max-w-full flex-col flex-wrap items-center justify-center gap-6">
       <Image
         priority
         src="/logo.png"
@@ -22,8 +22,8 @@ export default function Home() {
       ></Image>
       <h1
         className={cn(
-          "text-6xl text-white text-wrap text-center w-10/12",
-          poppins.className
+          "w-10/12 text-wrap text-center text-6xl text-white",
+          poppins.className,
         )}
       >
         A Central Hub for all your Results{" "}
@@ -31,18 +31,24 @@ export default function Home() {
       <h2
         className={cn(
           natoSans.className,
-          "text-xl text-center text-[#ccccd2] w-2/3"
+          "w-2/3 text-center text-xl text-[#ccccd2]",
         )}
       >
         Take a panoramic dive into your academic progress by effortlessly
         reviewing, analyzing and tracking every mark and grade earned throughout
         each semester.
       </h2>
-      <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
-        <Button className="hover:bg-white hover:text-[#931D68] text-md" variant="outline">
+      <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+        <Button
+          className="text-md hover:bg-white hover:text-[#931D68]"
+          variant="outline"
+        >
           <Link href="/">Check out your Result</Link>
         </Button>
-        <Button className="hover:bg-white hover:text-[#931D68] text-md" variant="outline">
+        <Button
+          className="text-md hover:bg-white hover:text-[#931D68]"
+          variant="outline"
+        >
           <Link href="https://github.com/soorya-u/Grade-Grove">
             View Source Code
           </Link>

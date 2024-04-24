@@ -8,10 +8,10 @@ const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-between items-center min-h-16 w-[85vw] m-auto gap-y-4 border-t-[2px] border-t-[#ffffff49] md-lg:flex-row py-3">
-      <div className="flex justify-center gap-x-2 gap-y-1 items-center flex-wrap">
+    <footer className="m-auto flex min-h-16 w-[85vw] flex-col items-center justify-between gap-y-4 border-t-[2px] border-t-[#ffffff49] py-3 md-lg:flex-row">
+      <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
         <Image src="/logo.png" width={28} height={28} alt="Elite-AIML-Logo" />
-        <p className={cn(poppins.className, "text-gray-200 text-center")}>
+        <p className={cn(poppins.className, "text-center text-gray-200")}>
           Built by{" "}
           <Link
             href="https://twitter.com/sooryaa_u"
@@ -31,8 +31,8 @@ export default function Footer() {
           .
         </p>
       </div>
-      <div className="flex justify-center items-center gap-x-2 gap-y-1 flex-wrap">
-        <p className={cn(poppins.className, "text-gray-200 text-center")}>
+      <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+        <p className={cn(poppins.className, "text-center text-gray-200")}>
           Check these Projects Out:
         </p>
         <Link href="https://belief.soorya-u.dev" target="_blank">

@@ -5,12 +5,11 @@ import {
 } from "@/types/student";
 import prismaClient from "@/lib/db";
 import getSemesterNumber from "@/utils/getSemesterNumber";
-import { truncate } from "fs/promises";
 
 export class Student {
   public static async getStudent(
     semester: string,
-    usn: string
+    usn: string,
   ): Promise<[IStudentHeading, Error | IStudentDetails, IStudentScores[]]> {
     const semNumber = getSemesterNumber(semester);
 
@@ -23,7 +22,7 @@ export class Student {
 
   private static async getStudentHeading(
     semester: number,
-    usn: string
+    usn: string,
   ): Promise<IStudentHeading> {
     const queryParams =
       semester === 1 || semester === 2
@@ -63,7 +62,7 @@ export class Student {
 
   private static async getStudentDetails(
     semester: number,
-    usn: string
+    usn: string,
   ): Promise<IStudentDetails | Error> {
     const queryParams =
       semester === 1 || semester === 2
@@ -98,7 +97,7 @@ export class Student {
     if (!result) return new Error("Student Not Found");
 
     const actResult = result.result.filter((r) =>
-      r.semesterNumber.includes(`${semester}`)
+      r.semesterNumber.includes(`${semester}`),
     )[0];
 
     const payload = {
@@ -110,8 +109,8 @@ export class Student {
           ? semester === 1
             ? result.cycle
             : result.cycle === "Physics"
-            ? "Chemistry"
-            : "Physics"
+              ? "Chemistry"
+              : "Physics"
           : null,
     };
 
@@ -120,7 +119,7 @@ export class Student {
 
   private static async getStudentScores(
     semester: number,
-    usn: string
+    usn: string,
   ): Promise<IStudentScores[]> {
     const queryParams =
       semester === 1 || semester === 2

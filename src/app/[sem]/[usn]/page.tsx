@@ -9,7 +9,7 @@ import StudentTable from "@/components/pages/student/StudentTable";
 async function Profile({ params }: { params: { sem: string; usn: string } }) {
   const [heading, details, scores] = await Student.getStudent(
     params.sem,
-    params.usn
+    params.usn,
   );
 
   if (details instanceof Error) return notFound();
@@ -17,7 +17,7 @@ async function Profile({ params }: { params: { sem: string; usn: string } }) {
   return (
     <>
       <StudentHeading data={heading} />
-      <section className="w-full flex flex-col xl:flex-row justify-center items-center bg-transparent px-4 gap-28">
+      <section className="flex w-full flex-col items-center justify-center gap-28 bg-transparent px-4 xl:flex-row">
         <StudentProfile semester={params.sem} usn={params.usn} data={details} />
         <StudentTable data={scores} />
       </section>

@@ -29,7 +29,7 @@ function ProfileCard({
       <Card>
         <CardContent className="pt-4">
           <div className="flex items-center space-x-4">
-            <Avatar className="aspect-square border-2 border-[#ccc] scale-100 hover:scale-[1.2] transition-transform duration-150 ease-linear cursor-pointer">
+            <Avatar className="aspect-square scale-100 cursor-pointer border-2 border-[#ccc] transition-transform duration-150 ease-linear hover:scale-[1.2]">
               <AvatarImage src={imgPath} />
               <AvatarFallback>{name}</AvatarFallback>
             </Avatar>
@@ -37,7 +37,7 @@ function ProfileCard({
               href={githubLink}
               className={cn(
                 poppins.className,
-                "text-lg text-white cursor-pointer hover:text-[#f64444] transition-[color] duration-150 ease-linear"
+                "cursor-pointer text-lg text-white transition-[color] duration-150 ease-linear hover:text-[#f64444]",
               )}
             >
               {name}

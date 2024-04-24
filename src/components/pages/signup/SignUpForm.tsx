@@ -38,7 +38,7 @@ export default function SignUpForm() {
             {...register("firstName")}
             className={cn(
               poppins.className,
-              "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0"
+              "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
             )}
             placeholder="John"
             type="text"
@@ -54,7 +54,7 @@ export default function SignUpForm() {
             {...register("lastName")}
             className={cn(
               poppins.className,
-              "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0"
+              "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
             )}
             placeholder="Doe"
             type="text"
@@ -64,7 +64,7 @@ export default function SignUpForm() {
           <span
             className={cn(
               poppins.className,
-              "text-[#00fffb] col-start-1 col-end-3 text-xs"
+              "col-start-1 col-end-3 text-xs text-[#00fffb]",
             )}
           >
             {errors.firstName?.message ?? errors.lastName?.message}
@@ -81,13 +81,13 @@ export default function SignUpForm() {
           {...register("username")}
           className={cn(
             poppins.className,
-            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0"
+            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
           placeholder="john-doe"
           type="text"
         />
         {errors.username && (
-          <span className={cn(poppins.className, "text-[#00fffb] text-xs")}>
+          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
             {errors.username.message}
           </span>
         )}
@@ -102,12 +102,12 @@ export default function SignUpForm() {
           {...register("password")}
           className={cn(
             poppins.className,
-            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0"
+            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
           type="password"
         />
         {errors.password && (
-          <span className={cn(poppins.className, "text-[#00fffb] text-xs")}>
+          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
             {errors.password.message}
           </span>
         )}

@@ -7,9 +7,9 @@ import { cn } from "@/utils/cn";
 export default function VerticalTimeCard() {
   return (
     <div className="w-full">
-      <div className="mx-auto max-w-4xl w-full space-y-5">
+      <div className="mx-auto w-full max-w-4xl space-y-5">
         {commits.map((commit, idx) => (
-          <div key={idx} className="space-y-4 w-full px-4">
+          <div key={idx} className="w-full space-y-4 px-4">
             <Timestamp
               name={commit.name}
               href={commit.branchLink}
@@ -17,8 +17,8 @@ export default function VerticalTimeCard() {
             />
             <div
               className={cn(
-                "grid grid-cols-1 gap-5 w-full",
-                idx === 3 && "sm:grid-cols-2"
+                "grid w-full grid-cols-1 gap-5",
+                idx === 3 && "sm:grid-cols-2",
               )}
             >
               {commit.devs.map((dev, idx) => (

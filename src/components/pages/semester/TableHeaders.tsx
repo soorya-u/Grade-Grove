@@ -43,7 +43,7 @@ export const sortedTableHeader = ({
           aria-expanded={open}
         >
           {name}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 hidden 3xs:inline" />
+          <ChevronsUpDown className="ml-2 hidden h-4 w-4 shrink-0 opacity-50 3xs:inline" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[175px] p-0">
@@ -62,7 +62,7 @@ export const sortedTableHeader = ({
               <Check
                 className={cn(
                   "mr-2 h-4 w-4",
-                  column.getIsSorted() === "desc" ? "opacity-0" : "opacity-100"
+                  column.getIsSorted() === "desc" ? "opacity-0" : "opacity-100",
                 )}
               />
               Ascending Order
@@ -80,7 +80,7 @@ export const sortedTableHeader = ({
               <Check
                 className={cn(
                   "mr-2 h-4 w-4",
-                  column.getIsSorted() === "desc" ? "opacity-100" : "opacity-0"
+                  column.getIsSorted() === "desc" ? "opacity-100" : "opacity-0",
                 )}
               />
               Descending Order
@@ -111,7 +111,7 @@ export const unsortedTableHeader = ({
           aria-expanded={open}
         >
           {name}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 hidden 3xs:inline" />
+          <ChevronsUpDown className="ml-2 hidden h-4 w-4 shrink-0 opacity-50 3xs:inline" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[175px] p-0">
@@ -126,7 +126,7 @@ export const unsortedTableHeader = ({
               <Check
                 className={cn(
                   "mr-2 h-4 w-4",
-                  column.getIsSorted() === "asc" ? "opacity-100" : "opacity-0"
+                  column.getIsSorted() === "asc" ? "opacity-100" : "opacity-0",
                 )}
               />
               Ascending Order
@@ -140,7 +140,7 @@ export const unsortedTableHeader = ({
               <Check
                 className={cn(
                   "mr-2 h-4 w-4",
-                  column.getIsSorted() === "desc" ? "opacity-100" : "opacity-0"
+                  column.getIsSorted() === "desc" ? "opacity-100" : "opacity-0",
                 )}
               />
               Descending Order

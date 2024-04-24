@@ -5,28 +5,28 @@ export const meanStackDescription = (
     Undertook the process of migrating the project to the{" "}
     <Link
       href="https://www.mongodb.com/"
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
     >
       MongoDB
     </Link>
     ,{" "}
     <Link
       href="https://expressjs.com/"
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
     >
       Express.js
     </Link>
     ,{" "}
     <Link
       href="https://angular.dev/"
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
     >
       Angular
     </Link>
     ,{" "}
     <Link
       href="https://nodejs.org/"
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
     >
       Node.js
     </Link>{" "}
@@ -40,28 +40,28 @@ export const sooryaT3StackDescription = (
   <>
     Migrated the Project to the{" "}
     <Link
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
       href="https://create.t3.gg/"
     >
       T3 Stack
     </Link>
     , incorporating{" "}
     <Link
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
       href="https://nextjs.org/"
     >
       Next.js
     </Link>{" "}
     for frontend development,{" "}
     <Link
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
       href="https://www.prisma.io/"
     >
       Prisma
     </Link>{" "}
     for database efficiency, and{" "}
     <Link
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
       href="https://tailwindui.com/"
     >
       Tailwind
@@ -75,7 +75,7 @@ export const saanviT3StackDescription = (
   <>
     Diligently Expanded the Results and engaged with the
     <Link
-      className="underline underline-offset-2 italic decoration-[#00fffb]"
+      className="italic underline decoration-[#00fffb] underline-offset-2"
       href="https://postgresql.org/"
     >
       PostgreSQL

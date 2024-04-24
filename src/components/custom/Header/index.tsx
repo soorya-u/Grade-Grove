@@ -10,13 +10,13 @@ const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
 function Header() {
   return (
-    <header className="sticky top-0 w-full z-50">
-      <nav className="h-[10vh] flex justify-between items-center py-2 px-4 backdrop-blur-sm border-b border-[#ffffff49] rounded-b-md sm:px-8">
-        <div className="flex justify-start items-center gap-x-6 sm:gap-x-8">
+    <header className="sticky top-0 z-50 w-full">
+      <nav className="flex h-[10vh] items-center justify-between rounded-b-md border-b border-[#ffffff49] px-4 py-2 backdrop-blur-sm sm:px-8">
+        <div className="flex items-center justify-start gap-x-6 sm:gap-x-8">
           <Hamburger className="block sm:hidden" />
           <Link
             href="/"
-            className={cn(audiowide.className, "text-2xl text-nowrap")}
+            className={cn(audiowide.className, "text-nowrap text-2xl")}
           >
             Grade Grove
           </Link>

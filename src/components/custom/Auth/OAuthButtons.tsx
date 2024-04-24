@@ -36,7 +36,7 @@ export default function OAuthButtons() {
   }, [searchPrarms]);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-4 xs:flex-row">
+    <div className="flex flex-col items-center justify-center gap-4 xs:flex-row">
       <Button
         onClick={async () =>
           await handleClick("google", searchPrarms.get("callbackUrl"))
@@ -44,12 +44,12 @@ export default function OAuthButtons() {
         variant="outline"
         className={cn(
           poppins.className,
-          "flex gap-x-2 text-sm hover:bg-white hover:text-[#931D68] group"
+          "group flex gap-x-2 text-sm hover:bg-white hover:text-[#931D68]",
         )}
       >
         <FontAwesomeIcon
           icon={faGoogle}
-          className="w-5 h-5 group-hover:[&_path]:fill-[#931D68]"
+          className="h-5 w-5 group-hover:[&_path]:fill-[#931D68]"
         />
         Contiue with Google
       </Button>
@@ -60,12 +60,12 @@ export default function OAuthButtons() {
         variant="outline"
         className={cn(
           poppins.className,
-          "flex gap-x-2 text-sm hover:bg-white hover:text-[#931D68] group"
+          "group flex gap-x-2 text-sm hover:bg-white hover:text-[#931D68]",
         )}
       >
         <FontAwesomeIcon
           icon={faGithub}
-          className="w-6 h-6 group-hover:[&_path]:fill-[#931D68]"
+          className="h-6 w-6 group-hover:[&_path]:fill-[#931D68]"
         />
         Contiue with Github
       </Button>

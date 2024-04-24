@@ -22,7 +22,7 @@ function Timestamp({
             <Link
               className={cn(
                 rubik.className,
-                "font-semibold text-2xl text-white hover:text-[#f64444] transition-[color] duration-150 ease-linear"
+                "text-2xl font-semibold text-white transition-[color] duration-150 ease-linear hover:text-[#f64444]",
               )}
               href={href}
             >

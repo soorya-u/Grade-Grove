@@ -1,5 +1,3 @@
-"use client";
-
 import NextAuthProvider from "./NextAuthProvider";
 
 type ProvidersProps = {

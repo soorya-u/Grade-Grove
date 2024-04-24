@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/primitives/skeleton";
 function Loading() {
   return (
     <>
-      <Skeleton className="m-auto w-[25rem] h-[30px]" />
+      <Skeleton className="m-auto h-[30px] w-[25rem]" />
       <Table className="w-[95vw] sm:w-[80vw]">
         <TableHeader>
           <TableRow>
@@ -24,7 +24,7 @@ function Loading() {
                     (idx === 2 || idx === 4) && "hidden md:table-cell"
                   }`}
                 >
-                  <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
+                  <Skeleton className="m-auto h-[20px] w-16 sm:w-20 lg:w-28" />
                 </TableCell>
               ))}
           </TableRow>
@@ -43,7 +43,7 @@ function Loading() {
                         (idx === 2 || idx === 4) && "hidden md:table-cell"
                       }`}
                     >
-                      <Skeleton className="m-auto w-16 sm:w-20 lg:w-28 h-[20px]" />
+                      <Skeleton className="m-auto h-[20px] w-16 sm:w-20 lg:w-28" />
                     </TableCell>
                   ))}
               </TableRow>

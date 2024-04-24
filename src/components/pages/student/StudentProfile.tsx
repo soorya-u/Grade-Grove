@@ -19,9 +19,9 @@ function StudentProfile({
   data: IStudentDetails;
 }) {
   return (
-    <section className="w-1/4 min-w-[250px] sm:min-w-[400px] min-h-[375px] bg-[#00000026] border border-white rounded-[0.45rem] shadow shadow-[#00000026] p-4">
-      <div className="w-full h-full flex flex-col justify-center items-center gap-6">
-        <Avatar className="h-[60%] w-[60%] aspect-square border-2 border-[#ccc]">
+    <section className="min-h-[375px] w-1/4 min-w-[250px] rounded-[0.45rem] border border-white bg-[#00000026] p-4 shadow shadow-[#00000026] sm:min-w-[400px]">
+      <div className="flex h-full w-full flex-col items-center justify-center gap-6">
+        <Avatar className="aspect-square h-[60%] w-[60%] border-2 border-[#ccc]">
           <AvatarImage src={getImagePath(usn)} />
           <AvatarFallback>{usn}</AvatarFallback>
         </Avatar>

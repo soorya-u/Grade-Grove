@@ -20,14 +20,14 @@ function StudentTable({ data }: { data: IStudentScores[] }) {
   return (
     <>
       <section>
-        <Table className="min-w-[250px] w-[100%] h-[70%] border border-white rounded-lg overflow-hidden shadow shadow-[#00000026]">
+        <Table className="h-[70%] w-[100%] min-w-[250px] overflow-hidden rounded-lg border border-white shadow shadow-[#00000026]">
           <TableHeader>
             <TableRow>
-              <TableHead className="text-base text-center">Subject</TableHead>
+              <TableHead className="text-center text-base">Subject</TableHead>
               <TableHead
                 className={cn(
                   poppins.className,
-                  "text-base text-center hidden md:table-cell"
+                  "hidden text-center text-base md:table-cell",
                 )}
               >
                 Subject Code
@@ -35,7 +35,7 @@ function StudentTable({ data }: { data: IStudentScores[] }) {
               <TableHead
                 className={cn(
                   poppins.className,
-                  "text-base text-center hidden xs:table-cell"
+                  "hidden text-center text-base xs:table-cell",
                 )}
               >
                 Internal Assessment
@@ -43,13 +43,13 @@ function StudentTable({ data }: { data: IStudentScores[] }) {
               <TableHead
                 className={cn(
                   poppins.className,
-                  "text-base text-center hidden xs:table-cell"
+                  "hidden text-center text-base xs:table-cell",
                 )}
               >
                 External Assessment
               </TableHead>
               <TableHead
-                className={cn(poppins.className, "text-base text-center")}
+                className={cn(poppins.className, "text-center text-base")}
               >
                 Total Marks
               </TableHead>
@@ -59,14 +59,14 @@ function StudentTable({ data }: { data: IStudentScores[] }) {
             {data.map((elem, idx) => (
               <TableRow key={idx}>
                 <TableCell
-                  className={cn(rubik.className, "text-base text-center")}
+                  className={cn(rubik.className, "text-center text-base")}
                 >
                   {elem.subjectName}
                 </TableCell>
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-base text-center hidden md:table-cell"
+                    "hidden text-center text-base md:table-cell",
                   )}
                 >
                   {elem.subjectCode}
@@ -74,7 +74,7 @@ function StudentTable({ data }: { data: IStudentScores[] }) {
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-base text-center hidden xs:table-cell"
+                    "hidden text-center text-base xs:table-cell",
                   )}
                 >
                   {elem.internalMarks}
@@ -82,13 +82,13 @@ function StudentTable({ data }: { data: IStudentScores[] }) {
                 <TableCell
                   className={cn(
                     rubik.className,
-                    "text-base text-center hidden xs:table-cell"
+                    "hidden text-center text-base xs:table-cell",
                   )}
                 >
                   {elem.externalMarks}
                 </TableCell>
                 <TableCell
-                  className={cn(rubik.className, "text-base text-center")}
+                  className={cn(rubik.className, "text-center text-base")}
                 >
                   {elem.totalMarks}
                 </TableCell>

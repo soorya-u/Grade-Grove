@@ -67,8 +67,8 @@ function SemTable<TData, TValue>({
         type="text"
         placeholder="Search by Name or USN..."
         className={cn(
-          "w-[95vw] sm:w-[80vw] bg-[#00000030] outline-none border-[2px] border-white",
-          poppins.className
+          "w-[95vw] border-[2px] border-white bg-[#00000030] outline-none sm:w-[80vw]",
+          poppins.className,
         )}
         value={filterValue}
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -85,15 +85,15 @@ function SemTable<TData, TValue>({
                     key={header.id}
                     className={cn(
                       poppins.className,
-                      "text-base text-center p-0",
-                      idx === 2 || idx === 4 ? "hidden md:table-cell" : ""
+                      "p-0 text-center text-base",
+                      idx === 2 || idx === 4 ? "hidden md:table-cell" : "",
                     )}
                   >
                     {header.isPlaceholder
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </TableHead>
                 );
@@ -118,8 +118,8 @@ function SemTable<TData, TValue>({
                     key={cell.id}
                     className={cn(
                       rubik.className,
-                      "font-medium text-center text-base",
-                      (idx === 2 || idx === 4) && "hidden md:table-cell"
+                      "text-center text-base font-medium",
+                      (idx === 2 || idx === 4) && "hidden md:table-cell",
                     )}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -130,7 +130,12 @@ function SemTable<TData, TValue>({
           ) : (
             <TableRow>
               <TableCell colSpan={5}>
-                <h1 className={cn(poppins.className, "text-xl w-full text-center")}>
+                <h1
+                  className={cn(
+                    poppins.className,
+                    "w-full text-center text-xl",
+                  )}
+                >
                   No Match Found
                 </h1>
               </TableCell>

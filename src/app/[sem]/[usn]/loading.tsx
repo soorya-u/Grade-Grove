@@ -10,23 +10,23 @@ import {
 function Loading() {
   return (
     <>
-      <Skeleton className="mx-auto w-[80%] sm:w-[25rem] h-[40px] mb-5" />
-      <section className="w-full flex flex-col xl:flex-row justify-center items-center bg-transparent px-4 gap-28">
-        <section className="w-1/4 min-w-[250px] sm:min-w-[400px] min-h-[375px] bg-[#00000026] border border-white rounded-[0.45rem] shadow shadow-[#00000026] p-4">
-          <div className="w-full h-full flex flex-col justify-center items-center gap-6">
-            <Skeleton className="h-[60%] w-[60%] rounded-full aspect-square" />
+      <Skeleton className="mx-auto mb-5 h-[40px] w-[80%] sm:w-[25rem]" />
+      <section className="flex w-full flex-col items-center justify-center gap-28 bg-transparent px-4 xl:flex-row">
+        <section className="min-h-[375px] w-1/4 min-w-[250px] rounded-[0.45rem] border border-white bg-[#00000026] p-4 shadow shadow-[#00000026] sm:min-w-[400px]">
+          <div className="flex h-full w-full flex-col items-center justify-center gap-6">
+            <Skeleton className="aspect-square h-[60%] w-[60%] rounded-full" />
 
             <div className="grid grid-cols-2 gap-4">
               {Array(8)
                 .fill(0)
                 .map((_, idx) => (
-                  <Skeleton key={idx} className="w-24 sm:w-32 h-6" />
+                  <Skeleton key={idx} className="h-6 w-24 sm:w-32" />
                 ))}
             </div>
           </div>
         </section>
 
-        <Table className="min-w-[250px] w-[100%] h-[70%] border border-white rounded-lg overflow-hidden shadow shadow-[#00000026]">
+        <Table className="h-[70%] w-[100%] min-w-[250px] overflow-hidden rounded-lg border border-white shadow shadow-[#00000026]">
           <TableHeader>
             <TableRow>
               {Array(5)
@@ -38,7 +38,7 @@ function Loading() {
                       (idx === 2 || idx === 3) && "hidden xs:table-cell"
                     }`}
                   >
-                    <Skeleton className="w-16 sm:w-20 lg:w-32 mx-4 md:mx-8 h-[25px]" />
+                    <Skeleton className="mx-4 h-[25px] w-16 sm:w-20 md:mx-8 lg:w-32" />
                   </TableCell>
                 ))}
             </TableRow>
@@ -57,7 +57,7 @@ function Loading() {
                           (idx === 2 || idx === 3) && "hidden xs:table-cell"
                         }`}
                       >
-                        <Skeleton className="w-16 sm:w-20 lg:w-32 mx-4 md:mx-8 h-[25px]" />
+                        <Skeleton className="mx-4 h-[25px] w-16 sm:w-20 md:mx-8 lg:w-32" />
                       </TableCell>
                     ))}
                 </TableRow>

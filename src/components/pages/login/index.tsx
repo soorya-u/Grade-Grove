@@ -18,7 +18,7 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default async function LoginCard() {
   return (
-    <Card className="w-full max-w-sm border-none shadow-none bg-transparent">
+    <Card className="w-full max-w-sm border-none bg-transparent shadow-none">
       <CardHeader className="flex flex-col">
         <CardTitle className={cn(poppins.className, "text-2xl")}>
           Login
@@ -33,12 +33,12 @@ export default async function LoginCard() {
       </CardContent>
       <CardFooter>
         <div
-          className={cn(poppins.className, "mt-4 mx-auto text-center text-sm")}
+          className={cn(poppins.className, "mx-auto mt-4 text-center text-sm")}
         >
           Don&apos;t have an account?{" "}
           <Link
             href="/auth/signup"
-            className="underline underline-offset-2 outline-none text-nowrap"
+            className="text-nowrap underline underline-offset-2 outline-none"
           >
             Sign up
           </Link>

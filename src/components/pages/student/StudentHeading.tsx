@@ -11,11 +11,11 @@ const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 function StudentHeading({ data }: { data: IStudentHeading }) {
   return (
     <>
-      <div className="flex flex-col sm:flex-row sm:gap-2 justify-center items-center px-4 gap-0">
+      <div className="flex flex-col items-center justify-center gap-0 px-4 sm:flex-row sm:gap-2">
         <h1
           className={cn(
             poppins.className,
-            "text-center mb-0 mt-7 sm:my-7 text-4xl"
+            "mb-0 mt-7 text-center text-4xl sm:my-7",
           )}
         >
           {data.rank}
@@ -28,7 +28,7 @@ function StudentHeading({ data }: { data: IStudentHeading }) {
         <h1
           className={cn(
             poppins.className,
-            "text-center  mt-0 mb-7 sm:my-7 text-4xl"
+            "mb-7  mt-0 text-center text-4xl sm:my-7",
           )}
         >
           {data.name}

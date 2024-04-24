@@ -38,11 +38,11 @@ export default function LoginForm() {
           placeholder="john-doe"
           className={cn(
             poppins.className,
-            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0"
+            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
         />
         {errors.username && (
-          <span className={cn(poppins.className, "text-[#00fffb] text-xs")}>
+          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
             {errors.username.message}
           </span>
         )}
@@ -58,11 +58,11 @@ export default function LoginForm() {
           type="password"
           className={cn(
             poppins.className,
-            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0"
+            "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
         />
         {errors.password && (
-          <span className={cn(poppins.className, "text-[#00fffb] text-xs")}>
+          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
             {errors.password.message}
           </span>
         )}
