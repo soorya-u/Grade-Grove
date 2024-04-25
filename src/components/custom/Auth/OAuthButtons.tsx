@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { Poppins } from "next/font/google";
 
@@ -7,40 +7,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { cn } from "@/utils/cn";
 import { Button } from "@/components/primitives/button";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { useToast } from "@/components/primitives/use-toast";
+import { signIn } from "@/lib/auth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-async function handleClick(provider: string, redirectUrl: string | null) {
-  const route = redirectUrl?.split("/").slice(3).join("/");
-  signIn(provider, { redirect: true, callbackUrl: "/" + (route ?? "/") });
-}
-
 export default function OAuthButtons() {
-  const searchPrarms = useSearchParams();
-  const { toast } = useToast();
-
-  useEffect(() => {
-    const err = searchPrarms.get("error");
-    err &&
-      err === "OAuthAccountNotLinked" &&
-      toast({
-        title: "Email Already Exists",
-        description:
-          "The Email your are using to Login is already in use. Try Using Different Provider.",
-        variant: "destructive",
-      });
-  }, [searchPrarms]);
-
   return (
     <div className="flex flex-col items-center justify-center gap-4 xs:flex-row">
       <Button
-        onClick={async () =>
-          await handleClick("google", searchPrarms.get("callbackUrl"))
-        }
+        onClick={async () => await signIn("google")}
         variant="outline"
         className={cn(
           poppins.className,
@@ -54,9 +29,7 @@ export default function OAuthButtons() {
         Contiue with Google
       </Button>
       <Button
-        onClick={async () =>
-          await handleClick("github", searchPrarms.get("callbackUrl"))
-        }
+        onClick={async () => await signIn("github")}
         variant="outline"
         className={cn(
           poppins.className,
