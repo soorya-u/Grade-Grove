@@ -1,3 +1,5 @@
+"use server";
+
 import { IResultPayload } from "@/types/result";
 import prismaClient from "@/lib/db";
 import getSemesterNumber from "@/utils/getSemesterNumber";

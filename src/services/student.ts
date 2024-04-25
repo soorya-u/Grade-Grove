@@ -6,6 +6,8 @@ import {
 import prismaClient from "@/lib/db";
 import getSemesterNumber from "@/utils/getSemesterNumber";
 
+"use server";
+
 export class Student {
   public static async getStudent(
     semester: string,
