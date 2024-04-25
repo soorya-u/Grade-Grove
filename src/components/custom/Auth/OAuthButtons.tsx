@@ -1,6 +1,7 @@
 "use client";
 
 import { Poppins } from "next/font/google";
+import { useSearchParams } from "next/navigation";
 
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,10 +14,15 @@ import ServerButton from "@/components/custom/ServerButton";
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function OAuthButtons() {
+  const searchParams = useSearchParams();
+
+  if (searchParams.get("error"))
+    throw new Error(searchParams.get("error") ?? undefined);
+
   return (
     <div className="flex flex-col items-center justify-center gap-4 xs:flex-row">
       <ServerButton
-        action={signInGoogle}
+        action={() => signInGoogle(searchParams.get("callbackUrl") ?? "/")}
         variant="outline"
         className={cn(
           poppins.className,
@@ -30,7 +36,7 @@ export default function OAuthButtons() {
         Contiue with Google
       </ServerButton>
       <ServerButton
-        action={signInGitHub}
+        action={() => signInGitHub(searchParams.get("callbackUrl") ?? "/")}
         variant="outline"
         className={cn(
           poppins.className,
