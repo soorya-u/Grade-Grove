@@ -7,7 +7,8 @@ import prisma from "./db";
 import env from "@/schema/env";
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
-  secret: env.AUTH_SECRET,
+  // TODO: fix ENV
+  secret: "ABCD",
   adapter: PrismaAdapter(prisma),
   providers: [Google, GitHub],
   pages: {

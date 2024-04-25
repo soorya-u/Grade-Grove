@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 
 import { signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 
-import { Button } from "@/components/primitives/button";
+import ServerButton from "@/components/custom/ServerButton";
 
 import { cn } from "@/utils/cn";
 
@@ -32,16 +34,16 @@ export default function UserCard(props: UserCardProps) {
         alt="User"
       />
       <h4 className="text-base font-semibold">{props.name}</h4>
-      <span className="mx-4 h-6 w-[1px] bg-[#ccccd2] opacity-50"></span>
-      <Button
-        onClick={() => signOut()}
+      <span className="mx-4 h-6 w-[1px] bg-[#ccccd2] opacity-50" />
+      <ServerButton
+        action={async () => await signOut()}
         className={cn(
           poppins.className,
           "bg-transparent p-0 hover:bg-transparent",
         )}
       >
         <LogOut />
-      </Button>
+      </ServerButton>
     </div>
   );
 }

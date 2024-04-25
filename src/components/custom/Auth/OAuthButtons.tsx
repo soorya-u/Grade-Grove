@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Poppins } from "next/font/google";
 
@@ -6,16 +6,17 @@ import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { cn } from "@/utils/cn";
-import { Button } from "@/components/primitives/button";
-import { signIn } from "@/lib/auth";
+import { signInGoogle, singInGitHub } from "@/actions/sign-in";
+
+import ServerButton from "@/components/custom/ServerButton";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function OAuthButtons() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 xs:flex-row">
-      <Button
-        onClick={async () => await signIn("google")}
+      <ServerButton
+        action={signInGoogle}
         variant="outline"
         className={cn(
           poppins.className,
@@ -27,9 +28,9 @@ export default function OAuthButtons() {
           className="h-5 w-5 group-hover:[&_path]:fill-[#931D68]"
         />
         Contiue with Google
-      </Button>
-      <Button
-        onClick={async () => await signIn("github")}
+      </ServerButton>
+      <ServerButton
+        action={singInGitHub}
         variant="outline"
         className={cn(
           poppins.className,
@@ -41,7 +42,7 @@ export default function OAuthButtons() {
           className="h-6 w-6 group-hover:[&_path]:fill-[#931D68]"
         />
         Contiue with Github
-      </Button>
+      </ServerButton>
     </div>
   );
 }
