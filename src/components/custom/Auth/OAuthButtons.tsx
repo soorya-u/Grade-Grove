@@ -6,7 +6,7 @@ import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { cn } from "@/utils/cn";
-import { signInGoogle, singInGitHub } from "@/actions/sign-in";
+import { signInGoogle, signInGitHub } from "@/actions/sign-in";
 
 import ServerButton from "@/components/custom/ServerButton";
 
@@ -30,7 +30,7 @@ export default function OAuthButtons() {
         Contiue with Google
       </ServerButton>
       <ServerButton
-        action={singInGitHub}
+        action={signInGitHub}
         variant="outline"
         className={cn(
           poppins.className,

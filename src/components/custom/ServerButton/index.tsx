@@ -17,7 +17,7 @@ type ServerPropsButton = {
 
 export default function ServerButton(props: ServerPropsButton) {
   return (
-    <form action={props.action}>
+    <form action={async () => await props.action()}>
       <Button
         type="submit"
         className={props.className}

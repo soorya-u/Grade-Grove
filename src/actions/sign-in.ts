@@ -6,6 +6,6 @@ export async function signInGoogle() {
   await signIn("google");
 }
 
-export async function singInGitHub() {
+export async function signInGitHub() {
   await signIn("github");
 }
