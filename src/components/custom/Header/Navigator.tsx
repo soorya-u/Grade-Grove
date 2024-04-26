@@ -51,14 +51,14 @@ function Navigator({ className }: { className: string }) {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link
-            href="/about"
+            href="/changelog"
             className={cn(
               quicksand.className,
               "text-lg hover:text-white",
-              pathname === "/about" ? "text-white" : "text-[#ccccd2]",
+              pathname === "/changelog" ? "text-white" : "text-[#ccccd2]",
             )}
           >
-            About
+            Changelog
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>

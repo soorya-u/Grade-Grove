@@ -18,7 +18,7 @@ export default function VerticalTimeCard() {
             <div
               className={cn(
                 "grid w-full grid-cols-1 gap-5",
-                idx === 3 && "sm:grid-cols-2",
+                commit.devs.length > 4 && "sm:grid-cols-2",
               )}
             >
               {commit.devs.map((dev, idx) => (

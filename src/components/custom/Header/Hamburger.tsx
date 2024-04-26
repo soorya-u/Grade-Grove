@@ -88,20 +88,20 @@ function Hamburger({ className }: { className: string }) {
           </Accordion>
           <SheetClose asChild>
             <Link
-              href="/about"
+              href="/changelog"
               className={cn(
                 quicksand.className,
                 "flex w-full items-center gap-3 rounded-xl border-2 border-white px-2 py-3 text-lg",
-                pathname === "/about"
+                pathname === "/changelog"
                   ? "bg-white text-[#BE2E58]"
                   : "bg-transparent text-white",
               )}
             >
               <Info
                 className={cn("h-6 w-6 pr-1")}
-                color={pathname === `/about` ? "#BE2E58" : "#fff"}
+                color={pathname === `/changelog` ? "#BE2E58" : "#fff"}
               />
-              About
+              Changelog
             </Link>
           </SheetClose>
           {session && session.user ? (

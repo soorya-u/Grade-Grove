@@ -7,11 +7,11 @@ import VerticalTimeCard from "@/components/pages/about/VerticalTimeCard";
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-function About() {
+function Changelog() {
   return (
     <>
       <h1 className={cn(poppins.className, "mt-12 px-4 text-center text-5xl")}>
-        About Us
+        Changelog
       </h1>
 
       <div className="px-18 w-3/4 text-center text-xl text-[#ccccd2]">
@@ -31,4 +31,4 @@ function About() {
   );
 }
 
-export default About;
+export default Changelog;

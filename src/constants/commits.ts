@@ -2,20 +2,40 @@ import {
   meanStackDescription,
   saanviT3StackDescription,
   sooryaT3StackDescription,
+  nextAuthDescription,
 } from "@/components/pages/about/Descriptions";
 
-type Devs = {
-  name: string;
-  imgPath: string;
-  github: string;
-  description: string | JSX.Element;
-};
+import {
+  type Dev,
+  afifa,
+  aish,
+  devika,
+  pratham,
+  saanvi,
+  soorya,
+  taneen,
+  yashaswini,
+} from "./devs";
+
+type Contributor = Dev & { description: string | JSX.Element };
 
 type Commit = {
   name: string;
   branchLink: string;
   date: Date;
-  devs: Devs[];
+  devs: Contributor[];
+};
+
+const nextAuth: Commit = {
+  name: "Introduction Authentication Measures",
+  branchLink: "https://github.com/soorya-u/Grade-Grove/issues/18",
+  date: new Date("04/26/2024"),
+  devs: [
+    {
+      ...soorya,
+      description: nextAuthDescription,
+    },
+  ],
 };
 
 const t3StackMigration: Commit = {
@@ -24,15 +44,11 @@ const t3StackMigration: Commit = {
   date: new Date("01/19/2024"),
   devs: [
     {
-      name: "Soorya U",
-      imgPath: "/devs/soorya.jpg",
-      github: "https://github.com/soorya-u",
+      ...soorya,
       description: sooryaT3StackDescription,
     },
     {
-      name: "Saanvi MJ",
-      imgPath: "/devs/saanvi.jpg",
-      github: "https://github.com/Saanvi-MJ",
+      ...saanvi,
       description: saanviT3StackDescription,
     },
   ],
@@ -44,9 +60,7 @@ const meanStackTransition = {
   date: new Date("12/23/2023"),
   devs: [
     {
-      name: "Soorya U",
-      imgPath: "/devs/soorya.jpg",
-      github: "https://github.com/soorya-u",
+      ...soorya,
       description: meanStackDescription,
     },
   ],
@@ -58,69 +72,51 @@ const sassStyling: Commit = {
   date: new Date("11/05/2023"),
   devs: [
     {
-      name: "Soorya U",
-      imgPath: "/devs/soorya.jpg",
-      github: "https://github.com/soorya-u",
+      ...soorya,
       description:
         "Implemented Sass for enhanced styling and responsiveness, leveraging its syntactically improved stylesheet features within the UI design process.",
     },
   ],
 };
 
-const earlyDevs: Devs[] = [
+const earlyDevs: Contributor[] = [
   {
-    name: "Soorya U",
-    imgPath: "/devs/soorya.jpg",
-    github: "https://github.com/soorya-u",
+    ...soorya,
     description:
       "Accomplished the design of a comprehensive UI and the Integration of backend API calls using the Angular Framework.",
   },
   {
-    name: "Saanvi MJ",
-    imgPath: "/devs/saanvi.jpg",
-    github: "https://github.com/Saanvi-MJ",
+    ...saanvi,
     description:
       "Collected Data and created a JSON file containing the Results and Incorporated Color Schemes into the Design.",
   },
   {
-    name: "Devika M",
-    imgPath: "/devs/devi.jpg",
-    github: "https://github.com/devikamallik",
+    ...devika,
     description:
       "Crafted a Detailed Project Report encapsulating essential Information, Insights, and Outcomes of the Entire Project.",
   },
   {
-    name: "Aishwarya HA",
-    imgPath: "/devs/aish.jpg",
-    github: "https://github.com/Aishwarya-HA",
+    ...aish,
     description:
       "Crafted a Detailed Project Report encapsulating essential Information, Insights, and Outcomes of the Entire Project.",
   },
   {
-    name: "Syeda Taneen Falak",
-    imgPath: "/devs/taneen.jpg",
-    github: "https://github.com/Taneen-Falak",
+    ...taneen,
     description:
       "Developed a PowerPoint Presentation for the Project, incorporating Key Information effectively about the Project.",
   },
   {
-    name: "Pratham KR",
-    imgPath: "/devs/pratham.jpg",
-    github: "https://github.com/bangrepratham",
+    ...pratham,
     description:
       "Artistically crafted a Logo, infusing creativity to encapsulate the Essence of the Project.",
   },
   {
-    name: "Afifa Hanif",
-    imgPath: "/devs/afifa.jpg",
-    github: "",
+    ...afifa,
     description:
       "Developed a PowerPoint Presentation for the Project, incorporating Key Information effectively about the Project.",
   },
   {
-    name: "Yashaswini KV",
-    imgPath: "/devs/yashaswini.jpg",
-    github: "",
+    ...yashaswini,
     description: "Gathered Data, Contributing only to the Initial Stages.",
   },
 ];
@@ -133,6 +129,7 @@ const apiApproach: Commit = {
 };
 
 export const commits: Commit[] = [
+  nextAuth,
   t3StackMigration,
   meanStackTransition,
   sassStyling,
