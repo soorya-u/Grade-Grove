@@ -1,46 +1,44 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { Poppins } from "next/font/google";
+import { useSearchParams } from "next/navigation";
 
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { cn } from "@/utils/cn";
-import { Button } from "@/components/primitives/button";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { signInGoogle, signInGitHub } from "@/actions/sign-in";
+
+import ServerButton from "@/components/custom/ServerButton";
 import { useToast } from "@/components/primitives/use-toast";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-async function handleClick(provider: string, redirectUrl: string | null) {
-  const route = redirectUrl?.split("/").slice(3).join("/");
-  signIn(provider, { redirect: true, callbackUrl: "/" + (route ?? "/") });
-}
-
 export default function OAuthButtons() {
-  const searchPrarms = useSearchParams();
+  const searchParams = useSearchParams();
   const { toast } = useToast();
 
   useEffect(() => {
-    const err = searchPrarms.get("error");
+    const err = searchParams.get("error");
     err &&
       err === "OAuthAccountNotLinked" &&
       toast({
         title: "Email Already Exists",
         description:
-          "The Email your are using to Login is already in use. Try Using Different Provider.",
+          "The Email you are using to Login is already in use. Try Using Different Provider.",
         variant: "destructive",
       });
-  }, [searchPrarms]);
+  }, [searchParams]);
+
+  const formData = new FormData();
+  formData.append("callbackUrl", searchParams.get("callbackUrl") ?? "/");
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 xs:flex-row">
-      <Button
-        onClick={async () =>
-          await handleClick("google", searchPrarms.get("callbackUrl"))
-        }
+      <ServerButton
+        action={async () => await signInGoogle(formData)}
         variant="outline"
         className={cn(
           poppins.className,
@@ -52,11 +50,9 @@ export default function OAuthButtons() {
           className="h-5 w-5 group-hover:[&_path]:fill-[#931D68]"
         />
         Contiue with Google
-      </Button>
-      <Button
-        onClick={async () =>
-          await handleClick("github", searchPrarms.get("callbackUrl"))
-        }
+      </ServerButton>
+      <ServerButton
+        action={async () => await signInGitHub(formData)}
         variant="outline"
         className={cn(
           poppins.className,
@@ -68,7 +64,7 @@ export default function OAuthButtons() {
           className="h-6 w-6 group-hover:[&_path]:fill-[#931D68]"
         />
         Contiue with Github
-      </Button>
+      </ServerButton>
     </div>
   );
 }

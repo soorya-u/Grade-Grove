@@ -1,57 +1,31 @@
-import { AuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import GithubProvider from "next-auth/providers/github";
+import NextAuth from "next-auth";
+import GitHub from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
+
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { $Enums } from "@prisma/client";
+import { Adapter } from "next-auth/adapters";
+import prisma from "./db";
+import { cache } from "react";
 
-import env from "@/schema/env";
-import prismaClient from "./db";
-
-export const authOptions: AuthOptions = {
-  session: {
-    strategy: "jwt",
-    maxAge: 77_76_000, // 90 days
-  },
-
-  providers: [
-    GoogleProvider({
-      clientId: env.GOOGLE_ID,
-      clientSecret: env.GOOGLE_SECRET,
-      profile: (profile) => ({
-        id: profile.sub,
-        name: `${profile.given_name} ${profile.family_name}`,
-        email: profile.email,
-        image: profile.picture,
-        role: profile.role || $Enums.Role.Normal,
-      }),
-    }),
-    GithubProvider({
-      clientId: env.GITHUB_ID,
-      clientSecret: env.GITHUB_SECRET,
-      profile: (profile) => ({
-        id: profile.id,
-        name: profile.name,
-        email: profile.email,
-        image: profile.avatar_url,
-        role: profile.role ?? $Enums.Role.Normal,
-      }),
-    }),
-  ],
-  // @ts-ignore
-  adapter: PrismaAdapter(prismaClient),
-
+const {
+  auth: nextAuth,
+  handlers,
+  signIn,
+  signOut,
+} = NextAuth({
   callbacks: {
-    // @ts-ignore
-    async jwt({ token, user }) {
-      return { ...token, ...user };
-    },
-    async session({ session, token }) {
-      session.user.role = token.role;
+    session: ({ session, user }) => {
+      session.user.role = user.role;
       return session;
     },
   },
-  secret: env.JWT_SECRET,
+  adapter: PrismaAdapter(prisma) as Adapter,
+  providers: [Google, GitHub],
   pages: {
-    signIn: "/auth/login",
+    signIn: "/auth/signup",
   },
-};
+});
+
+const auth = cache(nextAuth);
+
+export { handlers, signIn, signOut, auth };

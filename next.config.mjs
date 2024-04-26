@@ -3,22 +3,13 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
         hostname: "belief.soorya-u.dev",
-        port: "",
-        pathname: "/logo.png",
       },
       {
-        protocol: "https",
         hostname: "lh3.googleusercontent.com",
-        port: "",
-        pathname: "**/*",
       },
       {
-        protocol: "https",
         hostname: "avatars.githubusercontent.com",
-        port: "",
-        pathname: "**/*",
       },
     ],
   },
