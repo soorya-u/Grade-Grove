@@ -1,8 +1,4 @@
-export type Dev = {
-  name: string;
-  imgPath: string;
-  github: string;
-};
+import { Dev } from "@/types/changelog";
 
 export const soorya: Dev = {
   name: "Soorya U",

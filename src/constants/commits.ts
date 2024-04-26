@@ -6,7 +6,6 @@ import {
 } from "@/components/pages/about/Descriptions";
 
 import {
-  type Dev,
   afifa,
   aish,
   devika,
@@ -17,14 +16,7 @@ import {
   yashaswini,
 } from "./devs";
 
-type Contributor = Dev & { description: string | JSX.Element };
-
-type Commit = {
-  name: string;
-  branchLink: string;
-  date: Date;
-  devs: Contributor[];
-};
+import { Commit, Contributor } from "@/types/changelog";
 
 const nextAuth: Commit = {
   name: "Introduction Authentication Measures",
