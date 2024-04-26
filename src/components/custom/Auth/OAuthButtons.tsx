@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { Poppins } from "next/font/google";
 import { useSearchParams } from "next/navigation";
 
@@ -10,19 +12,33 @@ import { cn } from "@/utils/cn";
 import { signInGoogle, signInGitHub } from "@/actions/sign-in";
 
 import ServerButton from "@/components/custom/ServerButton";
+import { useToast } from "@/components/primitives/use-toast";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function OAuthButtons() {
   const searchParams = useSearchParams();
+  const { toast } = useToast();
 
-  if (searchParams.get("error"))
-    throw new Error(searchParams.get("error") ?? undefined);
+  useEffect(() => {
+    const err = searchParams.get("error");
+    err &&
+      err === "OAuthAccountNotLinked" &&
+      toast({
+        title: "Email Already Exists",
+        description:
+          "The Email your are using to Login is already in use. Try Using Different Provider.",
+        variant: "destructive",
+      });
+  }, [searchParams]);
+
+  const formData = new FormData();
+  formData.append("callbackUrl", searchParams.get("callbackUrl") ?? "/");
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 xs:flex-row">
       <ServerButton
-        action={() => signInGoogle(searchParams.get("callbackUrl") ?? "/")}
+        action={async () => await signInGoogle(formData)}
         variant="outline"
         className={cn(
           poppins.className,
@@ -36,7 +52,7 @@ export default function OAuthButtons() {
         Contiue with Google
       </ServerButton>
       <ServerButton
-        action={() => signInGitHub(searchParams.get("callbackUrl") ?? "/")}
+        action={async () => await signInGitHub(formData)}
         variant="outline"
         className={cn(
           poppins.className,

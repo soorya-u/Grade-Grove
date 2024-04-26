@@ -1,20 +1,13 @@
 "use server";
 
 import { signIn } from "@/lib/auth";
-import { revalidatePath } from "next/cache";
 
-export async function signInGoogle(callbackUrl: string) {
-  try {
-    await signIn("google", { redirect: true, redirectTo: callbackUrl });
-  } catch (err) {
-    revalidatePath("/auth/signup");
-  }
+export async function signInGoogle(formData: FormData) {
+  const callbackUrl = formData.get("callbackUrl")?.toString();
+  await signIn("google", { redirect: true, redirectTo: callbackUrl });
 }
 
-export async function signInGitHub(callbackUrl: string) {
-  try {
-    await signIn("github", { redirect: true, redirectTo: callbackUrl });
-  } catch (err) {
-    revalidatePath("/auth/signup");
-  }
+export async function signInGitHub(formData: FormData) {
+  const callbackUrl = formData.get("callbackUrl")?.toString();
+  await signIn("github", { redirect: true, redirectTo: callbackUrl });
 }

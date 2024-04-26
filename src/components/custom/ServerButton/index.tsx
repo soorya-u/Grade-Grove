@@ -11,13 +11,13 @@ type ServerPropsButton = {
     | null
     | undefined;
   children: React.ReactNode;
-  action: () => Promise<void>;
+  action: (formData: FormData) => Promise<void>;
   className: string;
 };
 
 export default function ServerButton(props: ServerPropsButton) {
   return (
-    <form action={async () => await props.action()}>
+    <form action={props.action}>
       <Button
         type="submit"
         className={props.className}
