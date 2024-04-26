@@ -5,7 +5,6 @@ import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { Adapter } from "next-auth/adapters";
 import prisma from "./db";
-import env from "@/schema/env";
 import { cache } from "react";
 
 const {
@@ -14,8 +13,6 @@ const {
   signIn,
   signOut,
 } = NextAuth({
-  // TODO: fix ENV
-  secret: "ABCD",
   callbacks: {
     session: ({ session, user }) => {
       session.user.role = user.role;

@@ -27,7 +27,7 @@ export default function OAuthButtons() {
       toast({
         title: "Email Already Exists",
         description:
-          "The Email your are using to Login is already in use. Try Using Different Provider.",
+          "The Email you are using to Login is already in use. Try Using Different Provider.",
         variant: "destructive",
       });
   }, [searchParams]);
