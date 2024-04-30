@@ -4,16 +4,16 @@ import { z } from "zod";
 const env = createEnv({
   clientPrefix: "NEXT_PUBLIC_",
   client: {
-    NEXT_PUBLIC_URL: z.string().url(),
+    NEXT_PUBLIC_URL: z.string().min(1).url(),
   },
   server: {
-    POSTGRES_DATABASE_URL: z.string(),
+    POSTGRES_URL: z.string().min(1),
     BUN_ENV: z.union([z.literal("development"), z.literal("production")]),
-    AUTH_GOOGLE_ID: z.string(),
-    AUTH_GOOGLE_SECRET: z.string(),
-    AUTH_GITHUB_ID: z.string(),
-    AUTH_GITHUB_SECRET: z.string(),
-    AUTH_SECRET: z.string(),
+    AUTH_GOOGLE_ID: z.string().min(1),
+    AUTH_GOOGLE_SECRET: z.string().min(1),
+    AUTH_GITHUB_ID: z.string().min(1),
+    AUTH_GITHUB_SECRET: z.string().min(1),
+    AUTH_SECRET: z.string().min(1),
   },
   runtimeEnv: process.env,
 });

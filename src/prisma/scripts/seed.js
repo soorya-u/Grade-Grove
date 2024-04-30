@@ -84,5 +84,5 @@ async function main() {
 
 main()
   .then(() => console.log("Transaction Successfull"))
-  .catch(() => console.log("Error: ", err))
+  .catch((err) => console.log("Error: ", err))
   .finally(() => dbClient.$disconnect());
