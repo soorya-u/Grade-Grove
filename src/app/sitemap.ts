@@ -1,4 +1,4 @@
-import { Student } from "@/services/student";
+import { getAllUsn } from "@/server/student";
 
 const domain =
   process.env.NEXT_PUBLIC_URL || (`https://grade-grove.soorya-u.dev` as const);
@@ -21,7 +21,7 @@ export default async function sitemap() {
     lastModified: new Date().toISOString(),
   }));
 
-  const allUsn = await Student.getAllUsn();
+  const allUsn = await getAllUsn();
 
   const usnRoutes = semDynamicPath.flatMap((sem) => {
     return allUsn.map((usn) => ({

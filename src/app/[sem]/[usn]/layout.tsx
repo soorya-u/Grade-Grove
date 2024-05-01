@@ -1,6 +1,6 @@
 import { Metadata } from "next/types";
 
-import { Student } from "@/services/student";
+import { getAllUsn, getStudentName } from "@/server/student";
 import { defaultMetadata } from "@/constants/metadata";
 
 import getOrdinalSemester from "@/utils/getOrdinalSemester";
@@ -11,7 +11,7 @@ type StudentPageLayoutProps = {
 };
 
 // export async function generateStaticParams() {
-//   const allUsn = await Student.getAllUsn();
+//   const allUsn = await getAllUsn();
 
 //   const semDynamicPath = ["first-sem", "second-sem", "third-sem", "fourth-sem"];
 
@@ -26,7 +26,7 @@ type StudentPageLayoutProps = {
 export async function generateMetadata({
   params,
 }: StudentPageLayoutProps): Promise<Metadata> {
-  const studentName = await Student.getStudentName(params.usn);
+  const studentName = await getStudentName(params.usn);
   const semester = `${getOrdinalSemester(params.sem)} Semester`;
 
   return {

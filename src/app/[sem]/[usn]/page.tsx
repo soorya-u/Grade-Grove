@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 
 import { auth } from "@/lib/auth";
-import { Student } from "@/services/student";
+import { getStudent } from "@/server/student";
 
 import StudentHeading from "@/components/pages/student/StudentHeading";
 import StudentProfile from "@/components/pages/student/StudentProfile";
@@ -12,10 +12,7 @@ async function Profile({ params }: { params: { sem: string; usn: string } }) {
   if (!session || !session.user)
     return redirect(`/auth/signup?callbackUrl=/${params.sem}/${params.usn}`);
 
-  const [heading, details, scores] = await Student.getStudent(
-    params.sem,
-    params.usn,
-  );
+  const [heading, details, scores] = await getStudent(params.sem, params.usn);
 
   if (details instanceof Error) return notFound();
 

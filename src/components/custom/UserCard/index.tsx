@@ -3,12 +3,11 @@
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 
-import { signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 
-import ServerButton from "@/components/custom/ServerButton";
-
+import { signOut } from "@/server/auth";
 import { cn } from "@/utils/cn";
+import ServerButton from "./ServerButton";
 
 type UserCardProps = {
   imageLink: string | null | undefined;
