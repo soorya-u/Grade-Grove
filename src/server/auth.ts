@@ -11,3 +11,9 @@ export async function signInGitHub(formData: FormData) {
   const callbackUrl = formData.get("callbackUrl")?.toString();
   await signIn("github", { redirect: true, redirectTo: callbackUrl });
 }
+
+import { signOut as NextAuthSignOut } from "@/lib/auth";
+
+export async function signOut() {
+  await NextAuthSignOut();
+}

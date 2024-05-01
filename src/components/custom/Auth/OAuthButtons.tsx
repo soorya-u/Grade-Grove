@@ -9,9 +9,9 @@ import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { cn } from "@/utils/cn";
-import { signInGoogle, signInGitHub } from "@/actions/sign-in";
+import { signInGoogle, signInGitHub } from "@/server/auth";
 
-import ServerButton from "@/components/custom/ServerButton";
+import ServerButton from "@/components/custom/UserCard/ServerButton";
 import { useToast } from "@/components/primitives/use-toast";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });

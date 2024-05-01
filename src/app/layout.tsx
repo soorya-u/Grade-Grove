@@ -1,3 +1,5 @@
+import "./globals.css";
+
 import type { Metadata } from "next/types";
 import { Ubuntu } from "next/font/google";
 
@@ -7,8 +9,7 @@ import Header from "@/components/custom/Header";
 import Footer from "@/components/custom/Footer";
 import { Toaster } from "@/components/primitives/toaster";
 import Providers from "@/providers";
-
-import "./globals.css";
+import { cn } from "@/utils/cn";
 
 const ubuntu = Ubuntu({ weight: "400", subsets: ["latin"] });
 
@@ -26,7 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ubuntu.className}>
+      <body
+        className={cn(
+          ubuntu.className,
+          "h-screen w-full bg-gradient-to-tr from-[indigo] to-[#f64444] bg-body",
+        )}
+      >
         <Providers>
           <Header />
           <main className="flex min-h-[82vh] flex-col items-center justify-center gap-7 before:content-[''] after:content-['']">
