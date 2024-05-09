@@ -10,7 +10,7 @@ const natoSans = Noto_Sans({ weight: "500", subsets: ["latin"] });
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-export default function Home() {
+export default function HomePage() {
   return (
     <section className="flex max-w-full flex-col flex-wrap items-center justify-center gap-6">
       <Image

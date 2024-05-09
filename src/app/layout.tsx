@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ...defaultMetadata,
 };
 
-export default function RootLayout({
+export default function HomeLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
