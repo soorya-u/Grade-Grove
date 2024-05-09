@@ -43,7 +43,7 @@ export default function HomePage() {
           className="text-md hover:bg-white hover:text-[#931D68]"
           variant="outline"
         >
-          <Link href="/">Check out your Result</Link>
+          <Link href="/semester">Check out your Result</Link>
         </Button>
         <Button
           className="text-md hover:bg-white hover:text-[#931D68]"

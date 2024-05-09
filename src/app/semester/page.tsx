@@ -1,11 +1,11 @@
 import { Poppins } from "next/font/google";
-
-import prismaClient from "@/lib/db";
-import { cn } from "@/utils/cn";
-import getSuperScript from "@/utils/getSuperScript";
 import Link from "next/link";
-import getSemesterRoute from "@/utils/getSemesterRoute";
+
+import { cn } from "@/utils/cn";
 import { getSemesterDetails } from "@/server/semester";
+
+import getSuperScript from "@/utils/getSuperScript";
+import getSemesterRoute from "@/utils/getSemesterRoute";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -15,10 +15,10 @@ export default async function SemesterPage() {
   return (
     <section className="flex w-full flex-col items-center justify-start gap-7">
       <h1 className={cn(poppins.className, "px-4 text-center text-5xl")}>
-        Semesters
+        Results of 2021-25
       </h1>
 
-      <div className="container grid grid-cols-1 gap-6 px-4 py-7 sm:grid-cols-2 md:grid-cols-3 md:gap-8 md:px-6 lg:grid-cols-4">
+      <div className="container grid grid-cols-1 gap-6 px-4 py-7 xss:grid-cols-2 md:grid-cols-3 md:gap-8 md:px-6 lg:grid-cols-4">
         {semesters.map((sem, idx) => (
           <Link
             key={idx}
@@ -49,7 +49,7 @@ export default async function SemesterPage() {
                       Credits: {sem.semesterCredits}
                     </h3>
                     <h3 className="text-lg font-medium tracking-tight group-hover:text-[#931D68]">
-                      Number of Subjects: {sem.noOfSubjects}
+                      No. of Subjects: {sem.noOfSubjects}
                     </h3>
                   </div>
                 </div>

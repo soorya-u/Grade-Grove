@@ -5,12 +5,6 @@ const nextConfig = {
       {
         hostname: "belief.soorya-u.dev",
       },
-      {
-        hostname: "lh3.googleusercontent.com",
-      },
-      {
-        hostname: "avatars.githubusercontent.com",
-      },
     ],
   },
 };
