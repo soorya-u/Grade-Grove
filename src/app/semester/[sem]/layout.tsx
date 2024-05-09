@@ -11,10 +11,10 @@ type SemesterLayoutProps = {
 
 export function generateStaticParams() {
   return [
-    { sem: "first-sem" },
-    { sem: "second-sem" },
-    { sem: "third-sem" },
-    { sem: "fourth-sem" },
+    { sem: "first" },
+    { sem: "second" },
+    { sem: "third" },
+    { sem: "fourth" },
   ];
 }
 

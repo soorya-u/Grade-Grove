@@ -1,4 +1,5 @@
 import { Button } from "@/components/primitives/button";
+import { cn } from "@/utils/cn";
 
 type ServerPropsButton = {
   variant?:
@@ -17,10 +18,10 @@ type ServerPropsButton = {
 
 export default function ServerButton(props: ServerPropsButton) {
   return (
-    <form action={props.action}>
+    <form className="flex flex-col" action={props.action}>
       <Button
         type="submit"
-        className={props.className}
+        className={cn(props.className, "justify-start gap-2 pl-4")}
         variant={props.variant || "default"}
       >
         {props.children}

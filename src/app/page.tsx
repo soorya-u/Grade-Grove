@@ -10,7 +10,7 @@ const natoSans = Noto_Sans({ weight: "500", subsets: ["latin"] });
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
-export default function Home() {
+export default function HomePage() {
   return (
     <section className="flex max-w-full flex-col flex-wrap items-center justify-center gap-6">
       <Image
@@ -43,7 +43,7 @@ export default function Home() {
           className="text-md hover:bg-white hover:text-[#931D68]"
           variant="outline"
         >
-          <Link href="/">Check out your Result</Link>
+          <Link href="/semester">Check out your Result</Link>
         </Button>
         <Button
           className="text-md hover:bg-white hover:text-[#931D68]"

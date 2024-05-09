@@ -110,7 +110,7 @@ function SemTable<TData, TValue>({
                 data-state={row.getIsSelected() && "selected"}
                 className="cursor-pointer hover:bg-black/20"
                 onClick={() =>
-                  router.push(`/${semester}/${row.getValue("usn")}`)
+                  router.push(`/semester/${semester}/${row.getValue("usn")}`)
                 }
               >
                 {row.getVisibleCells().map((cell, idx) => (

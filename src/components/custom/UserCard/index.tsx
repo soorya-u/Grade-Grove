@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Poppins } from "next/font/google";
 
 import { LogOut } from "lucide-react";
@@ -12,20 +11,14 @@ import ServerButton from "./ServerButton";
 type UserCardProps = {
   imageLink: string | null | undefined;
   name: string | null | undefined;
-  className?: string;
 };
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function UserCard(props: UserCardProps) {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center gap-x-2",
-        props.className,
-      )}
-    >
-      <Image
+    <div className={cn("flex items-center justify-center gap-x-2")}>
+      <img
         className="aspect-square rounded-full border-2 border-[#ccccd2]"
         width={30}
         height={30}

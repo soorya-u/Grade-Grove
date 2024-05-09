@@ -7,7 +7,7 @@ import getSemesterNumber from "@/utils/getSemesterNumber";
 export async function getResult(semester: string): Promise<IResultPayload[]> {
   const semNumber = getSemesterNumber(semester);
   const queryParams =
-    semester === "first-sem" || semester === "second-sem"
+    semester === "first" || semester === "second"
       ? [
           { semesterNumber: `${semNumber}P` },
           { semesterNumber: `${semNumber}C` },

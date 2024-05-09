@@ -1,12 +1,12 @@
 export default function getSemesterNumber(semester: string) {
   switch (semester) {
-    case "first-sem":
+    case "first":
       return 1;
-    case "second-sem":
+    case "second":
       return 2;
-    case "third-sem":
+    case "third":
       return 3;
-    case "fourth-sem":
+    case "fourth":
       return 4;
     default:
       return 0;
