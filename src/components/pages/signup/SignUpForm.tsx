@@ -64,7 +64,7 @@ export default function SignUpForm() {
           <span
             className={cn(
               poppins.className,
-              "col-start-1 col-end-3 text-xs text-[#00fffb]",
+              "col-start-1 col-end-3 text-xs text-[#ffea00]",
             )}
           >
             {errors.firstName?.message ?? errors.lastName?.message}
@@ -78,17 +78,17 @@ export default function SignUpForm() {
         <Input
           disabled={true || isSubmitting}
           aria-disabled={isSubmitting}
-          {...register("username")}
+          {...register("email")}
           className={cn(
             poppins.className,
             "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
-          placeholder="john-doe"
-          type="text"
+          placeholder="johndoe@example.com"
+          type="email"
         />
-        {errors.username && (
-          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
-            {errors.username.message}
+        {errors.email && (
+          <span className={cn(poppins.className, "text-xs text-[#ffea00]")}>
+            {errors.email.message}
           </span>
         )}
       </div>
@@ -99,6 +99,7 @@ export default function SignUpForm() {
         <Input
           disabled={true || isSubmitting}
           aria-disabled={isSubmitting}
+          placeholder="*******"
           {...register("password")}
           className={cn(
             poppins.className,
@@ -107,7 +108,7 @@ export default function SignUpForm() {
           type="password"
         />
         {errors.password && (
-          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
+          <span className={cn(poppins.className, "text-xs text-[#ffea00]")}>
             {errors.password.message}
           </span>
         )}

@@ -10,6 +10,7 @@ import { Input } from "@/components/primitives/input";
 import { Label } from "@/components/primitives/label";
 import { Button } from "@/components/primitives/button";
 import { cn } from "@/utils/cn";
+import { signIn } from "next-auth/react";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -23,7 +24,7 @@ export default function LoginForm() {
   });
   return (
     <form
-      onSubmit={handleSubmit((val) => console.log(val))}
+      onSubmit={handleSubmit(async (val) => await signIn("credentials", val))}
       className="grid gap-4"
     >
       <div className="grid gap-2">
@@ -31,19 +32,19 @@ export default function LoginForm() {
           Username
         </Label>
         <Input
-          disabled={true || isSubmitting}
+          disabled={isSubmitting}
           aria-disabled={isSubmitting}
-          {...register("username")}
-          type="text"
-          placeholder="john-doe"
+          {...register("email")}
+          type="email"
+          placeholder="johndoe@example.com"
           className={cn(
             poppins.className,
             "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
         />
-        {errors.username && (
-          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
-            {errors.username.message}
+        {errors.email && (
+          <span className={cn(poppins.className, "text-xs text-[#ffea00]")}>
+            {errors.email.message}
           </span>
         )}
       </div>
@@ -52,8 +53,9 @@ export default function LoginForm() {
           Password
         </Label>
         <Input
-          disabled={true || isSubmitting}
+          disabled={isSubmitting}
           aria-disabled={isSubmitting}
+          placeholder="*******"
           {...register("password")}
           type="password"
           className={cn(
@@ -62,13 +64,13 @@ export default function LoginForm() {
           )}
         />
         {errors.password && (
-          <span className={cn(poppins.className, "text-xs text-[#00fffb]")}>
+          <span className={cn(poppins.className, "text-xs text-[#ffea00]")}>
             {errors.password.message}
           </span>
         )}
       </div>
       <Button
-        disabled={true || isSubmitting}
+        disabled={isSubmitting}
         aria-disabled={isSubmitting}
         className={cn(poppins.className, "w-full bg-primary text-base")}
       >
