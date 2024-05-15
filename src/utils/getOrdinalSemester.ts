@@ -1,12 +1,12 @@
 export default function getOrdinalSemester(semester: string) {
   switch (semester) {
-    case "first-sem":
+    case "first":
       return "First";
-    case "second-sem":
+    case "second":
       return "Second";
-    case "third-sem":
+    case "third":
       return "Third";
-    case "fourth-sem":
+    case "fourth":
       return "Fourth";
   }
 }
