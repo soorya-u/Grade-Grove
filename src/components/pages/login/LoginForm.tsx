@@ -28,8 +28,8 @@ export default function LoginForm() {
       className="grid gap-4"
     >
       <div className="grid gap-2">
-        <Label className={poppins.className} htmlFor="username">
-          Username
+        <Label className={poppins.className} htmlFor="email">
+          Email
         </Label>
         <Input
           disabled={isSubmitting}
@@ -43,7 +43,7 @@ export default function LoginForm() {
           )}
         />
         {errors.email && (
-          <span className={cn(poppins.className, "text-xs text-[#ffea00]")}>
+          <span className={cn(poppins.className, "text-xs text-yellow-400")}>
             {errors.email.message}
           </span>
         )}
@@ -64,7 +64,7 @@ export default function LoginForm() {
           )}
         />
         {errors.password && (
-          <span className={cn(poppins.className, "text-xs text-[#ffea00]")}>
+          <span className={cn(poppins.className, "text-xs text-yellow-400")}>
             {errors.password.message}
           </span>
         )}
