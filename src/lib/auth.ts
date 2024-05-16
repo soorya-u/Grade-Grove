@@ -45,7 +45,7 @@ const Credentials = NextAuthCredentials({
 });
 
 const nextAuthConfig = (req: NextRequest | undefined): NextAuthConfig => {
-  const isCredentials =
+  const isCredentialLogin =
     req &&
     req.url.includes("callback") &&
     req.url.includes("credentials") &&
@@ -54,7 +54,7 @@ const nextAuthConfig = (req: NextRequest | undefined): NextAuthConfig => {
   return {
     callbacks: {
       signIn: async ({ user }) => {
-        if (isCredentials) {
+        if (isCredentialLogin) {
           if (user && user.id) {
             const sessionToken = randomUUID();
             const sessionExpiry = new Date(Date.now() + session.maxAge * 1000);
@@ -88,17 +88,11 @@ const nextAuthConfig = (req: NextRequest | undefined): NextAuthConfig => {
     },
     session,
     jwt: {
-      encode: (params) => {
-        if (isCredentials) {
-          const cookie = cookies().get("authjs.session-token")?.value;
-          return cookie ?? "";
-        }
-        return encode(params);
-      },
-      decode: (params) => {
-        if (isCredentials) return null;
-        return decode(params);
-      },
+      encode: (params) =>
+        isCredentialLogin
+          ? cookies().get("authjs.session-token")?.value ?? ""
+          : encode(params),
+      decode: (params) => (isCredentialLogin ? null : decode(params)),
     },
   };
 };
