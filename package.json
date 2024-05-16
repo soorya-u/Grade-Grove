@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "bun run env && prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",

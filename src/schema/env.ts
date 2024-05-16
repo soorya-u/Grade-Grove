@@ -16,7 +16,8 @@ const env = createEnv({
     AUTH_SECRET: z.string().min(1),
     RESEND_KEY: z.string().min(1),
   },
-  runtimeEnv: process.env,
+  // @ts-ignore Bun env
+  runtimeEnv: Bun.env ?? process.env,
 });
 
 export default env;
