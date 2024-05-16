@@ -21,7 +21,7 @@ export default function ServerButton(props: ServerPropsButton) {
     <form className="flex flex-col" action={props.action}>
       <Button
         type="submit"
-        className={cn(props.className, "justify-start gap-2 pl-4")}
+        className={cn(props.className, "justify-start gap-2")}
         variant={props.variant || "default"}
       >
         {props.children}

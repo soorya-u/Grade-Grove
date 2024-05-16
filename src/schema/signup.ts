@@ -14,7 +14,7 @@ export const signUpSchema = z.object({
     .min(1, { message: "This Field is Required" })
     .regex(nameRegex, { message: "Name must contain only Alphabets" }),
   email: z.string().min(1, { message: "This Field is Required" }).email({
-    message: "The Entered Email is not Valid",
+    message: "Enter a Valid Email",
   }),
   password: z
     .string()

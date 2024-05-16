@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 
@@ -28,7 +29,9 @@ export default async function SignUpCard() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <SignUpForm />
+        <Suspense>
+          <SignUpForm />
+        </Suspense>
         <OAuth />
       </CardContent>
       <CardFooter className="flex items-center justify-center">

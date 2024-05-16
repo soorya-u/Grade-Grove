@@ -29,14 +29,25 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  if (existingUser)
-    return NextResponse.json<ResponseType>(
-      {
-        title: "User Already Exits",
-        description: "Entered Email has already been Registered.",
-      },
-      { status: 409 },
-    );
+  if (existingUser) {
+    if (existingUser.emailVerified)
+      return NextResponse.json<ResponseType>(
+        {
+          title: "User Already Exits",
+          description: "Entered Email has already been Registered.",
+        },
+        { status: 409 },
+      );
+    else
+      return NextResponse.json<ResponseType>(
+        {
+          title: "Email has already been Registered",
+          description:
+            "Entered Email has already been Registered. Please verify your Email.",
+        },
+        { status: 409 },
+      );
+  }
 
   const password = await bcrypt.hash(rawPassword, 10);
 

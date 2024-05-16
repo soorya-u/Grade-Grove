@@ -2,6 +2,7 @@
 
 import { Poppins } from "next/font/google";
 import { useForm } from "react-hook-form";
+import { LucideLoader2 } from "lucide-react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -14,28 +15,29 @@ import { signUpSchema, type SignUpType } from "@/schema/signup";
 import { cn } from "@/utils/cn";
 import httpClient from "@/lib/http";
 import { ResponseType } from "@/types/api";
+import { useError } from "@/hooks/use-error";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const signUpFunction = async (payload: SignUpType) => {
+  useError("code");
+
   await httpClient
     .post<ResponseType>("/api/auth/register", payload)
-    .then((res) => {
-      console.log(res);
+    .then((res) =>
       toast({
         variant: "success",
         title: res.data.title,
         description: res.data.description,
-      });
-    })
-    .catch(({ response: err }) => {
-      console.log(err);
+      }),
+    )
+    .catch(({ response: err }) =>
       toast({
         variant: "destructive",
         title: err.data.title,
         description: err.data.description,
-      });
-    });
+      }),
+    );
 };
 
 export default function SignUpForm() {
@@ -106,7 +108,6 @@ export default function SignUpForm() {
             "border-[#ffffff84] bg-[#00000030] focus-visible:border-none focus-visible:ring-offset-0",
           )}
           placeholder="johndoe@example.com"
-          type="email"
         />
         {errors.email && (
           <span className={cn(poppins.className, "text-xs text-yellow-400")}>
@@ -141,7 +142,12 @@ export default function SignUpForm() {
         type="submit"
         className={cn(poppins.className, "w-full")}
       >
-        Create an account
+        {" "}
+        {isSubmitting ? (
+          <LucideLoader2 color="black" className="size-6 animate-spin" />
+        ) : (
+          "Create an account"
+        )}
       </Button>
     </form>
   );

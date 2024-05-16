@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 import { Poppins } from "next/font/google";
 import { useSearchParams } from "next/navigation";
 
@@ -12,25 +10,13 @@ import { cn } from "@/utils/cn";
 import { signInGoogle, signInGitHub } from "@/server/auth";
 
 import ServerButton from "@/components/custom/UserCard/ServerButton";
-import { useToast } from "@/components/primitives/use-toast";
+import { useError } from "@/hooks/use-error";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function OAuthButtons() {
   const searchParams = useSearchParams();
-  const { toast } = useToast();
-
-  useEffect(() => {
-    const err = searchParams.get("error");
-    err &&
-      err === "OAuthAccountNotLinked" &&
-      toast({
-        title: "Email Already Exists",
-        description:
-          "The Email you are using to Login is already in use. Try Using Different Provider.",
-        variant: "destructive",
-      });
-  }, [searchParams]);
+  useError("error");
 
   const formData = new FormData();
   formData.append("callbackUrl", searchParams.get("callbackUrl") ?? "/");
