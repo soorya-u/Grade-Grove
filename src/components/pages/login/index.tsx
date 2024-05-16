@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 
@@ -28,7 +29,9 @@ export default async function LoginCard() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <LoginForm />
+        <Suspense>
+          <LoginForm />
+        </Suspense>
         <OAuth />
       </CardContent>
       <CardFooter>
