@@ -1,6 +1,7 @@
 "use server";
 
 import { signIn } from "@/lib/auth";
+import { signOut as NextAuthSignOut } from "@/lib/auth";
 
 export async function signInGoogle(formData: FormData) {
   const callbackUrl = formData.get("callbackUrl")?.toString();
@@ -12,7 +13,18 @@ export async function signInGitHub(formData: FormData) {
   await signIn("github", { redirect: true, redirectTo: callbackUrl });
 }
 
-import { signOut as NextAuthSignOut } from "@/lib/auth";
+export async function signInCredentials(payload: {
+  email: string;
+  password: string;
+  callbackUrl: string;
+}) {
+  await signIn("credentials", {
+    redirectTo: payload.callbackUrl,
+    redirect: true,
+    email: payload.email,
+    password: payload.password,
+  });
+}
 
 export async function signOut() {
   await NextAuthSignOut();
