@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { randomUUID } from "crypto";
+import * as bcrypt from "bcrypt";
 import { cookies } from "next/headers";
 
 import { NextRequest } from "next/server";
@@ -14,6 +15,7 @@ import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 import NextAuthCredentials from "next-auth/providers/credentials";
 
+import { loginSchema } from "@/schema/login";
 import prisma from "./db";
 
 const adapter = PrismaAdapter(prisma) as Adapter;
@@ -24,23 +26,36 @@ const session = {
 
 const Credentials = NextAuthCredentials({
   name: "Credentials",
-  authorize: async ({ username }) => {
+  authorize: async (credentials) => {
+    const parsedCredentials = await loginSchema.safeParseAsync(credentials);
+    if (parsedCredentials.error) return null; // Handle Error
+
+    const { email, password } = parsedCredentials.data;
+
     const user = await prisma.user.findUnique({
       where: {
-        email: username as string,
+        email,
       },
     });
 
-    if (user)
-      return {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-        image: user.image,
-      };
+    if (!user) return null; // Handle Error
 
-    return null;
+    if (!user.emailVerified) return null; // Handle Error
+
+    const isPasswordVerified = await bcrypt.compare(
+      password,
+      user.password ?? "",
+    );
+
+    if (!isPasswordVerified) return null; // Handle Error
+
+    return {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      image: user.image,
+    };
   },
 });
 
@@ -76,9 +91,20 @@ const nextAuthConfig = (req: NextRequest | undefined): NextAuthConfig => {
 
         return true;
       },
-      session: ({ session, user }) => {
-        session.user.role = user.role;
-        return session;
+      session: ({ session }) => {
+        const { user: sessionUser, ...rest } = session;
+        const { email, role, image, name } = sessionUser;
+        const newSession = {
+          user: {
+            name,
+            image,
+            role,
+            email,
+          },
+          ...rest,
+        };
+
+        return newSession;
       },
     },
     adapter,
