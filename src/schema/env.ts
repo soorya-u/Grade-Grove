@@ -14,6 +14,7 @@ const env = createEnv({
     AUTH_GITHUB_ID: z.string().min(1),
     AUTH_GITHUB_SECRET: z.string().min(1),
     AUTH_SECRET: z.string().min(1),
+    RESEND_KEY: z.string().min(1),
   },
   runtimeEnv: process.env,
 });

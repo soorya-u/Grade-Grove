@@ -1,3 +1,4 @@
+import env from "@/schema/env";
 import {
   Html,
   Button,
@@ -16,7 +17,7 @@ type VerifyEmailProps = {
 };
 
 export default function VerifyEmail({ userId, token }: VerifyEmailProps) {
-  const url = "https://grade-grove.soorya-u.dev" as const;
+  const url = env.NEXT_PUBLIC_URL;
   return (
     <Tailwind>
       <Html lang="en">

@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 import * as bcrypt from "bcrypt";
+import { randomUUID } from "crypto";
 
 import { signUpSchema } from "@/schema/signup";
 import prisma from "@/lib/db";
 import { ResponseType } from "@/types/api";
+import env from "@/schema/env";
+
+import VerifyEmail from "@/emails/VerifyEmail";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -62,6 +67,43 @@ export async function POST(req: NextRequest) {
   });
 
   if (!account)
+    return NextResponse.json<ResponseType>(
+      {
+        title: "Unable to create User",
+        description: "Authentication Failed due to Unknown Reason. Try Later",
+      },
+      { status: 500 },
+    );
+
+  const token = randomUUID();
+
+  const resend = new Resend(env.RESEND_KEY);
+
+  const verTk = await prisma.verificationToken.create({
+    data: {
+      token,
+      identifier: user.id,
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 6), // 6 hrs
+    },
+  });
+
+  if (!verTk)
+    return NextResponse.json<ResponseType>(
+      {
+        title: "Unable to create User",
+        description: "Authentication Failed due to Unknown Reason. Try Later",
+      },
+      { status: 500 },
+    );
+
+  const res = await resend.emails.send({
+    from: "grade-grove@email.soorya-u.dev",
+    to: user.email,
+    subject: "Verify your Email for Grade Grove",
+    react: VerifyEmail({ userId: user.id, token }),
+  });
+
+  if (res.error)
     return NextResponse.json<ResponseType>(
       {
         title: "Unable to create User",
