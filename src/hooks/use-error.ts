@@ -19,11 +19,13 @@ export const useError = (param: string) => {
     if (!matcher) return;
     const err = getErrorMessage(matcher);
     if (!err) return;
-    router.push(`${err.url}?${searchParams.toString()}`);
-    toast({
-      title: err.title,
-      description: err.description,
-      variant: err.variant,
-    });
+    if (err.url && err.url !== pathname)
+      router.push(`${err.url}?${searchParams.toString()}`);
+    else
+      toast({
+        title: err.title,
+        description: err.description,
+        variant: err.variant,
+      });
   }, [searchParams]);
 };
