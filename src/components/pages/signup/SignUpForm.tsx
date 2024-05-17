@@ -20,8 +20,6 @@ import { useError } from "@/hooks/use-error";
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const signUpFunction = async (payload: SignUpType) => {
-  useError("code");
-
   await httpClient
     .post<ResponseType>("/api/auth/register", payload)
     .then((res) =>
@@ -41,6 +39,7 @@ const signUpFunction = async (payload: SignUpType) => {
 };
 
 export default function SignUpForm() {
+  useError("code");
   const {
     handleSubmit,
     register,
