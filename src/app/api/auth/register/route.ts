@@ -108,10 +108,13 @@ export async function POST(req: NextRequest) {
     );
 
   const res = await resend.emails.send({
-    from: "grade-grove@email.soorya-u.dev",
+    from: "Grade Grove <grade-grove@email.soorya-u.dev>",
     to: user.email,
     subject: "Verify your Email for Grade Grove",
     react: VerifyEmail({ userId: user.id, token }),
+    headers: {
+
+    }
   });
 
   if (res.error)

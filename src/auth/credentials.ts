@@ -63,7 +63,7 @@ export const Credentials = NextAuthCredentials({
         if (!verTk) throw new UnexpectedError();
 
         const res = await resend.emails.send({
-          from: "grade-grove@email.soorya-u.dev",
+          from: "Grade Grove <no-reply@email.soorya-u.dev>",
           to: user.email,
           subject: "Verify your Email for Grade Grove",
           react: VerifyEmail({ userId: user.id, token }),
