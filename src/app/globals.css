@@ -102,8 +102,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100px;
 }
 
-/* div[data-side="bottom"][role="dialog"] {
-  background-color: #00000030;
+div[data-side="bottom"][role="dialog"] {
+  @apply bg-[#00000030] border-[2px] border-white  backdrop-blur-[8px]
+/*  background-color: #00000030;
   border: 2px solid white;
-  backdrop-filter: blur(8px);
-} */
+  backdrop-filter: blur(8px); */
+}
