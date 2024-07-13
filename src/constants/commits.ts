@@ -98,14 +98,13 @@ const earlyDevs: Contributor[] = [
       "Developed a PowerPoint Presentation for the Project, incorporating Key Information effectively about the Project.",
   },
   {
-    ...pratham,
-    description:
-      "Artistically crafted a Logo, infusing creativity to encapsulate the Essence of the Project.",
-  },
-  {
     ...afifa,
     description:
       "Developed a PowerPoint Presentation for the Project, incorporating Key Information effectively about the Project.",
+  },
+  {
+    ...pratham,
+    description: "Crafted a Logo, Contributing only to the Initial Stages.",
   },
   {
     ...yashaswini,
