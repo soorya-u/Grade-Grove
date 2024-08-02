@@ -15,7 +15,7 @@ async function Result({ params }: { params: { sem: string } }) {
   return (
     <>
       <h1 className={cn(poppins.className, "px-4 text-center text-3xl")}>
-        {getOrdinalSemester(params.sem)} Semester Top 10 List
+        {getOrdinalSemester(params.sem)} Semester Top 20 List
       </h1>
       <SemTable columns={columns} semester={params.sem} data={payload} />
     </>
