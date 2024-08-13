@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Quicksand } from "next/font/google";
 import { usePathname } from "next/navigation";
 
-import { NavigationMenuItem } from "@/components/primitives/navigation-menu";
+import { NavigationMenuItem } from "@/components/ui/navigation-menu";
 import { cn } from "@/utils/cn";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });

@@ -5,7 +5,7 @@ import {
   useRouter,
   redirect,
 } from "next/navigation";
-import { useToast } from "@/components/primitives/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 import getErrorMessage from "@/utils/getErrorMessages";
 
 export const useError = (param: string) => {

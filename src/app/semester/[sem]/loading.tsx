@@ -4,9 +4,9 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from "@/components/primitives/table";
+} from "@/components/ui/table";
 
-import { Skeleton } from "@/components/primitives/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function Loading() {
   return (

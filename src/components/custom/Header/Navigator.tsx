@@ -1,7 +1,7 @@
 import {
   NavigationMenu,
   NavigationMenuList,
-} from "@/components/primitives/navigation-menu";
+} from "@/components/ui/navigation-menu";
 
 import NavigatorLink from "./NavigatorLink";
 

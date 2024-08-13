@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/primitives/avatar";
+} from "@/components/ui/avatar";
 
 import { IStudentDetails } from "@/types/student";
 

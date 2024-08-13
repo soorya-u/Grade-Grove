@@ -1,4 +1,4 @@
-import { Button } from "@/components/primitives/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 
 type ServerPropsButton = {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 
-import { Button } from "@/components/primitives/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import { auth } from "@/lib/auth";
 

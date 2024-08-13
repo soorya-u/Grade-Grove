@@ -1,11 +1,11 @@
 import { Poppins, Rubik } from "next/font/google";
 
-import { CardContent, Card } from "@/components/primitives/card";
+import { CardContent, Card } from "@/components/ui/card";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/primitives/avatar";
+} from "@/components/ui/avatar";
 
 import { cn } from "@/utils/cn";
 import Link from "next/link";

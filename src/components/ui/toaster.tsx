@@ -9,8 +9,8 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/components/primitives/toast";
-import { useToast } from "@/components/primitives/use-toast";
+} from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/utils/cn";
 import { LucideAlertTriangle, Info } from "lucide-react";
 

@@ -6,10 +6,10 @@ import { LucideLoader2 } from "lucide-react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Button } from "@/components/primitives/button";
-import { Input } from "@/components/primitives/input";
-import { Label } from "@/components/primitives/label";
-import { toast } from "@/components/primitives/use-toast";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/components/ui/use-toast";
 
 import { signUpSchema, type SignUpType } from "@/schema/signup";
 import { cn } from "@/utils/cn";

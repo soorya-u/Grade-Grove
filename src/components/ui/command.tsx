@@ -7,7 +7,7 @@ import { Search } from "lucide-react";
 import { Quicksand } from "next/font/google";
 
 import { cn } from "@/utils/cn";
-import { Dialog, DialogContent } from "@/components/primitives/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 

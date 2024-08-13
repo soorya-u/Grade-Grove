@@ -12,7 +12,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/primitives/accordion";
+} from "@/components/ui/accordion";
 import { useState } from "react";
 
 type UserCardProps = {

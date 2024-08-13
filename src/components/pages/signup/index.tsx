@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/components/primitives/card";
+} from "@/components/ui/card";
 import { cn } from "@/utils/cn";
 
 import SignUpForm from "./SignUpForm";

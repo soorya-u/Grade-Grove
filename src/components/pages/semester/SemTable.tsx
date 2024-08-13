@@ -22,9 +22,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/primitives/table";
+} from "@/components/ui/table";
 
-import { Input } from "@/components/primitives/input";
+import { Input } from "@/components/ui/input";
 
 import { cn } from "@/utils/cn";
 

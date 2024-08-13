@@ -7,7 +7,7 @@ import { defaultMetadata } from "@/constants/metadata";
 
 import Header from "@/components/custom/Header";
 import Footer from "@/components/custom/Footer";
-import { Toaster } from "@/components/primitives/toaster";
+import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/providers";
 import { cn } from "@/utils/cn";
 

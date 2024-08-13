@@ -9,7 +9,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/primitives/table";
+} from "@/components/ui/table";
 
 import { cn } from "@/utils/cn";
 

@@ -4,7 +4,7 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/primitives/sheet";
+} from "@/components/ui/sheet";
 
 import { ILink } from "@/types/link";
 import { auth } from "@/lib/auth";

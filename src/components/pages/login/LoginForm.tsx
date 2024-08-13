@@ -9,9 +9,9 @@ import { loginSchema, type LoginType } from "@/schema/login";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LucideLoader2 } from "lucide-react";
 
-import { Input } from "@/components/primitives/input";
-import { Label } from "@/components/primitives/label";
-import { Button } from "@/components/primitives/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 import { cn } from "@/utils/cn";
 import { signInCredentials } from "@/server/auth";

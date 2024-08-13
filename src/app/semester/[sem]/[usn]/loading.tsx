@@ -1,11 +1,11 @@
-import { Skeleton } from "@/components/primitives/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
   TableCell,
   TableHeader,
   TableRow,
-} from "@/components/primitives/table";
+} from "@/components/ui/table";
 
 function Loading() {
   return (

@@ -6,19 +6,19 @@ import { Column } from "@tanstack/react-table";
 
 import { Check, ChevronsUpDown } from "lucide-react";
 
-import { Button } from "@/components/primitives/button";
+import { Button } from "@/components/ui/button";
 
 import {
   Command,
   CommandGroup,
   CommandItem,
-} from "@/components/primitives/command";
+} from "@/components/ui/command";
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/primitives/popover";
+} from "@/components/ui/popover";
 
 import { IResultPayload } from "@/types/result";
 

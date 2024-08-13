@@ -5,7 +5,7 @@ import { Quicksand } from "next/font/google";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/utils/cn";
-import { SheetClose } from "@/components/primitives/sheet";
+import { SheetClose } from "@/components/ui/sheet";
 import { Info, LineChart, UserCheck, UserPlus } from "lucide-react";
 import { ILink } from "@/types/link";
 

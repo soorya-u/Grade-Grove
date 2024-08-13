@@ -1,4 +1,4 @@
-import { Button } from "@/components/primitives/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import { Noto_Sans, Poppins } from "next/font/google";
 import Link from "next/link";
