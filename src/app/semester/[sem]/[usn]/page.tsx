@@ -10,7 +10,7 @@ import StudentTable from "@/components/pages/student/StudentTable";
 async function Profile({ params }: { params: { sem: string; usn: string } }) {
   const session = await auth();
   if (!session || !session.user)
-    return redirect(`/auth/signup?callbackUrl=/${params.sem}/${params.usn}`);
+    return redirect(`/auth/signup?callbackUrl=/semester/${params.sem}/${params.usn}`);
 
   const [heading, details, scores] = await getStudent(params.sem, params.usn);
 
