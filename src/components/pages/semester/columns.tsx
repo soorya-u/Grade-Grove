@@ -4,7 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { IResultPayload } from "@/types/result";
 
-import { sortedTableHeader, unsortedTableHeader } from "./TableHeaders";
+import { sortedTableHeader, unsortedTableHeader } from "./table-headers";
 
 export const columns: ColumnDef<IResultPayload>[] = [
   {

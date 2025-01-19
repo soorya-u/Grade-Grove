@@ -3,7 +3,7 @@ import {
   saanviT3StackDescription,
   sooryaT3StackDescription,
   nextAuthDescription,
-} from "@/components/pages/about/Descriptions";
+} from "@/components/pages/about/descriptions";
 
 import {
   afifa,

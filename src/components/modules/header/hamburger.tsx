@@ -9,8 +9,8 @@ import {
 import { ILink } from "@/types/link";
 import { auth } from "@/lib/auth";
 
-import HamburgerUserCard from "../UserCard/HamburgerUserCard";
-import HamburgerLink from "./HamburgerLink";
+import HamburgerUserCard from "../user-card/hamburger-user-card";
+import HamburgerLink from "./hamburger-link";
 
 export default async function Hamburger({ className }: { className: string }) {
   const session = await auth();

@@ -2,7 +2,7 @@ import { Audiowide, Poppins } from "next/font/google";
 
 import { cn } from "@/utils/cn";
 
-import VerticalTimeCard from "@/components/pages/about/VerticalTimeCard";
+import VerticalTimeCard from "@/components/pages/about/vertical-time-card";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
