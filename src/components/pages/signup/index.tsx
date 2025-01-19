@@ -12,8 +12,8 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/utils/cn";
 
-import SignUpForm from "./SignUpForm";
-import OAuth from "@/components/custom/Auth";
+import SignUpForm from "./sign-up-form";
+import OAuth from "@/components/modules/auth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

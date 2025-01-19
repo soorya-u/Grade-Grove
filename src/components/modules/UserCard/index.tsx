@@ -6,7 +6,7 @@ import { LogOut } from "lucide-react";
 
 import { signOut } from "@/server/auth";
 import { cn } from "@/utils/cn";
-import ServerButton from "./ServerButton";
+import ServerButton from "./server-button";
 
 type UserCardProps = {
   imageLink: string | null | undefined;

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Audiowide } from "next/font/google";
 
-import Navigator from "./Navigator";
-import Hamburger from "./Hamburger";
+import Navigator from "./navigator";
+import Hamburger from "./hamburger";
 import { cn } from "@/utils/cn";
-import AuthButton from "../Auth/AuthButton";
+import AuthButton from "../auth/auth-button";
 
 const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 

@@ -2,7 +2,7 @@ import { Poppins } from "next/font/google";
 
 import { getResult } from "@/server/result";
 
-import SemTable from "@/components/pages/semester/SemTable";
+import SemTable from "@/components/pages/semester/sem-table";
 import { columns } from "@/components/pages/semester/columns";
 
 import getOrdinalSemester from "@/utils/getOrdinalSemester";

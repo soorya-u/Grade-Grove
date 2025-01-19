@@ -11,9 +11,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import LoginForm from "./LoginForm";
+import LoginForm from "./login-form";
 import { cn } from "@/utils/cn";
-import OAuth from "@/components/custom/Auth";
+import OAuth from "@/components/modules/auth";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 

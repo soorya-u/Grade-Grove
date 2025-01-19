@@ -1,5 +1,5 @@
-import ProfileCard from "./ProfileCard";
-import Timestamp from "./Timestamp";
+import ProfileCard from "./profile-card";
+import Timestamp from "./timestamp";
 
 import { commits } from "@/constants/commits";
 import { cn } from "@/utils/cn";

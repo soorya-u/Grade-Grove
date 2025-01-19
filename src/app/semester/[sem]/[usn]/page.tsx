@@ -3,9 +3,9 @@ import { notFound, redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { getStudent } from "@/server/student";
 
-import StudentHeading from "@/components/pages/student/StudentHeading";
-import StudentProfile from "@/components/pages/student/StudentProfile";
-import StudentTable from "@/components/pages/student/StudentTable";
+import StudentHeading from "@/components/pages/student/student-heading";
+import StudentProfile from "@/components/pages/student/student-profile";
+import StudentTable from "@/components/pages/student/student-table";
 
 async function Profile({ params }: { params: { sem: string; usn: string } }) {
   const session = await auth();

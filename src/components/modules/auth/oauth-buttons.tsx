@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cn } from "@/utils/cn";
 import { signInGoogle, signInGitHub } from "@/server/auth";
 
-import ServerButton from "@/components/custom/UserCard/ServerButton";
+import ServerButton from "@/components/modules/UserCard/server-button";
 import { useError } from "@/hooks/use-error";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
