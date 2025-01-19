@@ -1,4 +1,4 @@
-import NextAuthProvider from "./NextAuthProvider";
+import NextAuthProvider from "./next-auth";
 
 type ProvidersProps = {
   children: React.ReactNode;
