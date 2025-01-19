@@ -12,7 +12,7 @@ import {
 } from "@/errors/auth";
 import { loginSchema } from "@/schema/login";
 import env from "@/schema/env";
-import VerifyEmail from "@/emails/VerifyEmail";
+import VerifyEmail from "@/emails/verify-email";
 import prisma from "@/lib/db";
 
 export const Credentials = NextAuthCredentials({

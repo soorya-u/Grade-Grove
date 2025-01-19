@@ -8,7 +8,7 @@ import prisma from "@/lib/db";
 import { ResponseType } from "@/types/api";
 import env from "@/schema/env";
 
-import VerifyEmail from "@/emails/VerifyEmail";
+import VerifyEmail from "@/emails/verify-email";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
