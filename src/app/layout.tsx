@@ -5,7 +5,7 @@ import { Ubuntu } from "next/font/google";
 
 import { defaultMetadata } from "@/constants/metadata";
 
-import Header from "@/components/modules/Header";
+import Header from "@/components/modules/header";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/providers";

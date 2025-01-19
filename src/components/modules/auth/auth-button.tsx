@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import { auth } from "@/lib/auth";
 
-import UserCard from "../UserCard";
+import UserCard from "../user-card";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
