@@ -1,6 +1,5 @@
 "use client";
 
-import { Poppins } from "next/font/google";
 import { useSearchParams } from "next/navigation";
 
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -11,8 +10,7 @@ import { signInGoogle, signInGitHub } from "@/server/auth";
 
 import ServerButton from "@/components/modules/user-card/server-button";
 import { useError } from "@/hooks/use-error";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { poppins } from "@/fonts";
 
 export default function OAuthButtons() {
   const searchParams = useSearchParams();
@@ -32,6 +30,7 @@ export default function OAuthButtons() {
         )}
       >
         <FontAwesomeIcon
+          // @ts-ignore
           icon={faGoogle}
           className="h-5 w-5 group-hover:[&_path]:fill-[#931D68]"
         />
@@ -46,6 +45,7 @@ export default function OAuthButtons() {
         )}
       >
         <FontAwesomeIcon
+          // @ts-ignore
           icon={faGithub}
           className="h-6 w-6 group-hover:[&_path]:fill-[#931D68]"
         />

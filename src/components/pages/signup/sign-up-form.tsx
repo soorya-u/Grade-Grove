@@ -1,6 +1,5 @@
 "use client";
 
-import { Poppins } from "next/font/google";
 import { useForm } from "react-hook-form";
 import { LucideLoader2 } from "lucide-react";
 
@@ -16,8 +15,7 @@ import { cn } from "@/utils/cn";
 import httpClient from "@/lib/http";
 import { ResponseType } from "@/types/api";
 import { useError } from "@/hooks/use-error";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { poppins } from "@/fonts";
 
 const signUpFunction = async (payload: SignUpType) => {
   await httpClient

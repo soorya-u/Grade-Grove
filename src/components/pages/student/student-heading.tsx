@@ -1,12 +1,9 @@
-import { Poppins } from "next/font/google";
-
 import getSuperScript from "@/utils/getSuperScript";
 
 import { cn } from "@/utils/cn";
 
 import { IStudentHeading } from "@/types/student";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { poppins } from "@/fonts";
 
 function StudentHeading({ data }: { data: IStudentHeading }) {
   return (

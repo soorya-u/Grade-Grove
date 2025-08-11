@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { Audiowide } from "next/font/google";
 
 import Navigator from "./navigator";
 import Hamburger from "./hamburger";
 import { cn } from "@/utils/cn";
 import AuthButton from "../auth/auth-button";
+import { audiowide } from "@/fonts";
 
-const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
 export default function Header() {
   return (

@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Quicksand } from "next/font/google";
 import { usePathname } from "next/navigation";
 
 import { NavigationMenuItem } from "@/components/ui/navigation-menu";
 import { cn } from "@/utils/cn";
-
-const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
+import { quicksand } from "@/fonts";
 
 export default function NavigatorLink({ link }: { link: string }) {
   const pathname = usePathname();

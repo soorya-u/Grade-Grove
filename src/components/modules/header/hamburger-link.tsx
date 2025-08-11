@@ -1,15 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Quicksand } from "next/font/google";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/utils/cn";
 import { SheetClose } from "@/components/ui/sheet";
 import { Info, LineChart, UserCheck, UserPlus } from "lucide-react";
 import { ILink } from "@/types/link";
-
-const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
+import { quicksand } from "@/fonts";
 
 const linkMapper = {
   Semester: { icon: LineChart, route: "semester" },

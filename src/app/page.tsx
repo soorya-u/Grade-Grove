@@ -1,14 +1,9 @@
 import Image from "next/image";
-import { Noto_Sans, Poppins } from "next/font/google";
-
-import { cn } from "@/utils/cn";
-
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const natoSans = Noto_Sans({ weight: "500", subsets: ["latin"] });
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { Button } from "@/components/ui/button";
+import { natoSans, poppins } from "@/fonts";
+import { cn } from "@/utils/cn";
 
 export default function HomePage() {
   return (

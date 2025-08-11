@@ -1,7 +1,5 @@
 import { IStudentScores } from "@/types/student";
 
-import { Poppins, Rubik } from "next/font/google";
-
 import {
   Table,
   TableBody,
@@ -12,9 +10,7 @@ import {
 } from "@/components/ui/table";
 
 import { cn } from "@/utils/cn";
-
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
-const rubik = Rubik({ weight: "400", subsets: ["latin"] });
+import { poppins, rubik } from "@/fonts";
 
 function StudentTable({ data }: { data: IStudentScores[] }) {
   return (

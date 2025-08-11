@@ -1,7 +1,5 @@
 "use client";
 
-import { Poppins } from "next/font/google";
-
 import {
   Toast,
   ToastClose,
@@ -11,10 +9,9 @@ import {
   ToastViewport,
 } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
+import { poppins } from "@/fonts";
 import { cn } from "@/utils/cn";
 import { LucideAlertTriangle, Info } from "lucide-react";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const variantOptions = {
   default: { className: "", icon: <></> },

@@ -1,7 +1,5 @@
 "use client";
 
-import { Quicksand } from "next/font/google";
-
 import { ChevronDown, LogOut } from "lucide-react";
 
 import { signOut } from "@/server/auth";
@@ -14,14 +12,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState } from "react";
+import { quicksand } from "@/fonts";
 
 type UserCardProps = {
   imageLink: string | null | undefined;
   name: string | null | undefined;
   className?: string;
 };
-
-const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
 
 export default function HamburgerUserCard(props: UserCardProps) {
   const [accordionOpen, setAccordionOpen] = useState(false);

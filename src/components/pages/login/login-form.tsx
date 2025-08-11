@@ -1,6 +1,5 @@
 "use client";
 
-import { Poppins } from "next/font/google";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
@@ -16,8 +15,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import { signInCredentials } from "@/server/auth";
 import { useError } from "@/hooks/use-error";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { poppins } from "@/fonts";
 
 export default function LoginForm() {
   const searchParams = useSearchParams();
