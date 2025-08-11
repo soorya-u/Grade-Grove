@@ -12,7 +12,9 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
-    "email": "email dev --dir src/emails"
+    "email": "email dev --dir src/emails",
+    "seed": "bun src/prisma/seed.ts",
+    "prisma:seed": "prisma db seed"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
