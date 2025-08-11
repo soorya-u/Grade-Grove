@@ -7,7 +7,7 @@ const env = createEnv({
     NEXT_PUBLIC_URL: z.string().min(1).url(),
   },
   server: {
-    POSTGRES_URL: z.string().min(1),
+    DATABASE_URL: z.string().min(1),
     BUN_ENV: z.union([z.literal("development"), z.literal("production")]),
     AUTH_GOOGLE_ID: z.string().min(1),
     AUTH_GOOGLE_SECRET: z.string().min(1),
