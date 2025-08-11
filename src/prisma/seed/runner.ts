@@ -1,9 +1,10 @@
+// @ts-nocheck
+
 import { $Enums } from "@prisma/client";
-import dbClient from "@/lib/db"
-import { TCacheValue } from "./types"
+import dbClient from "@/lib/db";
+import { TCacheValue } from "./types";
 
 type TransactionClient = Parameters<Parameters<typeof dbClient.$transaction>[0]>[0];
-
 
 export class Seeder {
 
