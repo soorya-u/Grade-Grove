@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { Poppins } from "next/font/google";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import { auth } from "@/lib/auth";
+import { poppins } from "@/fonts";
 
 import UserCard from "../user-card";
 
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default async function AuthButton() {
   const session = await auth();

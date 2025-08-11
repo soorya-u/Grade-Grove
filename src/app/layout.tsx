@@ -1,7 +1,6 @@
 import "./globals.css";
 
 import type { Metadata } from "next/types";
-import { Ubuntu } from "next/font/google";
 
 import { defaultMetadata } from "@/constants/metadata";
 
@@ -10,8 +9,7 @@ import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "@/providers";
 import { cn } from "@/utils/cn";
-
-const ubuntu = Ubuntu({ weight: "400", subsets: ["latin"] });
+import { ubuntu } from "@/fonts";
 
 export const metadata: Metadata = {
   title: "Grade Grove",

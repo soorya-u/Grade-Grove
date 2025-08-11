@@ -1,14 +1,12 @@
-import { Poppins } from "next/font/google";
-
 import { getResult } from "@/server/result";
 
 import SemTable from "@/components/pages/semester/sem-table";
 import { columns } from "@/components/pages/semester/columns";
 
+import { poppins } from "@/fonts";
+
 import getOrdinalSemester from "@/utils/getOrdinalSemester";
 import { cn } from "@/utils/cn";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 async function Result({ params }: { params: { sem: string } }) {
   const payload = await getResult(params.sem);

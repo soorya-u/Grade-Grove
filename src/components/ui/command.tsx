@@ -4,12 +4,10 @@ import * as React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
-import { Quicksand } from "next/font/google";
 
 import { cn } from "@/utils/cn";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-
-const quicksand = Quicksand({ weight: "600", subsets: ["latin"] });
+import { quicksand } from "@/fonts";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,

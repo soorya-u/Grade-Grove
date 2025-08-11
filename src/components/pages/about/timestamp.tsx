@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { Rubik } from "next/font/google";
 
 import { cn } from "@/utils/cn";
-
-const rubik = Rubik({ weight: "400", subsets: ["latin"] });
+import { rubik } from "@/fonts";
 
 function Timestamp({
   name,

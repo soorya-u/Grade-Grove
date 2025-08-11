@@ -1,4 +1,3 @@
-import { Poppins } from "next/font/google";
 import Link from "next/link";
 
 import { cn } from "@/utils/cn";
@@ -6,8 +5,7 @@ import { getSemesterDetails } from "@/server/semester";
 
 import getSuperScript from "@/utils/getSuperScript";
 import getSemesterRoute from "@/utils/getSemesterRoute";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { poppins } from "@/fonts";
 
 export default async function SemesterPage() {
   const semesters = await getSemesterDetails();

@@ -1,6 +1,5 @@
 "use client";
 
-import { Rubik, Poppins } from "next/font/google";
 import { useRouter } from "next/navigation";
 
 import { ChangeEvent, useState } from "react";
@@ -27,9 +26,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { cn } from "@/utils/cn";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
-const rubik = Rubik({ weight: "400", subsets: ["latin"] });
+import { poppins, rubik } from "@/fonts";
 
 interface SemTableProps<TData, TValue> {
   semester: string;

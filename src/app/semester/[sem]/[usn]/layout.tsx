@@ -1,6 +1,6 @@
 import { Metadata } from "next/types";
 
-import { getAllUsn, getStudentName } from "@/server/student";
+import { getStudentName } from "@/server/student";
 import { defaultMetadata } from "@/constants/metadata";
 
 import getOrdinalSemester from "@/utils/getOrdinalSemester";
@@ -9,19 +9,6 @@ type StudentPageLayoutProps = {
   children: React.ReactNode;
   params: { sem: string; usn: string };
 };
-
-// export async function generateStaticParams() {
-//   const allUsn = await getAllUsn();
-
-//   const semDynamicPath = ["first-sem", "second-sem", "third-sem", "fourth-sem"];
-
-//   return semDynamicPath.flatMap((sem) => {
-//     return allUsn.map((usn) => ({
-//       sem: sem,
-//       usn: usn,
-//     }));
-//   });
-// }
 
 export async function generateMetadata({
   params,

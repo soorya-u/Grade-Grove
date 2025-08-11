@@ -1,10 +1,8 @@
-import { cn } from "@/utils/cn";
-import { Poppins } from "next/font/google";
-
 import Link from "next/link";
 import Image from "next/image";
 
-const poppins = Poppins({ weight: "400", subsets: ["latin"] });
+import { cn } from "@/utils/cn";
+import { poppins } from "@/fonts";
 
 export default function Footer() {
   return (

@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { Poppins } from "next/font/google";
 
 import {
   Card,
@@ -14,8 +13,7 @@ import {
 import LoginForm from "./login-form";
 import { cn } from "@/utils/cn";
 import OAuth from "@/components/modules/auth";
-
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
+import { poppins } from "@/fonts";
 
 export default async function LoginCard() {
   return (

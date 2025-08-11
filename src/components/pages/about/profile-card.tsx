@@ -1,17 +1,9 @@
-import { Poppins, Rubik } from "next/font/google";
-
 import { CardContent, Card } from "@/components/ui/card";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { cn } from "@/utils/cn";
 import Link from "next/link";
-
-const rubik = Rubik({ weight: "400", subsets: ["latin"] });
-const poppins = Poppins({ weight: "400", subsets: ["latin"] });
+import { poppins, rubik } from "@/fonts";
 
 function ProfileCard({
   name,

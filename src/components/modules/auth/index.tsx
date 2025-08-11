@@ -1,11 +1,10 @@
 import { Suspense } from "react";
 
-import { Poppins } from "next/font/google";
 
 import { cn } from "@/utils/cn";
 import OAuthButtons from "./oauth-buttons";
+import { poppins } from "@/fonts";
 
-const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 export default function OAuth() {
   return (
