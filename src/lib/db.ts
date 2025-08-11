@@ -1,8 +1,13 @@
 import { PrismaClient } from "@prisma/client";
 import { withAccelerate } from '@prisma/extension-accelerate'
+import env from "@/schema/env"
 
 const prismaClientSingleton = () => {
-  return new PrismaClient().$extends(withAccelerate());
+  const prisma = new PrismaClient()
+  if (env.DATABASE_URL.startsWith("prisma"))
+    prisma.$extends(withAccelerate())
+
+  return prisma;
 };
 
 declare global {
