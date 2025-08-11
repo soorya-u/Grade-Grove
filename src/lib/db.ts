@@ -1,14 +1,13 @@
 import { PrismaClient } from "@prisma/client";
-// import env from "@/schema/env";
-// import { Pool } from "@neondatabase/serverless";
-// import { PrismaNeon } from "@prisma/adapter-neon";
+import { withAccelerate } from '@prisma/extension-accelerate'
+import env from "@/schema/env"
 
 const prismaClientSingleton = () => {
-  // const neon = new Pool({ connectionString: env.POSTGRES_DATABASE_URL });
-  // const adapter = new PrismaNeon(neon);
-  return new PrismaClient({
-    // adapter
-  });
+  const prisma = new PrismaClient()
+  if (env.DATABASE_URL.startsWith("prisma"))
+    prisma.$extends(withAccelerate())
+
+  return prisma;
 };
 
 declare global {

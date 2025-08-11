@@ -1,0 +1,9 @@
+enum Cycle {
+  Physics
+  Chemistry
+}
+
+enum Role {
+  Normal
+  Admin
+}
