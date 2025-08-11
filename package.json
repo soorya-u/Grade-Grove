@@ -4,7 +4,7 @@
   "private": true,
   "prisma": {
     "schema": "src/prisma/schema",
-    "seed": "bun src/prisma/seed.ts"
+    "seed": "bun src/prisma/seed/index.ts"
   },
   "scripts": {
     "dev": "next dev",
@@ -13,8 +13,8 @@
     "lint": "next lint",
     "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "email": "email dev --dir src/emails",
-    "seed": "bun src/prisma/seed.ts",
-    "prisma:seed": "prisma db seed"
+    "seed": "bun src/prisma/seed/index.ts",
+    "seed:prod": "bun src/prisma/seed/index.ts --voluntary"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",

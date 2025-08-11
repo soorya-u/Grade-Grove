@@ -1,4 +1,5 @@
 import env from "@/schema/env"
+import { Seeder } from "./runner"
 
 const allowProd = process.argv.includes("--voluntary");
 
@@ -7,4 +8,4 @@ if (env.BUN_ENV === "production" && !allowProd) {
   process.exit(0)
 }
 
-(async () => await (await import("./runner")).run())()
+(async () => await Seeder.exec())()
